@@ -1,8 +1,8 @@
 module.exports = {
-	title: '不吃茶的李白v',
+	title: '不吃茶的v李白',
 	description: 'Live and Study.',
 	head: [
-		['link', { rel: 'icon', href: '/images/photo.jpg' }],
+		['link', { rel: 'icon', href: '/images/photo.png' }],
 		['meta', { 'http-quiv': 'pragma', cotent: 'no-cache'}],
 		['meta', { 'http-quiv': 'pragma', cotent: 'no-cache,must-revalidate'}],
 		['meta', { 'http-quiv': 'expires', cotent: '0'}]
