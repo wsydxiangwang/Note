@@ -10,9 +10,10 @@
     "deploy": "bash deploy.sh"
   },
   "keywords": [],
-  "author": "",
+  "author": "LiBai",
+  "repository": "github:wsydxiangwang/VuePressBlog",
   "license": "ISC",
   "dependencies": {
-    "vuepress": "^0.14.4"
+    "vuepress": "^1.4.1"
   }
 }

@@ -1,5 +1,5 @@
 ---
 home: true
-heroImage: /images/photo.jpg
-actionText: 开始学习 →
+heroImage: /images/cover.gif
+actionText: Get Started →
 actionLink: '/JavaScript/'
