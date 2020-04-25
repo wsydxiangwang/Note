@@ -1,11 +1,7 @@
-# VuePress 快速上手
+## 学习程序，一般都会做笔记吧，那么你们是记在哪儿的呢？
 
-### 步骤一：git clone git@mobike.io:zhangyunchen/vuepress-devkit.git
+## 用过博客园，用过CSDN，用过掘金，用过简书，用过有道云，用过自有服务器搭建的网站... 
 
-### 步骤二：运行 npm install
+## 现在还是选择了VuePress的框架，GitHub Pages提供的平台和数据库
 
-### 步骤三：运行 npm run dev
-
-### 最后：打开 http://localhost:8080/ 即可看到一个 Vue 文档风格的网站
-
-#### PS. 想获取更多部署方法，可以点击“快速上手” 第五节 部署上线，按步骤操作即可
+## （用着放心，且免费省心，vue的框架也是专于md笔记的，简洁，十分ok） 
