@@ -25,10 +25,12 @@ module.exports = {
 					children: []
 				},
 				{
+					title: 'JS 深入数组',
+					children: ['/JavaScript/Array/1', '/JavaScript/Array/2', '/JavaScript/Array/3', '/JavaScript/Array/4', '/JavaScript/Array/5', '/JavaScript/Array/6', '/JavaScript/Array/7']
+				},
+				{
 					title: 'this 全面解析',
-					children: ['',
-					'/JavaScript/Core/one',
-					'/JavaScript/Core/two']
+					children: ['/JavaScript/this/1', '/JavaScript/this/2', '/JavaScript/this/3']
 				},
 				{
 					title: '原型 Prototype',
@@ -37,84 +39,7 @@ module.exports = {
 				},
 				{
 					title: '节流防抖',
-					children: []
-				},
-				{
-					title: '作用域闭包',
-					children: []
-				},
-				{
-					title: 'JS 深入数组',
-					children: []
-				},
-				{
-					title: 'this 全面解析',
-					children: ['',
-					'/JavaScript/Core/one',
-					'/JavaScript/Core/two']
-				},
-				{
-					title: '原型 Prototype',
-					children: ['',
-					'/JavaScript/DOM/哦豁']
-				},
-				{
-					title: '节流防抖',
-					children: []
-				},
-				{
-					title: '作用域闭包',
-					children: []
-				},
-				{
-					title: 'JS 深入数组',
-					children: []
-				},
-				{
-					title: 'this 全面解析',
-					children: ['',
-					'/JavaScript/Core/one',
-					'/JavaScript/Core/two']
-				},
-				{
-					title: '原型 Prototype',
-					children: ['',
-					'/JavaScript/DOM/哦豁']
-				},
-				{
-					title: '节流防抖',
-					children: []
-				},
-				{
-					title: '作用域闭包',
-					children: []
-				},
-				{
-					title: 'JS 深入数组',
-					children: []
-				},
-				{
-					title: 'this 全面解析',
-					children: ['',
-					'/JavaScript/Core/one',
-					'/JavaScript/Core/two']
-				},
-				{
-					title: '原型 Prototype',
-					children: ['',
-					'/JavaScript/DOM/哦豁']
-				},
-				{
-					title: '节流防抖',
-					children: []
-				},
-				{
-					title: '作用域闭包',
-					children: []
-				},
-				{
-					title: 'JS 深入数组',
-					children: []
+					children: ['/JavaScript/节流防抖/one', '/JavaScript/节流防抖/two']
 				}
 			],
 			'/Vue/': [

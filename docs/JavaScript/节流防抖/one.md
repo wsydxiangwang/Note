@@ -1,116 +1,83 @@
-# 堆栈
-栈（stack）为自动分配的内存空间，它由系统自动释放；
-而堆（heap）则是动态分配的内存，大小不定也不会自动释放。
+# 性能优化之节流防抖
 
-## 基本数据类型
+## 节流 throttle
 
-1. 基本数据类型值不可变
-    ```js
-    let a = 'abc'
-    a[0] = 'c'
+函数节流指的是某个函数在一定时间间隔内（例如 3 秒）只执行一次，在这 3 秒内 `无视后来产生的函数调用请求`，也不会延长时间间隔。三秒后，才能进入**下一个任务**。这就好比公交车，10 分钟一趟，10 分钟内有多少人在公交站等我不管，10 分钟一到我就要发车走人！
 
-    console.log(a) // abc
-    ```
-2. 基本类型的比较是值的比较
-      ```js
-      var a = 1;
-      var b = 1;
-      console.log(a === b);//true
-      ```
+使用场景:
 
-## 引用类型
-引用类型（object）是存放在堆内存中的，变量实际上是一个存放在栈内存的指针，这个指针指向堆内存中的地址。每个空间大小不一样，要根据情况开进行特定的分配，例如。
+函数节流非常适用于函数被频繁调用的场景，例如：window.onresize() 事件、mousemove 事件、scroll 滚动事件、上传进度等情况。使用 throttle API 很简单，那应该如何实现 throttle 这个函数呢？
 
-引用类型的比较是引用的比较
-```js
-var a = [1,2,3];
-var b = [1,2,3];
-console.log(a === b); // false
-```
-
-## 垃圾回收
-引用：在内存管理的环境中，一个对象如果有访问另一个对象的权限（隐式或者显式），叫做一个对象引用另一个对象。例如，一个Javascript对象具有对它原型的引用（隐式引用）和对它属性的引用（显式引用）。
-
-引用计数垃圾收：此算法把“对象是否不再需要”简化定义为“对象有没有其他对象引用到它”。如果没有引用指向该对象（零引用），对象将被垃圾回收机制回收。
-
-标记-清除算法：这个算法假定设置一个叫做根（root）的对象（在Javascript里，根是全局对象）。垃圾回收器将定期从根开始，找所有从根开始引用的对象，然后找这些对象引用的对象……从根开始，垃圾回收器将找到所有可以获得的对象和收集所有不能获得的对象。
-
-限制: 那些无法从根对象查询到的对象都将被清除
-
-## 传值与传址的区别
-基本数据类型的赋值（=）是在内存中新开辟一段栈内存，然后再把再将值赋值到新的栈中。
-```js
-var a = 10;
-var b = a;
-
-a ++;
-console.log(a); // 11
-console.log(b); // 10
-```
-
-引用类型的赋值是传址。只是改变指针的指向
-```js
-var a = {}; // a保存了一个空对象的实例
-var b = a;  // a和b都指向了这个空对象
-
-a.name = 'jozo';
-console.log(a.name); // 'jozo'
-console.log(b.name); // 'jozo'
-
-b.age = 22;
-console.log(b.age);// 22
-console.log(a.age);// 22
-
-console.log(a == b);// true
-```
-
-
-## 深拷贝与浅拷贝
-深拷贝：将 B 对象拷贝到 A 对象中，包括 B 里面的子对象，
-
-浅拷贝：将 B 对象拷贝到 A 对象中，但不包括 B 里面的子对象
+定时器：
 
 ```js
-    // 内部方法：用户合并一个或多个对象到第一个对象
-    // 参数：
-    // target 目标对象  对象都合并到target里
-    // source 合并对象
-    // deep 是否执行深度合并
-    function extend(target, source, deep) {
-        for (key in source)
-            if (deep && (isPlainObject(source[key]) || isArray(source[key]))) {
-                // source[key] 是对象，而 target[key] 不是对象， 则 target[key] = {} 初始化一下，否则递归会出错的
-                if (isPlainObject(source[key]) && !isPlainObject(target[key]))
-                    target[key] = {}
-
-                // source[key] 是数组，而 target[key] 不是数组，则 target[key] = [] 初始化一下，否则递归会出错的
-                if (isArray(source[key]) && !isArray(target[key]))
-                    target[key] = []
-                // 执行递归
-                extend(target[key], source[key], deep)
-            }
-            // 不满足以上条件，说明 source[key] 是一般的值类型，直接赋值给 target 就是了
-            else if (source[key] !== undefined) target[key] = source[key]
-    }
-
-    // Copy all but undefined properties from one or more
-    // objects to the `target` object.
-    $.extend = function(target){
-        var deep, args = slice.call(arguments, 1);
-
-        //第一个参数为boolean值时，表示是否深度合并
-        if (typeof target == 'boolean') {
-            deep = target;
-            //target取第二个参数
-            target = args.shift()
+function throttle(fn, interval) {
+    let flag = true;
+    return function(...args) {
+        if (flag){
+            flag = false;
+            setTimeout(() => {
+                fn.apply(this, args);
+                flag = true;
+            }, interval);
         }
-        // 遍历后面的参数，都合并到target上
-        args.forEach(function(arg){ extend(target, arg, deep) })
-        return target
     }
+}
 ```
 
-$.extend(true, target, [source, ...])  ⇒ target
+时间戳：
 
-将 deep 参数放在首位，方便接收不确定的 source 参数。
-核心是用 for...in 遍历对象属性，如需深拷贝则启用**递归**。
+```js
+function throttle(fn, interval) {
+    let last = 0;
+    return function (...args) {
+        let now = +new Date();
+        if(now - last > interval){
+            last = now;
+            fn.apply(this, args)
+        }
+    }
+}
+```
+
+## 防抖 debounce
+
+防抖函数指的是某个函数在某段时间内，无论触发了多少次回调，**都只执行最后一次**。假如我们设置了一个等待时间 3 秒的函数，在这 3 秒内如果遇到函数调用请求就重新计时 3 秒，直至新的 3 秒内没有函数调用请求，此时执行函数，不然就以此类推重新计时。
+
+```js
+function debounce(fn, interval) {
+    let timer = null;
+    return function (...args) {
+        if(timer) clearTimeout(timer);
+        timer = setTimeout(() => {
+            fn.apply(this, args);
+        }, interval);
+    }
+}
+```
+
+## 加强版 throttle
+现在考虑一种情况，如果用户的操作非常频繁，不等设置的延迟时间结束就进行下次操作，会频繁的清除计时器并重新生成，所以函数 fn 一直都没办法执行，导致用户操作迟迟得不到响应。
+
+有一种思想是将「节流」和「防抖」合二为一，变成加强版的节流函数，关键点在于「 interval 时间内，可以重新生成定时器，但只要 interval 的时间到了，必须给用户一个响应」。这种合体思路恰好可以解决上面提出的问题。
+
+```js
+function throttle(fn, interval) {
+	let last = 0, timer = null;
+	return function (...args) {
+		let now = +new Date();
+		if(now - last < interval){
+			if(timer) clearTimeout(timer);
+			timer = setTimeout(() => {
+				last = now;
+				fn.apply(this, args);
+			}, interval);
+		} else {
+			// 这个时候表示时间到了，必须给响应
+			last = now;
+			fn.apply(this, args);
+		}
+	}
+}
+```
+
