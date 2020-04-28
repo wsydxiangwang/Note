@@ -34,12 +34,11 @@ module.exports = {
 				},
 				{
 					title: '原型 Prototype',
-					children: ['',
-					'/JavaScript/DOM/哦豁']
+					children: ['/JavaScript/Prototype/1', '/JavaScript/Prototype/2']
 				},
 				{
 					title: '异步方法',
-					children: ['/JavaScript/异步方法/1', '/JavaScript/异步方法/2', '/JavaScript/异步方法/3', '/JavaScript/异步方法/4', '/JavaScript/异步方法/5', '/JavaScript/异步方法/6']
+					children: ['/JavaScript/异步方法/1', '/JavaScript/异步方法/2', '/JavaScript/异步方法/3', '/JavaScript/异步方法/4']
 				},
 				{
 					title: '性能优化',
