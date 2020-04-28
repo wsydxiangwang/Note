@@ -38,7 +38,11 @@ module.exports = {
 					'/JavaScript/DOM/哦豁']
 				},
 				{
-					title: '节流防抖',
+					title: '异步方法',
+					children: ['/JavaScript/异步方法/1', '/JavaScript/异步方法/2', '/JavaScript/异步方法/3', '/JavaScript/异步方法/4', '/JavaScript/异步方法/5', '/JavaScript/异步方法/6']
+				},
+				{
+					title: '性能优化',
 					children: ['/JavaScript/节流防抖/one', '/JavaScript/节流防抖/two']
 				}
 			],
