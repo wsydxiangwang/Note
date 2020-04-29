@@ -26,7 +26,11 @@ module.exports = {
 				},
 				{
 					title: 'JS 深入数组',
-					children: ['/JavaScript/Array/1', '/JavaScript/Array/2', '/JavaScript/Array/3', '/JavaScript/Array/4', '/JavaScript/Array/5', '/JavaScript/Array/6', '/JavaScript/Array/7']
+					children: ['/JavaScript/Array/1', '/JavaScript/Array/2', '/JavaScript/Array/3', '/JavaScript/Array/4', '/JavaScript/Array/5', '/JavaScript/Array/6', '/JavaScript/Array/7', '/JavaScript/Array/8']
+				},
+				{
+					title: 'JS 字符串',
+					children: ['/JavaScript/String/1', '/JavaScript/String/2', '/JavaScript/String/3']
 				},
 				{
 					title: 'this 闭包 原型',
