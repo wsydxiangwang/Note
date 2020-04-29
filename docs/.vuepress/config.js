@@ -29,8 +29,8 @@ module.exports = {
 					children: ['/JavaScript/Array/1', '/JavaScript/Array/2', '/JavaScript/Array/3', '/JavaScript/Array/4', '/JavaScript/Array/5', '/JavaScript/Array/6', '/JavaScript/Array/7']
 				},
 				{
-					title: 'this 全面解析',
-					children: ['/JavaScript/this/1', '/JavaScript/this/2', '/JavaScript/this/3']
+					title: 'this 闭包 原型',
+					children: ['/JavaScript/this/1', '/JavaScript/this/2', '/JavaScript/this/3', '/JavaScript/this/4', '/JavaScript/this/5']
 				},
 				{
 					title: '原型 Prototype',
@@ -42,7 +42,7 @@ module.exports = {
 				},
 				{
 					title: '性能优化',
-					children: ['/JavaScript/节流防抖/one', '/JavaScript/节流防抖/two']
+					children: ['/JavaScript/性能优化/1', '/JavaScript/性能优化/2', '/JavaScript/性能优化/3']
 				}
 			],
 			'/Vue/': [
