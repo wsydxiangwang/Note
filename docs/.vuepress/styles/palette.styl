@@ -29,6 +29,23 @@ blockquote{
 .theme-default-content pre[class*="language-"]{
     padding: 2rem 1.5rem 1.05rem;
 }
+div[class*="language-"] pre, div[class*="language-"] pre[class*="language-"]{
+    position: static;
+}
+
+div[class*="language-"] pre[class*="language-"]::-webkit-scrollbar{
+    background: #2d2d2d;
+    height: 4px;
+}
+div[class*="language-"] pre[class*="language-"]::-webkit-scrollbar-track{
+    background: #2d2d2d;
+    height: 4px;
+}
+div[class*="language-"] pre[class*="language-"]::-webkit-scrollbar-thumb{
+    background: #565656;
+    height: 4px;
+}
+
 div[class*="language-"]::after, pre[class*="language-"]::after, pre[class*="language-"]::before{
     content: '';
     height: 10px;

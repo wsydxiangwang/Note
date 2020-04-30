@@ -29,6 +29,11 @@ module.exports = {
 					children: ['/JavaScript/Array/1', '/JavaScript/Array/2', '/JavaScript/Array/3', '/JavaScript/Array/4', '/JavaScript/Array/5', '/JavaScript/Array/6', '/JavaScript/Array/7', '/JavaScript/Array/8']
 				},
 				{
+					title: 'JS 对象',
+					sidebarDepth: 2,
+					children: ['/JavaScript/Object/1', '/JavaScript/Object/2', '/JavaScript/Object/3', '/JavaScript/Object/4', '/JavaScript/Object/5']
+				},
+				{
 					title: 'JS 字符串',
 					children: ['/JavaScript/String/1', '/JavaScript/String/2', '/JavaScript/String/3']
 				},
@@ -37,16 +42,12 @@ module.exports = {
 					children: ['/JavaScript/this/1', '/JavaScript/this/2', '/JavaScript/this/3', '/JavaScript/this/4', '/JavaScript/this/5']
 				},
 				{
-					title: '原型 Prototype',
-					children: ['/JavaScript/Prototype/1', '/JavaScript/Prototype/2']
-				},
-				{
 					title: '异步方法',
 					children: ['/JavaScript/异步方法/1', '/JavaScript/异步方法/2', '/JavaScript/异步方法/3', '/JavaScript/异步方法/4']
 				},
 				{
 					title: '性能优化',
-					children: ['/JavaScript/性能优化/1', '/JavaScript/性能优化/2', '/JavaScript/性能优化/3']
+					children: ['/JavaScript/性能优化/1', '/JavaScript/性能优化/2', '/JavaScript/性能优化/3', '/JavaScript/性能优化/4']
 				}
 			],
 			'/Vue/': [
