@@ -22,7 +22,7 @@ module.exports = {
 			'/JavaScript/': [
 				{
 					title: 'JS 基础',
-					children: []
+					children: ['/JavaScript/Core/1','/JavaScript/Core/2']
 				},
 				{
 					title: 'JS 深入数组',
@@ -43,17 +43,19 @@ module.exports = {
 				},
 				{
 					title: '异步方法',
-					children: ['/JavaScript/异步方法/1', '/JavaScript/异步方法/2', '/JavaScript/异步方法/3', '/JavaScript/异步方法/4']
+					children: ['/JavaScript/异步方法/1', '/JavaScript/异步方法/2', '/JavaScript/异步方法/3', '/JavaScript/异步方法/4', '/JavaScript/异步方法/5']
 				},
 				{
 					title: '性能优化',
-					children: ['/JavaScript/性能优化/1', '/JavaScript/性能优化/2', '/JavaScript/性能优化/3', '/JavaScript/性能优化/4']
+					sidebarDepth: 2,
+					children: ['/JavaScript/性能优化/1', '/JavaScript/性能优化/2', '/JavaScript/性能优化/3', '/JavaScript/性能优化/4', '/JavaScript/性能优化/5']
 				}
 			],
 			'/Vue/': [
 				{
-					title: 'cl1111ass',
-					children: []
+					title: '组件通信',
+					sidebarDepth: 2,
+					children: ['/Vue/Core/one']
 				}
 			]
 		}
