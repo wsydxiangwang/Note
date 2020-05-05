@@ -26,7 +26,9 @@ jobs:
         git config --local user.email "191539823@qq.com"
         git config --local user.name "Libai"
         git commit -m "Add changes" -a
-        
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      
     - run: npm ci
     - run: npm run deploy
 
