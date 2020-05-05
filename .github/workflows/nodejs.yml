@@ -10,16 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    # - run: npm ci
+    - run: npm ci
     - run: npm run deploy
 
-    #发布到mybells.github.io/master
     - name: Deploy wsydxiangwang.github.io/master
       uses: peaceiris/actions-gh-pages@v2
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        EXTERNAL_REPOSITORY: wsydxiangwang/wsydxiangwang.github.io #可以新建一个mybells.github.io仓库发布到master
+        EXTERNAL_REPOSITORY: wsydxiangwang/wsydxiangwang.github.io
         PUBLISH_BRANCH: master
         PUBLISH_DIR: docs/.vuepress/dist
       with:
+<<<<<<< HEAD
           emptyCommits: false
+=======
+          emptyCommits: false
+>>>>>>> f2415b4a5cef34b65a73560e71c6726cbe2cfc48
