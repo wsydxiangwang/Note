@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - run: npm ci
+    # - run: npm ci
     - run: npm run docs:build
 
     #发布到mybells.github.io/master
