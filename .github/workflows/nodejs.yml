@@ -21,8 +21,4 @@ jobs:
         PUBLISH_BRANCH: master
         PUBLISH_DIR: docs/.vuepress/dist
       with:
-<<<<<<< HEAD
           emptyCommits: false
-=======
-          emptyCommits: false
->>>>>>> f2415b4a5cef34b65a73560e71c6726cbe2cfc48
