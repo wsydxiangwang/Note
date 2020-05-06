@@ -26,11 +26,11 @@ blockquote{
     font-size: 0.95rem;
 }
 
-.theme-default-content pre,
-.theme-default-content pre[class*="language-"]{
+.page .theme-default-content pre,
+.page .theme-default-content pre[class*="language-"]{
     padding: 2rem 1.5rem 1rem;
 }
-div[class*="language-"] pre, div[class*="language-"] pre[class*="language-"]{
+.page div[class*="language-"] pre, div[class*="language-"] pre[class*="language-"]{
     position: static;
 }
 
@@ -70,21 +70,21 @@ pre[class*="language-"]::before{
 }
 
 h1{
-    font-size: 2rem;
+    font-size: 2rem !important;
 }
 h2{
-    font-size: 1.25rem;
+    font-size: 1.25rem !important;
 }
 h3{
-    font-size: 1rem;
+    font-size: 1rem !important;
 }
 
 
 @media screen and (max-width: 600px) {
     .theme-default-content pre,
     .theme-default-content pre[class*="language-"]{
-        line-height: 18px;
-        padding: 2rem 1rem 0.8rem;
+        line-height: 18px !important;
+        padding: 2rem 1rem 0.8rem !important;
     }
     .theme-default-content pre code,
     .theme-default-content pre[class*="language-"] code{
@@ -92,7 +92,7 @@ h3{
         letter-spacing: 0;
     }
     .theme-default-content div[class*="language-"]{
-        margin: 0.85rem -15px;
+        margin: 0.85rem -15px !important;
     }
     div[class*="language-"]::after, pre[class*="language-"]::after, pre[class*="language-"]::before{
         height: 8px;
@@ -108,10 +108,10 @@ h3{
         font-size: 14px;
     }
     h1{
-        font-size: 1.5rem;
+        font-size: 1.5rem !important;
     }
     body{
-        font-size: 14px;
+        font-size: 14px !important;
         letter-spacing: 1px;
     }
     .theme-default-content{
