@@ -5,11 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev docs",
-    "start": "vuepress dev docs",
     "build": "vuepress build docs",
-    "deploy": "bash deploy.sh"
+    "publish": "deploy.sh"
   },
-  "keywords": [],
   "author": "LiBai",
   "repository": "github:wsydxiangwang/VuePressBlog",
   "license": "ISC",

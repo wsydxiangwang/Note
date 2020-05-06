@@ -10,8 +10,6 @@ jobs:
 
     runs-on: ubuntu-latest
     
-    
-
     steps:
     - uses: actions/checkout@v1
      
@@ -23,7 +21,7 @@ jobs:
 
       
     - run: npm ci
-    - run: npm run deploy
+    - run: npm run build
 
     - name: Deploy wsydxiangwang.github.io/master
       uses: peaceiris/actions-gh-pages@v2
