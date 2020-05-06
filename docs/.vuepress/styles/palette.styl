@@ -26,8 +26,9 @@ blockquote{
     font-size: 0.95rem;
 }
 
+.theme-default-content pre,
 .theme-default-content pre[class*="language-"]{
-    padding: 2rem 1.5rem 1.05rem;
+    padding: 2rem 1.5rem 1rem;
 }
 div[class*="language-"] pre, div[class*="language-"] pre[class*="language-"]{
     position: static;
@@ -66,4 +67,63 @@ pre[class*="language-"]::after{
 pre[class*="language-"]::before{
     background: #00b800;
     left: 42px;
+}
+
+h1{
+    font-size: 2rem;
+}
+h2{
+    font-size: 1.25rem;
+}
+h3{
+    font-size: 1rem;
+}
+
+
+@media screen and (max-width: 600px) {
+    .theme-default-content pre,
+    .theme-default-content pre[class*="language-"]{
+        line-height: 18px;
+        padding: 2rem 1rem 0.8rem;
+    }
+    .theme-default-content pre code,
+    .theme-default-content pre[class*="language-"] code{
+        font-size: 13px;
+        letter-spacing: 0;
+    }
+    .theme-default-content div[class*="language-"]{
+        margin: 0.85rem -15px;
+    }
+    div[class*="language-"]::after, pre[class*="language-"]::after, pre[class*="language-"]::before{
+        height: 8px;
+        width: 8px;
+    }
+    pre[class*="language-"]::after{
+        left: 25px;
+    }
+    pre[class*="language-"]::before{
+        left: 38px;
+    }
+    html{
+        font-size: 14px;
+    }
+    h1{
+        font-size: 1.5rem;
+    }
+    body{
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+    .theme-default-content{
+        padding: 15px !important;
+    }
+    .sidebar-heading{
+        font-size: 16px;
+        font-weight: bold;
+        padding: 0px 12px;
+        line-height: 28px;
+    }
+    .sidebar > .sidebar-links > li:not(:first-child){
+        margin-top: 10px;
+    }
 }
