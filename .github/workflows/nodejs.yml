@@ -23,7 +23,7 @@ jobs:
 
       
     - run: npm ci
-    - run: npm run docs:build
+    - run: npm run deploy
 
     - name: Deploy wsydxiangwang.github.io/master
       uses: peaceiris/actions-gh-pages@v2
