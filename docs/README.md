@@ -2,4 +2,4 @@
 home: true
 heroImage: /images/cover.gif
 actionText: Get Started →
-actionLink: '/WEB/'
+actionLink: '/web/'
