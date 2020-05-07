@@ -61,6 +61,10 @@ module.exports = {
 					children: ['/web/性能优化/1', '/web/性能优化/2', '/web/性能优化/3', '/web/性能优化/4', '/web/性能优化/5', '/web/性能优化/6']
 				},
 				{
+					title: '设计模式',
+					children: ['/web/设计模式/1', '/web/设计模式/2', '/web/设计模式/3', '/web/设计模式/4', '/web/设计模式/5']
+				},
+				{
 					title: '算法学习',
 					children: ['/web/算法/1', '/web/算法/2', '/web/算法/3']
 				},
@@ -73,7 +77,7 @@ module.exports = {
 				{
 					title: '组件通信',
 					sidebarDepth: 2,
-					children: ['/vue/Core/1', '/vue/Core/2']
+					children: ['/vue/Core/1', '/vue/Core/2', '/vue/Core/3']
 				}
 			]
 		}
