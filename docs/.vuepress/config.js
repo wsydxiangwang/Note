@@ -61,6 +61,11 @@ module.exports = {
 					children: ['/web/性能优化/1', '/web/性能优化/2', '/web/性能优化/3', '/web/性能优化/4', '/web/性能优化/5', '/web/性能优化/6']
 				},
 				{
+					title: 'http',
+					sidebarDepth: 2,
+					children: ['/web/http/1', '/web/http/2', '/web/http/3']
+				},
+				{
 					title: '设计模式',
 					children: ['/web/设计模式/1', '/web/设计模式/2', '/web/设计模式/3', '/web/设计模式/4', '/web/设计模式/5']
 				},
