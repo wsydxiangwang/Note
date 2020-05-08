@@ -22,7 +22,8 @@ jobs:
       
     - run: npm ci
     - run: npm run build
-
+    - run: echo 'note.raindays.cn' > CNAME
+      
     - name: Deploy wsydxiangwang.github.io/master
       uses: peaceiris/actions-gh-pages@v2
       env:
