@@ -82,7 +82,7 @@ module.exports = {
 				{
 					title: '组件通信',
 					sidebarDepth: 2,
-					children: ['/vue/Core/1', '/vue/Core/2', '/vue/Core/3']
+					children: ['/vue/Core/1', '/vue/Core/2', '/vue/Core/3', '/vue/Core/4', '/vue/Core/5', '/vue/Core/6', '/vue/Core/7', '/vue/Core/8']
 				}
 			]
 		}
