@@ -74,6 +74,10 @@ module.exports = {
 					children: ['/web/算法/1', '/web/算法/2', '/web/算法/3']
 				},
 				{
+					title: '手写代码',
+					children: ['/web/手写/1', '/web/手写/2', '/web/手写/3']
+				},
+				{
 					title: '稀奇古怪的题',
 					children: ['/web/Other/1', '/web/Other/2', '/web/Other/3', '/web/Other/4', '/web/Other/5']
 				}
