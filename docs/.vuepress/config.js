@@ -14,12 +14,16 @@ module.exports = {
 	themeConfig: {
 		nav:[
 			{text: 'Web', link: '/web/'},
-			{text: 'Vue', link: '/vue/'},
 			{text: 'Mood', link: 'https://raindays.cn/'}, 
 			{text: 'Github', link: 'https://github.com/wsydxiangwang'} 
 		],
 		sidebar: {
 			'/web/': [
+				{
+					title: 'Vue',
+					sidebarDepth: 2,
+					children: ['/web/vue/1', '/web/vue/2', '/web/vue/3', '/web/vue/4', '/web/vue/5', '/web/vue/6', '/web/vue/7', '/web/vue/8']
+				},
 				{
 					title: 'CSS',
 					sidebarDepth: 2,
@@ -80,13 +84,6 @@ module.exports = {
 				{
 					title: '稀奇古怪的题',
 					children: ['/web/Other/1', '/web/Other/2', '/web/Other/3', '/web/Other/4', '/web/Other/5']
-				}
-			],
-			'/vue/': [
-				{
-					title: '组件通信',
-					sidebarDepth: 2,
-					children: ['/vue/Core/1', '/vue/Core/2', '/vue/Core/3', '/vue/Core/4', '/vue/Core/5', '/vue/Core/6', '/vue/Core/7', '/vue/Core/8']
 				}
 			]
 		}
