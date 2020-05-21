@@ -83,7 +83,7 @@ module.exports = {
 				},
 				{
 					title: '稀奇古怪的题',
-					children: ['/web/Other/1', '/web/Other/2', '/web/Other/3', '/web/Other/4', '/web/Other/5']
+					children: ['/web/Other/1', '/web/Other/2', '/web/Other/3', '/web/Other/4', '/web/Other/5', '/web/Other/6']
 				}
 			]
 		}
