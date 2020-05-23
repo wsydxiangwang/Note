@@ -22,7 +22,7 @@ module.exports = {
 				{
 					title: 'Vue',
 					sidebarDepth: 2,
-					children: ['/web/vue/1', '/web/vue/2', '/web/vue/3', '/web/vue/4', '/web/vue/5', '/web/vue/6', '/web/vue/7', '/web/vue/8', '/web/vue/9', '/web/vue/10']
+					children: ['/web/vue/1', '/web/vue/2', '/web/vue/3', '/web/vue/4', '/web/vue/5', '/web/vue/6', '/web/vue/7', '/web/vue/8', '/web/vue/9', '/web/vue/10', '/web/vue/20']
 				},
 				{
 					title: 'CSS',
