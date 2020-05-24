@@ -20,9 +20,14 @@ module.exports = {
 		sidebar: {
 			'/web/': [
 				{
-					title: 'Vue',
+					title: 'Vue 原理',
 					sidebarDepth: 2,
 					children: ['/web/vue/1', '/web/vue/2', '/web/vue/3', '/web/vue/4', '/web/vue/5', '/web/vue/6', '/web/vue/7', '/web/vue/8', '/web/vue/9', '/web/vue/10', '/web/vue/20']
+				},
+				{
+					title: 'Vue 方法',
+					sidebarDepth: 2,
+					children: ['/web/vue2/1', '/web/vue2/2', '/web/vue2/3', '/web/vue2/4', '/web/vue2/5', '/web/vue2/6', '/web/vue2/7', '/web/vue2/8', '/web/vue2/9', '/web/vue2/10', '/web/vue2/20']
 				},
 				{
 					title: 'CSS',
