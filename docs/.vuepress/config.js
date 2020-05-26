@@ -3,9 +3,12 @@ module.exports = {
 	description: 'Live and Study.',
 	head: [
 		['link', { rel: 'icon', href: '/images/photo.png' }],
-		['meta', { 'http-quiv': 'pragma', cotent: 'no-cache'}],
-		['meta', { 'http-quiv': 'pragma', cotent: 'no-cache,must-revalidate'}],
-		['meta', { 'http-quiv': 'expires', cotent: '0'}]
+		['meta', { name: 'theme-color', content: '#0084ff' }],
+		['link', { rel: 'manifest', href: '/manifest.json' }],
+		['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+		['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+		['meta', { name: 'msapplication-TileImage', content: '/images/photo' }],
+		['meta', { name: 'msapplication-TileColor', content: '#000000' }]
 	],
 	base: '/',
 	markdown: {
