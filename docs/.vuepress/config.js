@@ -18,7 +18,7 @@ module.exports = {
 		nav:[
 			{text: 'Web', link: '/web/'},
 			{text: 'Mood', link: 'https://raindays.cn/'}, 
-			{text: 'Github', link: 'https://github.com/wsydxiangwang'} 
+			{text: 'Github', link: 'https://github.com/wsydxiangwang/Note/blob/master/README.md'} 
 		],
 		sidebar: {
 			'/web/': [
@@ -75,7 +75,7 @@ module.exports = {
 				{
 					title: 'http',
 					sidebarDepth: 2,
-					children: ['/web/http/1', '/web/http/2', '/web/http/3']
+					children: ['/web/http/1', '/web/http/2', '/web/http/3', '/web/http/4', '/web/http/5', '/web/http/6', '/web/http/7', '/web/http/8', '/web/http/9', '/web/http/10',]
 				},
 				{
 					title: '设计模式',
