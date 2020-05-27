@@ -4,17 +4,18 @@
 
 ### Vue
 
-- [Vue 生命周期详解](https://github.com/wsydxiangwang/Learning-Notes/blob/master/Vue/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.md)
-- [什么是Virtual DOM](https://github.com/wsydxiangwang/Learning-Notes/blob/master/Vue/Virtual%20DOM.md)
-- [了解vue的Diff算法](https://github.com/wsydxiangwang/Learning-Notes/blob/master/Vue/Diff%20%E7%AE%97%E6%B3%95.md)
-- [响应式原理](https://github.com/wsydxiangwang/Learning-Notes/blob/master/Vue/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86.md)
-- [nextTick 作用及原理](https://github.com/wsydxiangwang/Learning-Notes/blob/master/Vue/nextTick.md)
-- [set 实时更新的方法](https://github.com/wsydxiangwang/Learning-Notes/blob/master/Vue/set%E6%9B%B4%E6%96%B0%E5%AF%B9%E8%B1%A1%E5%92%8C%E6%95%B0%E7%BB%84.md)
-- [props 组件通信](https://github.com/wsydxiangwang/Learning-Notes/blob/master/Vue/props%20%E5%93%8D%E5%BA%94%E5%8E%9F%E7%90%86.md)
+- [Vue 生命周期详解](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/9.md)
+- (new Vue 发生了什么)[https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/1.md]
+- [什么是Virtual DOM](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/2.md)
+- [了解vue的Diff算法](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/3.md)
+- [响应式原理](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/4.md)
+- [nextTick 作用及原理](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/5.md)
+- [set 实时更新的方法](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/7.md)
+- [props 组件通信](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/10.md)
 
 ### JavaScript
 
-- [this 全面解析](https://github.com/wsydxiangwang/Learning-Notes/blob/master/JavaScript/this%20%E5%85%A8%E9%9D%A2%E8%A7%A3%E6%9E%90.md)
+- [this 全面解析](https://github.com/wsydxiangwang/Note/blob/master/docs/web/this/1.md)
 
 ### 面试题
 
