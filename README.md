@@ -5,7 +5,7 @@
 ### Vue
 
 - [Vue 生命周期详解](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/9.md)
-- (new Vue 发生了什么)[https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/1.md]
+- [new Vue 发生了什么](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/1.md)
 - [什么是Virtual DOM](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/2.md)
 - [了解vue的Diff算法](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/3.md)
 - [响应式原理](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/4.md)
