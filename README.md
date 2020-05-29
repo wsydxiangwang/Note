@@ -1,6 +1,6 @@
 ## 知其然，也要知其所以然。
 
-整理中... 对你有帮助的话，还请给个star，在这里查看更适合哦👉 [学习笔记总结点我](https://wsydxiangwang.github.io?target=_blank) 
+整理中... 对你有帮助的话，还请给个star，在这里查看更适合哦👉 [学习笔记总结点我](https://wsydxiangwang.github.io) 
 
 ### Vue
 
