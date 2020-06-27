@@ -17,6 +17,7 @@ module.exports = {
 	themeConfig: {
 		nav:[
 			{text: 'Web', link: '/web/'},
+			{text: '数据库', link: '/数据库/'},
 			{text: 'Mood', link: 'https://raindays.cn/'}, 
 			{text: 'Github', link: 'https://github.com/wsydxiangwang/Note/blob/master/README.md'} 
 		],
@@ -93,6 +94,16 @@ module.exports = {
 					title: '稀奇古怪的题',
 					children: ['/web/Other/1', '/web/Other/2', '/web/Other/3', '/web/Other/4', '/web/Other/5', '/web/Other/6']
 				}
+			],
+			'/数据库': [
+				{
+					title: 'MongoDB',
+					sidebarDepth: 2,
+					children: [
+						'/数据库/mongo/1',
+						'/数据库/mongo/2'
+					]
+				},
 			]
 		}
 	}
