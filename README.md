@@ -2,6 +2,14 @@
 
 整理中... 对你有帮助的话，还请给个star，在这里查看更适合哦👉 [学习笔记总结点我](https://wsydxiangwang.github.io) 
 
+### JavaScript
+
+- [this 全面解析](https://github.com/wsydxiangwang/Note/blob/master/docs/web/this/1.md)
+
+### CSS
+
+
+
 ### Vue
 
 - [Vue 生命周期详解](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/9.md)
@@ -12,10 +20,6 @@
 - [nextTick 作用及原理](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/5.md)
 - [set 实时更新的方法](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/7.md)
 - [props 组件通信](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/10.md)
-
-### JavaScript
-
-- [this 全面解析](https://github.com/wsydxiangwang/Note/blob/master/docs/web/this/1.md)
 
 ### 面试题
 
