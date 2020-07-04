@@ -17,22 +17,23 @@ module.exports = {
 	themeConfig: {
 		nav:[
 			{text: 'Web', link: '/web/'},
-			{text: '数据库', link: '/数据库/'},
+			{text: '后端', link: '/后端/'},
+			{text: '进阶学习', link: '/other/'},
 			{text: 'Mood', link: 'https://raindays.cn/'}, 
 			{text: 'Github', link: 'https://github.com/wsydxiangwang/Note/blob/master/README.md'} 
 		],
 		sidebar: {
 			'/web/': [
-				{
-					title: 'Vue 原理',
-					sidebarDepth: 2,
-					children: ['/web/vue/9', '/web/vue/1', '/web/vue/2', '/web/vue/3', '/web/vue/4', '/web/vue/5', '/web/vue/6', '/web/vue/7', '/web/vue/8',  '/web/vue/10', '/web/vue/20']
-				},
-				{
-					title: 'Vue 方法',
-					sidebarDepth: 2,
-					children: ['/web/vue2/1', '/web/vue2/2', '/web/vue2/3', '/web/vue2/4', '/web/vue2/5', '/web/vue2/6', '/web/vue2/7', '/web/vue2/8', '/web/vue2/9', '/web/vue2/10', '/web/vue2/20']
-				},
+				// {
+				// 	title: 'Vue 原理',
+				// 	sidebarDepth: 2,
+				// 	children: ['/web/vue/9', '/web/vue/1', '/web/vue/2', '/web/vue/3', '/web/vue/4', '/web/vue/5', '/web/vue/6', '/web/vue/7', '/web/vue/8',  '/web/vue/10', '/web/vue/20']
+				// },
+				// {
+				// 	title: 'Vue 方法',
+				// 	sidebarDepth: 2,
+				// 	children: ['/web/vue2/1', '/web/vue2/2', '/web/vue2/3', '/web/vue2/4', '/web/vue2/5', '/web/vue2/6', '/web/vue2/7', '/web/vue2/8', '/web/vue2/9', '/web/vue2/10', '/web/vue2/20']
+				// },
 				{
 					title: 'CSS',
 					sidebarDepth: 2,
@@ -95,13 +96,47 @@ module.exports = {
 					children: ['/web/Other/1', '/web/Other/2', '/web/Other/3', '/web/Other/4', '/web/Other/5', '/web/Other/6']
 				}
 			],
-			'/数据库': [
+			'/后端': [
+				{
+					title: 'NodeJS',
+					sidebarDepth: 2,
+					children: [
+						'/后端/mongo/1',
+						'/后端/mongo/2'
+					]
+				},
 				{
 					title: 'MongoDB',
 					sidebarDepth: 2,
 					children: [
-						'/数据库/mongo/1',
-						'/数据库/mongo/2'
+						'/后端/mongo/1',
+						'/后端/mongo/2'
+					]
+				},
+			],
+			'/other': [
+				{
+					title: '设计模式',
+					sidebarDepth: 2,
+					children: [
+						'/后端/mongo/1',
+						'/后端/mongo/2'
+					]
+				},
+				{
+					title: '数据结构',
+					sidebarDepth: 2,
+					children: [
+						'/后端/mongo/1',
+						'/后端/mongo/2'
+					]
+				},
+				{
+					title: '算法',
+					sidebarDepth: 2,
+					children: [
+						'/后端/mongo/1',
+						'/后端/mongo/2'
 					]
 				},
 			]
