@@ -17,10 +17,11 @@ module.exports = {
 	themeConfig: {
 		nav:[
 			{text: 'Web', link: '/web/'},
-			{text: '后端', link: '/后端/'},
-			{text: '进阶学习', link: '/other/'},
-			{text: 'Mood', link: 'https://raindays.cn/'}, 
-			{text: 'Github', link: 'https://github.com/wsydxiangwang/Note/blob/master/README.md'} 
+			{text: '后端', link: '/after/'},
+			{text: '进阶', link: '/other/'},
+			{text: '心情小镇', link: 'https://raindays.cn/'}, 
+			{text: '全栈项目', link: 'https://github.com/wsydxiangwang/Mood'}, 
+			{text: 'Github', link: 'https://github.com/wsydxiangwang/Note'} 
 		],
 		sidebar: {
 			'/web/': [
@@ -37,7 +38,7 @@ module.exports = {
 				{
 					title: 'CSS',
 					sidebarDepth: 2,
-					children: ['/web/CSS/1','/web/CSS/2','/web/CSS/3','/web/CSS/4','/web/CSS/5','/web/CSS/6']
+					children: ['/web/CSS/1','/web/CSS/2','/web/CSS/3','/web/CSS/4','/web/CSS/5']
 				},
 				{
 					title: 'ES6',
@@ -80,63 +81,60 @@ module.exports = {
 					children: ['/web/http/1', '/web/http/2', '/web/http/3', '/web/http/4', '/web/http/5', '/web/http/6', '/web/http/7', '/web/http/8', '/web/http/9', '/web/http/10',]
 				},
 				{
-					title: '设计模式',
-					children: ['/web/设计模式/1', '/web/设计模式/2', '/web/设计模式/3', '/web/设计模式/4', '/web/设计模式/5']
-				},
-				{
-					title: '算法学习',
-					children: ['/web/算法/1', '/web/算法/2', '/web/算法/3']
-				},
-				{
-					title: '手写代码',
-					children: ['/web/手写/1', '/web/手写/2', '/web/手写/3']
-				},
-				{
 					title: '稀奇古怪的题',
 					children: ['/web/Other/1', '/web/Other/2', '/web/Other/3', '/web/Other/4', '/web/Other/5', '/web/Other/6']
 				}
 			],
-			'/后端': [
+			'/after/': [
 				{
 					title: 'NodeJS',
 					sidebarDepth: 2,
 					children: [
-						'/后端/mongo/1',
-						'/后端/mongo/2'
+						'/after/mongo/1',
+						'/after/mongo/2'
 					]
 				},
 				{
 					title: 'MongoDB',
 					sidebarDepth: 2,
 					children: [
-						'/后端/mongo/1',
-						'/后端/mongo/2'
+						'/after/mongo/1',
+						'/after/mongo/2'
 					]
 				},
 			],
-			'/other': [
+			'/other/': [
+				{
+					title: '手写代码',
+					children: ['/other/手写/1', '/other/手写/2', '/other/手写/3']
+				},
 				{
 					title: '设计模式',
 					sidebarDepth: 2,
 					children: [
-						'/后端/mongo/1',
-						'/后端/mongo/2'
+						'/other/设计模式/1',
+						'/other/设计模式/2',
+						'/other/设计模式/3',
+						'/other/设计模式/4',
+						'/other/设计模式/5',
 					]
 				},
 				{
 					title: '数据结构',
 					sidebarDepth: 2,
 					children: [
-						'/后端/mongo/1',
-						'/后端/mongo/2'
+						'/other/数据结构/1',
+						'/other/数据结构/2',
+						'/other/数据结构/3',
 					]
 				},
 				{
 					title: '算法',
 					sidebarDepth: 2,
 					children: [
-						'/后端/mongo/1',
-						'/后端/mongo/2'
+						'/other/算法/1',
+						'/other/算法/2',
+						'/other/算法/3',
 					]
 				},
 			]
