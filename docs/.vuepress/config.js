@@ -17,8 +17,8 @@ module.exports = {
 	themeConfig: {
 		nav:[
 			{text: 'Web', link: '/web/'},
-			{text: '后端', link: '/after/'},
 			{text: '进阶', link: '/other/'},
+			{text: '后端', link: '/after/'},
 			{text: '心情小镇', link: 'https://raindays.cn/'}, 
 			{text: '全栈项目', link: 'https://github.com/wsydxiangwang/Mood'}, 
 			{text: 'Github', link: 'https://github.com/wsydxiangwang/Note'} 
@@ -100,6 +100,13 @@ module.exports = {
 					children: [
 						'/after/mongo/1',
 						'/after/mongo/2'
+					]
+				},
+				{
+					title: 'Docker',
+					sidebarDepth: 2,
+					children: [
+						'/after/docker/1',
 					]
 				},
 			],
