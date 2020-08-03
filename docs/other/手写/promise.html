@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<script>
+
+//定义三种状态
+const PENDING = "pending";
+const FULFILLED = "fulfilled";
+const REJECTED = "rejected";
+
+function MyPromise(fn){
+    const self = this;      // 缓存当前promise实例
+    self.state = PENDING;
+    self.value = null;
+    self.error = null;
+    self.onFulfilledCallbacks = [];    // 保存then中的回调
+    self.onRejectedCallbacks = [];     // 保存catch中的回调
+
+    const resolve = (value) => {
+        if(self.state == PENDING){
+            setTimeout(() => {
+                self.state = FULFILLED;
+                self.value = value;
+                self.onFulfilledCallbacks.map(cd => cd(self.value));
+            })
+        }
+    }
+    const reject = (error) => {
+        if(self.state == PENDING){
+            setTimeout(() => {
+                self.state = REJECTED;
+                self.error = error;
+                self.onRejectedCallbacks.map(cd => cd(self.error));
+            })
+        }
+    }
+    fn(resolve, reject) // 同步执行代码
+}
+
+MyPromise.prototype.then = function(onFulfilled, onRejected){
+    let self = this;
+    let bridgePromise;
+
+    // 判断then的参数是否为函数类型，不是则赋予默认值
+    onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : value => value
+    onRejected = typeof onRejected === 'function' ? onRejected : error => { throw error }
+
+    function resolvePromise(bridgePromise, x, resolve, reject){
+        // 如果x是一个promise
+        if(x instanceof MyPromise){
+            // 拆解这个 promise ，直到返回值不为 promise 为止
+            if(x.state == PENDING){
+                x.then(res => {
+                    resolvePromise(bridgePromise, res, resolve, reject)
+                }, err => {
+                    reject(err)
+                })
+            }else{
+                x.then(resolve, reject)
+            }
+        }else{
+            // 非 Promise 的话, 直接 resolve 即可
+            resolve(x)
+        }
+    }
+
+    if(this.state == PENDING){
+        return bridgePromise = new MyPromise((resolve, reject) => {
+            self.onFulfilledCallbacks.push(() => {
+                try {
+                    let x = onFulfilled(self.value)
+                    resolvePromise(bridgePromise, x, resolve, reject)
+                } catch(e) {
+                    reject(e)
+                }
+            })
+            self.onRejectedCallbacks.push(() => {
+                try {
+                    let x = onRejected(self.error)
+                    resolve(x)
+                } catch(e) {
+                    reject(e)
+                }
+            })
+        })
+    }
+    else if(this.state == FULFILLED){
+        return bridgePromise = new MyPromise((resolve, reject) => {
+            try {
+                let x = onFulfilled(self.value)
+                resolvePromise(bridgePromise, x, resolve, reject)
+            } catch(e) {
+                reject(e)
+            }
+        })
+    }
+    else{
+        return bridgePromise = new MyPromise((resolve, reject) => {
+            try {
+                let x = onRejected(self.error)
+                resolvePromise(bridgePromise, x, resolve, reject)
+            } catch(e) {
+                reject(e)
+            }
+        })
+    }
+}
+
+const promise = (name) => {
+    return new MyPromise((resolve, reject) => {
+        reject(name)
+    })
+}
+
+promise('1111').then(res => {
+    console.log(res)
+    return promise('22222')
+}).then(res => {
+    console.log(res)
+})
+
+</script>
+</body>
+</html>
