@@ -96,12 +96,11 @@ MyPromise.prototype.then = function(onFulfilled, onRejected){
         })
     }
     else if(this.state == FULFILLED){
-        console.log('222')
+        console.log(2)
         return bridgePromise = new MyPromise((resolve, reject) => {
             setTimeout(() => {
                 try{
                     const x = onFulfilled(self.value)
-                    console.log(x)
                     resolvePromise(bridgePromise, x, resolve, reject);
                 }catch(err){
                     reject(err)
@@ -110,12 +109,10 @@ MyPromise.prototype.then = function(onFulfilled, onRejected){
         })
     }
     else{
-        console.log('3333')
         return bridgePromise = new MyPromise((resolve, reject) => {
             setTimeout(() => {
                 try{
                     const x = onRejected(self.error)
-                    console.log(x)
                     resolvePromise(bridgePromise, x, resolve, reject);
                 }catch(err){
                     reject(err)
@@ -130,14 +127,17 @@ const promise = (name) => {
         resolve(name)
     })
 }
-
 promise('1111').then(res => {
     console.log(res)
     return promise('22222')
 }).then(res => {
     console.log(res)
 })
-
+new MyPromise((resolve, reject) => {
+    resolve('222')
+}).then(res => {
+    console.log(res)
+})
 
 // function a(fn){
 //     console.log(22222)
@@ -155,6 +155,7 @@ promise('1111').then(res => {
 //     // s()
 //     b()
 // })
+
 
 </script>
 </body>
