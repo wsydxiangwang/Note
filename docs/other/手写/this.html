@@ -13,94 +13,130 @@
  */
 Function.prototype.call2 = function(context){
     /**
-     * context => 指向对象
+     * context => 指向对象(第一个参数)
      * this => 调用的函数
      */
-    console.log(arguments)
+    context = context || window;
     context.fn = this;
-    context.fn();
+
+    var args = [];
+    for(var i = 1; i < arguments.length; i++) {
+        args.push('arguments[' + i + ']');
+    }
+
+    var result = eval('context.fn(' + args +')')
+
+    // console.log(result)
+
     delete context.fn;
+    return result;
 }
-const foo = {
+var value = 2;
+var foo = {
     value: 1
 }
 function bar(name, age){
-    console.log(name, age, this.value)
+    console.log(this.value)
+    return {
+        value: this.value,
+        name: name,
+        age: age
+    }
 }
-bar.call2(foo, 'Libai', '18')
+
+// bar.call2(null)
+
+// console.log(bar.call2(foo, 'Libai', '18'))
+
+
+// eval('context.fn(' + args +')')
 
 // call test
-bar.call(foo, 'Libai', '18') // Libai 18 1
-
-
-// 第四版
-// Function.prototype.bind = function (context, ...args) {
-//     // 异常处理
-//     if (typeof this !== "function") {
-//       throw new Error("Function.prototype.bind - what is trying to be bound is not callable");
-//     }
-//     // 保存this的值，它代表调用 bind 的函数
-//     var self = this;
-//     var fNOP = function () {};
-
-//     var fbound = function () {
-//         self.apply(this instanceof self ? 
-//                     this : 
-//                     context, args.concat(Array.prototype.slice.call(arguments)));
-//     }
-
-//     fNOP.prototype = this.prototype;
-//     fbound.prototype = new fNOP();
-
-//     return fbound;
-// }
-
-// var value = 2;
-
-// var foo = {
-//     value: 1
-// };
-
-// function bar(name, age) {
-//     this.habit = 'shopping';
-//     console.log(this.value);
-//     console.log(name);
-//     console.log(age);
-// }
-
-// bar.prototype.friend = 'kevin';
-
-// var bindFoo = bar.bind(foo, 'daisy');
-
-// var obj = new bindFoo('18');
-// // undefined
-// // daisy
-// // 18
-// console.log(obj.habit);
-// console.log(obj.friend);
+// bar.call(foo, 'Libai', '18') // Libai 18 1
 
 
 
+/**
+ * apply 
+ */
+ Function.prototype.apply2 = function (context, arr) {
+    var context = Object(context) || window;
+    context.fn = this;
 
+    var result;
+    // 判断是否存在第二个参数
+    if (!arr) {
+        result = context.fn();
+    }
+    else {
+        var args = [];
+        for (var i = 0; i < arr.length; i++) {
+            args.push('arr[' + i + ']');
+        }
+        result = eval('context.fn(' + args + ')')
+    }
 
-// 第三版
-// Function.prototype.bind2 = function (context) {
-//     var self = this;
-//     var args = Array.prototype.slice.call(arguments, 1);
+    delete context.fn    //把函数删除掉,为了还原外部obj对象,把添加到他上边的属性在删除掉
+    return result;
+}
+// console.log(bar.apply2(foo, ['Libai', '18']))
 
-//     var fBound = function () {
-//         var bindArgs = Array.prototype.slice.call(arguments);
-//         // 当作为构造函数时，this 指向实例，此时结果为 true，将绑定函数的 this 指向该实例，可以让实例获得来自绑定函数的值
-//         // 以上面的是 demo 为例，如果改成 `this instanceof fBound ? null : context`，实例只是一个空对象，将 null 改成 this ，实例会具有 habit 属性
-//         // 当作为普通函数时，this 指向 window，此时结果为 false，将绑定函数的 this 指向 context
-//         return self.apply(this instanceof fBound ? this : context, args.concat(bindArgs));
-//     }
-//     // 修改返回函数的 prototype 为绑定函数的 prototype，实例就可以继承绑定函数的原型中的值
-//     fBound.prototype = this.prototype;
-//     return fBound;
-// }
+/**
+ * bind
+ */
+ Function.prototype.bind2 = function (context) {
+    var self = this;
+    // 获取bind2函数从第二个参数到最后一个参数
+    var args = Array.prototype.slice.call(arguments, 1)
 
+    var fNOP = function () {};
 
+    var fBound = function () {
+        // 这个时候的arguments是指bind返回的函数传入的参数
+        // 即 return function() 的参数
+        var bindArgs = Array.prototype.slice.call(arguments);
+
+        // 注释1
+        return self.apply(
+            this instanceof fBound ? this : context,
+            args.concat(bindArgs)
+        );
+    }
+
+    // 注释2
+    fNOP.prototype = this.prototype;
+    fBound.prototype = new fNOP();
+    return fBound
+}
+
+var value = 2;
+
+var foo = {
+    value: 1
+}
+
+function bar(name, age) {
+    this.habit = 'shopping';
+    console.log(this.value);
+    console.log(name);
+    console.log(age);
+}
+
+bar.prototype.friend = 'Libai';
+
+var bindFoo = bar.bind2(foo, 'daisy');
+
+var obj = new bindFoo('18');
+
+console.log(obj.habit);
+console.log(obj.friend);
+
+obj.__proto__.friend = "123123"; // 修改原型
+
+console.log(bar.prototype.friend); // 返回错误，这里被修改了
+
+// 改成原型链继承
+console.log(obj.friend); // ok
 </script>
 </body>
 </html>

@@ -55,7 +55,6 @@ module.exports = {
 				},
 				{
 					title: 'JS 对象',
-					sidebarDepth: 2,
 					children: ['/web/Object/1', '/web/Object/2', '/web/Object/3', '/web/Object/4', '/web/Object/5', '/web/Object/6']
 				},
 				{
@@ -83,6 +82,10 @@ module.exports = {
 				{
 					title: '稀奇古怪的题',
 					children: ['/web/Other/1', '/web/Other/2', '/web/Other/3', '/web/Other/4', '/web/Other/5', '/web/Other/6']
+				},
+				{
+					title: '正则',
+					children: ['/web/正则/1', '/web/正则/2']
 				}
 			],
 			'/after/': [
@@ -113,7 +116,7 @@ module.exports = {
 			'/other/': [
 				{
 					title: '手写代码',
-					children: ['/other/手写/1', '/other/手写/2', '/other/手写/3']
+					children: ['/other/手写/1', '/other/手写/2', '/other/手写/3', '/other/手写/4']
 				},
 				{
 					title: '设计模式',

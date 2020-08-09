@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>    
+<script>
+    
+// 第一版
+// function create() {
+// 	// 创建一个空的对象
+//     var obj = new Object(),
+// 	// 获得构造函数，arguments中去除第一个参数
+//     Con = [].shift.call(arguments);
+// 	// 链接到原型，obj 可以访问到构造函数原型中的属性
+//     obj.__proto__ = Con.prototype;
+// 	// 绑定 this 实现继承，obj 可以访问到构造函数中的属性
+//     Con.apply(obj, arguments);
+// 	// 返回对象
+//     return obj;
+// };
+
+
+
+// 1 返回对象 只能访问到返回对象中的属性
+// function Car(color, name) {
+//     this.color = color;
+//     return {
+//         name: name
+//     }
+// }
+// var car = new Car("black", "BMW");
+
+// console.log(car.color);  // undefined
+// console.log(car.name);   // "BMW"
+
+
+// 2 没有return 只能访问到构造函数中的属性
+// function Car(color, name) {
+//     this.color = color;
+// }
+// var car = new Car("black", "BMW");
+// console.log(car.color);  // black
+// console.log(car.name);   // undefined
+
+
+// 3 返回undefined以外的基本类型
+// function Car(color, name) {
+//     this.color = color;
+//     return "new car";
+// }
+// var car = new Car("black", "BMW");
+// console.log(car.color);  // black
+// console.log(car.name);   // undefined
+
+
+function create() {
+
+    Con = [].shift.call(arguments);
+
+    var obj = Object.create(Con.prototype)
+
+    var ret = Con.apply(obj, arguments);
+
+    console.log(obj)
+    console.log(ret)
+
+    return ret instanceof Object ? ret : obj;
+};
+
+// 测试用例
+function Car(color, name) {
+    this.color = color;
+    return {
+        name: name
+    }
+    // return 'aaa'
+}
+Car.prototype.start = function() {
+    console.log(this.color + " car start");
+}
+
+var car = create(Car, "black", "ABC");
+
+console.log(car.name)
+console.log(car.color)
+
+</script>
+</body>
+</html>
