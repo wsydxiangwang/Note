@@ -2,9 +2,7 @@
 
 看官这边来，在这里查看更适合哦👉 [Vuepress专业笔记记录](https://wsydxiangwang.github.io) 
 
-正在边学边整理中，如对你有帮助，还请给个star，感谢支持！！
-
-欢迎指错和建议
+正在边学边整理中，如对你有帮助，还请给个star，感谢支持！！欢迎指错和建议
 
 ### JavaScript
 
