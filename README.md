@@ -1,6 +1,10 @@
 ## 知其然，也要知其所以然。
 
-整理中... 对你有帮助的话，还请给个star，在这里查看更适合哦👉 [学习笔记总结点我](https://wsydxiangwang.github.io) 
+看官这边来，在这里查看更适合哦👉 [Vuepress专业笔记记录](https://wsydxiangwang.github.io) 
+
+正在边学边整理中，如对你有帮助，还请给个star，感谢支持！！
+
+欢迎指错和建议
 
 ### JavaScript
 
