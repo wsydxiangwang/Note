@@ -1,6 +1,6 @@
 ## 知其然，也要知其所以然。
 
-看官这边来，在这里查看更适合哦👉 [Vuepress，一个专业记录笔记的个人网站](https://wsydxiangwang.github.io) 
+看官这边来，更适合阅读的排版👉 [Vuepress，一个专业记录笔记的个人网站](https://wsydxiangwang.github.io) 
 
 数不胜数的人走过这条路，留下的脚印皆可见，在下只是，学别人所学，总结别人所总结。
 
