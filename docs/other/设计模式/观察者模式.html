@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<script>
+class Subject {
+    constructor() {
+        this.message = '暂无通知';
+        this.observers = []
+    }
+    getMessage() {
+        return this.message
+    }
+    setMassage(message) {
+       this.message = message;
+       this.notifyAllObservers()
+    }
+    notifyAllObservers() {
+        this.observers.forEach(observer => observer.update())
+    }
+    attach(observer) {
+       this.observers.push(observer)
+       
+       console.log(this.observers)
+    }
+}
+
+// 观察者
+class Observer {
+    constructor(name , message) {
+       this.name = name;
+       this.message = message;
+       this.message.attach(this);
+    }
+    update() {
+        console.log(`${this.name} 收到通知: ${this.message.getMessage()}`)
+    }
+}
+
+let message = new Subject();
+let o1 = new Observer('张三', message);
+let o2 = new Observer('李四', message);
+let o3 = new Observer('王五', message);
+
+message.setMassage('明天开家长会')
+message.setMassage('后天开始放假')
+message.setMassage('在家也要好好学习')
+
+</script>
+</body>
+</html>

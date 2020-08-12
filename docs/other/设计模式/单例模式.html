@@ -10,66 +10,72 @@
 <button id="loginBtn2">222222</button>
 
 <script>
-    const Singleton = function(name) {
-        this.name = name;
-        this.instance = null;
-    };
+// class Modal {
+// 	constructor(name) {
+// 		this.name = name;
+// 		this.getName();
+// 	}
+//     getName() {
+//         return this.name;
+//     }
+// }
+// Modal.create = (function() {
+//     let instance = null;
+//     return function(name) {
+//         if(!instance) {
+//            instance = new Modal(name);
+//         }
+//         return instance
+//     }
+// })()
+// let m1 = Modal.create('aaa');
+// let m2 = Modal.create('bbb');
 
-    Singleton.prototype.getName = function() {
-        console.log(this.name);
-    };
+// console.log(m1, m2)
+// console.log(m1 === m2) // true
 
-    Singleton.getInstance = function(name) {
-        if (!this.instance) {
-            // 关键语句
-            this.instance = new Singleton(name);
+var Sing = function(name){
+    this.name = name;
+}
+Sing.prototype.getName = function(){
+    console.log(this.name)
+}
+Sing.getInstance = (function(name){
+    var instance = null;
+    return function(name){
+        if(!instance){
+            instance = new Sing(name)
         }
-        return this.instance;
-    };
+        return instance
+    }
+})()
+var a = Sing.getInstance('aaa')
+var b = Sing.getInstance('bbb')
 
-    // test
-    const a = Singleton.getInstance('a'); // 通过 getInstance 来获取实例
-    const b = Singleton.getInstance('b');
-    console.log(a === b);
+console.log(a, b)
 
-    // 弹框层的实践
-    const createLoginLayer = function() {
-        const myDiv = document.createElement('div');
-        myDiv.innerHTML = '登入浮框';
-        // myDiv.style.display = 'none'
-        document.body.appendChild(myDiv);
-        return myDiv;
-    };
-    // 弹框层的实践
-    const createLoginLayer2 = function() {
-        const myDiv = document.createElement('div');
-        myDiv.innerHTML = '登入浮框2222';
-        // myDiv.style.display = 'none'
-        document.body.appendChild(myDiv);
-        return myDiv;
-    };
+let Modal = (function(){
+    let instance;
+    return function(name) {
+        if (instance) {
+           return instance;
+        }
+        this.name = name;
+        return instance = this;
+    }
+})();
 
-    // 使单例模式和创建弹框代码解耦
-    const getSingle = function(fn) {
-        let result = null;
-        return function() {
-            if (!result) {
-            result = fn.apply(this, arguments);
-            }
-            return result;
-        };
-    };
+Modal.prototype.getName = function() {
+    return this.name
+}
 
-    const createSingleLoginLayer = getSingle(createLoginLayer);
-    const createSingleLoginLayer2 = getSingle(createLoginLayer2);
+let question = new Modal('问题框');
+let answer = new Modal('回答框');
 
-    document.getElementById('loginBtn').onclick = function() {
-        createSingleLoginLayer();
-    };
+console.log(question === answer); // true
+console.log(question.getName());  // '问题框'
+console.log(answer.getName());  // '问题框'
 
-    document.getElementById('loginBtn2').onclick = function() {
-        createSingleLoginLayer2();
-    };
 </script>  
 </body>
 </html>
