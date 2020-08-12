@@ -1,6 +1,10 @@
 ## 知其然，也要知其所以然。
 
-整理中... 对你有帮助的话，还请给个star，在这里查看更适合哦👉 [学习笔记总结点我](https://wsydxiangwang.github.io) 
+看官这边来，更适合阅读的排版👉 [Vuepress，一个专业记录笔记的个人网站](https://wsydxiangwang.github.io) 
+
+数不胜数的人走过这条路，留下的脚印皆可见，在下只是，学别人所学，总结别人所总结。
+
+正在边学边整理中，如对你有帮助，还请给个star，感谢支持！！欢迎指错和建议
 
 ### JavaScript
 
@@ -21,9 +25,20 @@
 - [set 实时更新的方法](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/7.md)
 - [props 组件通信](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/10.md)
 
+## 进阶
+
 ### 算法
 
+### 设计模式
 
+- [单例模式](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/1.md)
+
+### 手写代码
+
+- [手写call、apply](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/1.md)
+- [手写bind函数](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/2.md)
+- [面试必备的Promise A+](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/3.md)
+- [new 原理及模拟实现](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/4.md)
 
 ### 面试题
 
