@@ -6,27 +6,59 @@
     <title>Document</title>
 </head>
 <body>
+<ul style="margin: 70px;">
+    <li data-id="1">1111111</li>
+    <li data-id="2">2222222</li>
+    <li data-id="3">3333333</li>
+    <li data-id="4">4444444</li>
+    <li data-id="5">5555555</li>
+</ul>
 <script>
     // 防抖方法 time内有触发 就会一直延后执行 知道 time后没触发才执行
-    const timeout = {}; //锁用一个对象存，不同方法名作为属性这样就可以作为公共的方法
-    function debounce(fn, time) {
-        const name = fn.name;
+    // const timeout = {}; // 锁用一个对象存，不同方法名作为属性这样就可以作为公共的方法
+    // function debounce(fn, time) {
+    //     const name = fn.name;
+    //     return function () {
+    //         clearTimeout(timeout[name]); // 每当用户输入的时候把前一个 setTimeout clear 掉
+    //         timeout[name] = setTimeout(() => { // 然后又创建一个新的 setTimeout, 这样就能保证输入字符后的 interval 间隔内如果还有字符输入的话，就不会执行 fn 函数
+    //             fn.apply(this, arguments);
+    //         }, time);
+    //     };
+    // }
+
+
+    // //然后可以
+    // function sayHi(){console.log('hi')}
+    // function sayno(){console.log('on')}
+
+    // debounce(sayHi, 500)() //
+    // debounce(sayno, 500)() //
+    // debounce(sayHi, 500)() //
+
+    const timeout = {}
+    function debounce(fn, interval, type) {
+        const name = type ? type : fn.name;
         return function () {
-            clearTimeout(timeout[name]); // 每当用户输入的时候把前一个 setTimeout clear 掉
-            timeout[name] = setTimeout(() => { // 然后又创建一个新的 setTimeout, 这样就能保证输入字符后的 interval 间隔内如果还有字符输入的话，就不会执行 fn 函数
+            clearTimeout(timeout[name])
+            timeout[name] = setTimeout(() => {
                 fn.apply(this, arguments);
-            }, time);
-        };
+            }, interval)
+        }
     }
 
+    const oLi = document.querySelectorAll('li')
 
-    //然后可以
-    function sayHi(){console.log('hi')}
-    function sayno(){console.log('on')}
+    for(let i = 0; i < oLi.length; i++){
+        oLi[i].addEventListener('click', function(){
+            const id = this.getAttribute('data-id');
+            debounce(sayHi, 1000, id)(id)
+            debounce(sayHi, 1000, id)(id)
+        })
+    }
+    
+    function sayHi(id){ console.log('hi', id) }
+    function sayno(id){ console.log('on', id) }
 
-    debounce(sayHi, 500)() //
-    debounce(sayno, 500)() //
-    debounce(sayHi, 500)() //
 </script>
 </body>
 </html>

@@ -72,7 +72,7 @@ module.exports = {
 				{
 					title: '性能优化',
 					sidebarDepth: 2,
-					children: ['/web/性能优化/1', '/web/性能优化/2', '/web/性能优化/3', '/web/性能优化/4', '/web/性能优化/5', '/web/性能优化/6']
+					children: ['/web/性能优化/1', '/web/性能优化/2', '/web/性能优化/3', '/web/性能优化/4', '/web/性能优化/5', '/web/性能优化/6', '/web/性能优化/7']
 				},
 				{
 					title: 'http',
