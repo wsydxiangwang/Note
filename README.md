@@ -33,7 +33,7 @@
 
 - [call与apply的奇妙感觉](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/1.md)
 - [bind函数的实现](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/2.md)
-- [面试必备的 Promise A+ 规范](https://gi  thub.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/3.md)
+- [面试必备的 Promise A+ 规范](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/3.md)
 - [new 原理及模拟实现](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/4.md)
 
 ### 面试题
