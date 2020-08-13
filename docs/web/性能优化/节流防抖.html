@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 防抖方法 time内有触发 就会一直延后执行 知道 time后没触发才执行
+    const timeout = {}; //锁用一个对象存，不同方法名作为属性这样就可以作为公共的方法
+    function debounce(fn, time) {
+        const name = fn.name;
+        return function () {
+            clearTimeout(timeout[name]); // 每当用户输入的时候把前一个 setTimeout clear 掉
+            timeout[name] = setTimeout(() => { // 然后又创建一个新的 setTimeout, 这样就能保证输入字符后的 interval 间隔内如果还有字符输入的话，就不会执行 fn 函数
+                fn.apply(this, arguments);
+            }, time);
+        };
+    }
+
+
+    //然后可以
+    function sayHi(){console.log('hi')}
+    function sayno(){console.log('on')}
+
+    debounce(sayHi, 500)() //
+    debounce(sayno, 500)() //
+    debounce(sayHi, 500)() //
+</script>
+</body>
+</html>
