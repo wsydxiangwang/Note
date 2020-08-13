@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<script>
+
+class Flower {
+    constructor(name) {
+        this.name = name;
+    }
+}
+
+// 送花人 小明
+let xiaoming = {
+    name: '小明',
+    sendFlower(target) {
+        target.receiveFlower(this.name)
+    }
+}
+// 代理B
+let B = {
+    receiveFlower(customer) {
+        // 当然要等小红好心情时才送花，也在送花时，才创建花
+        A.listenGoodMood(() => {
+            A.receiveFlower(new Flower(customer + '的花'))
+        })
+    } 
+}
+// 心仪对象 小红
+let A = {
+    name: '小红',
+    receiveFlower(flower) {
+        console.log(this.name + '收到：' + flower.name)
+    },
+    listenGoodMood(fn) {
+        setTimeout(() => {
+            fn()
+        }, 1000)
+    }
+}
+
+// xiaoming.sendFlower(B) // 小红收到：小明的花
+
+const list = {
+    'A': 100,
+    'B': 70,
+    'C': 50
+}
+
+const obj = new Proxy(list, {
+    get(target, key) {
+        if(target[key] > 60) {
+            console.log('考试及格')
+            return target[key]
+        } else {
+            console.log('不及格的成绩无法公示')
+        }
+    },
+    set(target, key, newVal) {
+        if(newVal - target[key] > 10) {
+            target[key] = newVal
+            console.log('修改成绩：success')
+        } else {
+            console.log('修改成绩：error')
+        }
+    }
+})
+
+obj.A;          // 考试及格
+obj.B;          // 考试及格
+obj.C;          // 不及格的成绩无法公示
+
+obj.A = 111;    // success
+obj.B = 20;     // error
+
+const createImage = (function() {
+    const img = document.createElement('img');
+    document.body.appendChild(img);
+
+    return function(src) {
+        img.src = src;
+    }
+})();
+
+const proxyImage = function(fn) {
+    const image = new Image();
+    const defaultImg = 'https://rs.vip.miui.com/vip-resource/prod/mio/v136/static/media/lazyLoad.a10ffbd7.png';
+
+    return function(src) {
+        fn(defaultImg);
+
+        // 这里加一个延迟，可以更好的看到图片替换的过程。
+        setTimeout(function() {
+            image.src = src;
+            image.onload = function() {
+                fn(src);
+            };
+        }, 2000);
+    };
+};
+
+const proxy = proxyImage(createImage);
+proxy('https://pic1.zhimg.com/80/v2-ec33fcec249a9cabab61b14436432bf0_r.jpg');
+
+</script>
+</body>
+
+</html>
