@@ -36,7 +36,7 @@
 - [面试必备的 Promise A+ 规范](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/3.md)
 - [new 原理及模拟实现](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/4.md)
 
-### 面试题
+### 考验自己的能力
 
 - [2020年前端面试复习必读文章【超百篇文章/赠复习导图】](https://juejin.im/post/5e8b163ff265da47ee3f54a6)
 - [写给女朋友的中级前端面试秘籍（含详细答案，15k级别）](https://juejin.im/post/5e7af0685188255dcf4a497e)
