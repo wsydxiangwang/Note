@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<script>
+function Stack() {
+    this.count = 0;
+    this.storage  = [];
+
+    // 入栈
+    this.push = (val) => {
+        this.storage[this.count] = val;
+        this.count++;
+    }
+
+    // 出栈 => 删除栈顶元素，并返回
+    this.pop = () => {
+        if (this.count === 0) {
+            return undefined;
+        }
+        this.count--;
+        return this.storage[this.count];
+    }
+
+    // 查看 => 查看栈顶元素
+    this.peek = () => {
+        return this.storage[this.count - 1]
+    }
+
+    // 栈长度
+    this.length = () => {
+        return this.count;
+    }
+
+    // 清空栈
+    this.clear = () => {
+        this.storage = [];
+        this.count = 0;
+    }
+}
+
+// const stack = new Stack();
+
+// console.log(stack.peek())       // undefined
+
+// stack.push('Apple')
+// stack.push('Banana')
+// stack.push('Pear')
+
+// console.log(stack.length())     // 3
+
+// console.log(stack.peek())       // Pear
+// console.log(stack.pop())        // Pear  
+
+// console.log(stack.length())     // 2
+// console.log(stack.pop())        // Banana  
+// console.log(stack.pop())        // Apple  
+// console.log(stack.pop())        // undefined  
+// console.log(stack.length())     // 0
+// console.log(stack.peek())       // undefined
+
+
+function isPalindrome(word) {
+    const stack = new Stack();
+
+    for (let i = 0; i < word.length; i++) {
+        stack.push(word[i])
+    }
+    
+    let words = '';
+    while(stack.length() > 0) {
+        words += stack.pop();
+    }
+
+    return word == words;
+}
+
+// console.log(isPalindrome('level'))
+// console.log(isPalindrome('1001'))
+// console.log(isPalindrome('word'))
+
+function Queue() {
+    this.collection = [];
+    this.enqueue = (val) => {
+        this.collection.push(val)
+    }
+    this.dequeue = () => {
+        return this.collection.shift()
+    }
+    this.front = () => {
+        return this.collection[0]
+    }
+    this.back = () => {
+        return this.collection[this.collection.length - 1]
+    }
+    this.toString = () => {
+        return this.collection.join('-')
+    }
+    this.empty = () => {
+        return this.collection.length === 0;
+    }
+    this.size = () => {
+        return this.collection.length;
+    }
+    this.clear = () => {
+        this.collection = []
+    }
+}
+
+const queue = new Queue();
+
+// queue.enqueue(['gannicus', 3])
+// queue.enqueue(['spartacus', 1])
+// queue.enqueue(['crixus', 2])
+// queue.enqueue(['oenomaus', 4])
+
+// console.log(queue.collection)
+
+// [
+//   ['spartacus', 1]
+//   ['crixus', 2]
+//   ['gannicus', 3]
+//   ['oenomaus', 4]
+// ]
+
+
+const drumGame = function(names, number) {
+    const queue = new Queue()
+    for (let i = 0; i < names.length; i++) {
+        queue.enqueue(names[i])
+    }
+
+    while (queue.size() > 1) {
+        for (let i = 0; i < number; i++) {
+            queue.enqueue(queue.dequeue())  // 这句是循环队列的核心
+            console.log(queue.collection)
+        }
+        const loser = queue.dequeue()
+        console.log(loser + ' 出局')
+    }
+    return queue.dequeue()           // 留下的最后一个就是胜利者
+}
+
+const names = ['John', 'Jack', 'Camila', 'Ingrid', 'Carl']
+const winner = drumGame(names, 7) // 假设每轮传花 7 次
+console.log('胜利者是: ' + winner)
+
+// queue.enqueue('Libai')
+// queue.enqueue('看外面')
+// queue.enqueue('有飞机')
+// queue.enqueue('哈哈哈')
+
+// console.log(queue.toString())   // Libai-看外面-有飞机-哈哈哈
+
+// console.log(queue.back())       // 哈哈哈
+// console.log(queue.front())      // Libai
+
+// console.log(queue.dequeue())    // Libai
+
+// console.log(queue.front())      // 看外面
+
+// console.log(queue.empty())      // false
+
+// queue.clear()
+
+// console.log(queue.empty())      // true
+
+// console.log(queue.front())      // undefined
+// console.log(queue.dequeue())    // undefined
+</script>
+</body>
+</html>
