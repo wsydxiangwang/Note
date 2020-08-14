@@ -10,19 +10,6 @@
 
 - [this 全面解析](https://github.com/wsydxiangwang/Note/blob/master/docs/web/this/1.md)
 
-### Vue
-
-- [Vue 生命周期详解](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/9.md)
-- [new Vue 发生了什么](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/1.md)
-- [什么是Virtual DOM](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/2.md)
-- [了解vue的Diff算法](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/3.md)
-- [响应式原理](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/4.md)
-- [nextTick 作用及原理](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/5.md)
-- [set 实时更新的方法](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/7.md)
-- [props 组件通信](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/10.md)
-
-### 进阶
-
 ### 设计模式
 
 - [单例模式](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/1.md)
@@ -48,6 +35,17 @@
 - [bind 进阶函数的实现](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/2.md)
 - [面试必备的 Promise A+ 规范](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/3.md)
 - [new 原理及模拟实现](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/4.md)
+
+### Vue
+
+- [Vue 生命周期详解](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/9.md)
+- [new Vue 发生了什么](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/1.md)
+- [什么是Virtual DOM](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/2.md)
+- [了解vue的Diff算法](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/3.md)
+- [响应式原理](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/4.md)
+- [nextTick 作用及原理](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/5.md)
+- [set 实时更新的方法](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/7.md)
+- [props 组件通信](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/10.md)
 
 ### 考验自己的能力
 
