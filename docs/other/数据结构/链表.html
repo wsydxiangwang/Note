@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<script>
+function Node(element) {
+    this.element = element;     // 当前节点的元素
+    this.next = null;           // 下一个节点链接
+}
+function linkedList() {
+
+    let head = null,                // 第一个链表 默认标识
+        length = 0,                 // 链表长度
+        current;                    // 当前传入元素
+
+    // 添加
+    this.push = (el) => {
+        const node = new Node(el)
+        if (head === null) {   // 插入第一个链表
+            head = node;
+        } else {
+            current = head;
+            while (current.next) {  // 获取最后一个链表
+                current = current.next
+            }
+            current.next = node     // 将最后一个链表的next赋值为新元素
+        }
+        length++    // 链表长度
+    }
+
+    // 移除
+    this.removeAt = (index) => {
+        if (index >= 0 && index < length) {     // 是否越界
+            // 移除第一个链表，特殊对待
+            if (index === 0) {
+                head = head.next
+            } else {
+                let previous;
+                current = head;
+                for (let i = 0; i < index; i++) {
+                    previous = current
+                    current = current.next
+                }
+                // 移除当前索引的 current
+                previous.next = current.next
+            }
+            length--
+            return head
+        }
+        return undefined;
+    }
+
+    // 指定位置添加
+    this.insert = (el, index) => {
+        if (index >= 0 && index < length + 1) {     // 是否越界
+            const node = new Node(el);
+            if (index === 0) {
+                current = head
+                node.next = current
+                head = node
+            } else {
+                let previous;
+                current = head;
+                for (let i = 0; i < index; i++) {
+                    previous = current
+                    current = current.next
+                }
+                // 介于 previous & current 两者间插入
+                previous.next = node
+                node.next = current
+            }
+            length++
+            return head
+        }
+        return false;
+    }
+
+    // 查找是否存在，有 => 索引，否 => -1
+    this.indexOf = (el) => {
+        current = head
+        for (let i = 0; i < length; i++) {
+            if (current.element === el) {
+                return i
+            }
+            current = current.next
+        }
+        return -1
+    }
+
+    // 移除
+    this.remove = (index) => {
+        this.removeAt(this.indexOf(element))
+    }
+
+    // 是否为空
+    this.isEmpty = () => {
+        return length === 0
+    }
+
+    // 获取长度
+    this.size = () => {
+        return length
+    }
+
+    // 获取最开头的链表
+    this.getHead = () => {
+        return head
+    }
+
+    // 打印链表
+    this.toString = () => {
+        if (head === null) {
+            return ''
+        }
+        current = head
+        let str = current.element
+        while (current.next) {
+            current = current.next
+            str += current.element
+        }
+        return str
+    }
+}
+
+// const link = new linkedList()
+
+// link.push(1)
+// link.push(2)
+// link.push(3)
+// link.push(4)
+// link.push(5)
+
+// console.log(link.removeAt(2))
+
+// console.log(link.insert(31, 3))
+
+// console.log(link.indexOf(2))
+
+// console.log(link.toString())
+
+function DoublyNode(element) {
+    this.element = element;
+    this.next = null;
+    this.prev = null;
+}
+function DoublyLinkedList() {
+    let head = null,                // 第一个链表 默认标识
+        length = 0,                 // 链表长度
+        current;                    // 当前传入元素
+        
+    // 指定位置添加
+    this.insert = (el, index) => {
+        if (index >= 0 && index < length + 1) {     // 是否越界
+            const node = new DoublyNode(el);
+            if (index === 0) {
+                current = head
+                node.next = current
+                head = node
+            } else {
+                let previous;
+                current = head;
+                for (let i = 0; i < index; i++) {
+                    previous = current
+                    current = current.next
+                }
+                // 介于 previous & current 两者间插入
+                previous.next = node
+                node.next = current
+            }
+            length++
+            return head
+        }
+        return false;
+    }
+}
+
+</script>
+</body>
+</html>
