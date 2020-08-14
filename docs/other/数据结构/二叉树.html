@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<script>
+
+function Node(key) {
+    this.key = key
+    this.left = null;
+    this.right = null;
+}
+
+function BinarySearchTree() {
+    let root = null;
+
+    // 插入
+    this.insert = (key) => {
+        const node = new Node(key)
+        if (root == null) {
+            root = node
+        } else {
+            insertNode(root, node)
+        }
+
+        function insertNode(root, node) {
+            
+        }
+    }
+}
+</script>
+</body>
+</html>

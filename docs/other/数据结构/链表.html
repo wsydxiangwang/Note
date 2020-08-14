@@ -148,7 +148,8 @@ function DoublyNode(element) {
     this.prev = null;
 }
 function DoublyLinkedList() {
-    let head = null,                // 第一个链表 默认标识
+    let head = null,                // 第一个链表
+        tail = null,                // 最后一个链表
         length = 0,                 // 链表长度
         current;                    // 当前传入元素
         
@@ -157,27 +158,90 @@ function DoublyLinkedList() {
         if (index >= 0 && index < length + 1) {     // 是否越界
             const node = new DoublyNode(el);
             if (index === 0) {
-                current = head
-                node.next = current
-                head = node
-            } else {
+                if (head == null) {         // ① 链表内元素为空
+                    head = node
+                    tail = node
+                } else {                    // 链表内存在元素
+                    current = head
+                    current.prev = node
+                    node.next = current
+                    head = node
+                }
+            } else if (index === length) {  // ② 在末尾插入元素
+                current = tail
+                current.next = node
+                node.prev = current
+                tail = node
+            } else {                        // ③ 在链表中插入元素
                 let previous;
-                current = head;
+                current = head
                 for (let i = 0; i < index; i++) {
                     previous = current
                     current = current.next
                 }
-                // 介于 previous & current 两者间插入
                 previous.next = node
                 node.next = current
+                current.prev = node
+                node.prev = previous
             }
             length++
-            return head
+                console.log(head, tail)
+            return true
         }
         return false;
     }
+
+    // 指定位置移除
+    this.removeAt = (index) => {
+        if (index >= 0 && index < length) {     // 是否越界
+            if (index === 0) {
+                if (length === 1) {
+                    head = null
+                    tail = null
+                } else {
+                    current = head
+                    head = current.next
+                    head.prev = current.prev
+                }
+            } else if (index === length - 1) {
+                current = tail
+                tail = current.prev
+                tail.next = current.next
+            } else {
+                let previous
+                current = head
+                for (let i = 0; i < index; i++) {
+                    previous = current
+                    current = current.next
+                }
+                previous.next = current.next
+                current.next.prev = previous
+            }
+            return true
+        }
+        return undefined
+    }
+
+    this.log = function() {
+        current = head
+        let str = current.element
+        while (current.next) {
+            current = current.next
+            str = str + ' ' + current.element
+        }
+        return str
+    }
 }
 
+const list = new DoublyLinkedList()
+
+
+console.log(list.insert(11, 0))
+
+console.log(list.insert(22, 0))
+console.log(list.insert(33, 0))
+
+console.log(list.removeAt(1))
 </script>
 </body>
 </html>
