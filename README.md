@@ -10,6 +10,32 @@
 
 - [this 全面解析](https://github.com/wsydxiangwang/Note/blob/master/docs/web/this/1.md)
 
+### 设计模式
+
+- [单例模式](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/1.md)
+- [策略模式](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/2.md)
+- [发布—订阅模式(观察者模式)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/3.md)
+- [代理模式](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/4.md)
+
+### 数据结构
+
+- [栈(Stack)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/1.md)
+- [队列(Queue)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/2.md)
+- [链表(Linked-list)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/3.md)
+
+### 算法
+
+- [复杂度概念](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E7%AE%97%E6%B3%95/1.md)
+- [排序算法](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E7%AE%97%E6%B3%95/2.md)
+- [二分搜索](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E7%AE%97%E6%B3%95/3.md)
+
+### 手写代码
+
+- [call、apply 的奇妙感觉](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/1.md)
+- [bind 进阶函数的实现](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/2.md)
+- [面试必备的 Promise A+ 规范](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/3.md)
+- [new 原理及模拟实现](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/4.md)
+
 ### Vue
 
 - [Vue 生命周期详解](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/9.md)
@@ -20,24 +46,6 @@
 - [nextTick 作用及原理](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/5.md)
 - [set 实时更新的方法](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/7.md)
 - [props 组件通信](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/10.md)
-
-### 进阶
-
-### 算法
-
-### 设计模式
-
-- [单例模式](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/1.md)
-- [策略模式](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/2.md)
-- [发布—订阅模式(观察者模式)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/3.md)
-- [代理模式](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/4.md)
-
-### 手写代码
-
-- [call、apply 的奇妙感觉](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/1.md)
-- [bind 进阶函数的实现](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/2.md)
-- [面试必备的 Promise A+ 规范](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/3.md)
-- [new 原理及模拟实现](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/4.md)
 
 ### 考验自己的能力
 
