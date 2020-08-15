@@ -26,11 +26,192 @@ function BinarySearchTree() {
             insertNode(root, node)
         }
 
-        function insertNode(root, node) {
-            
+        // 实现思路: 至顶向下查找, 先判断顶点是否为空；顶点为空则直接在该处插入, 若不为空, 则通过比较顶点的 key 和插入元素的 key 判断该插入到顶点的左侧还是右侧, 后面进行如上递归
+        function insertNode(parent, node) {
+            if (parent.key > node.key) {        // 当前节点大于新节点，则新节点放左边
+                if (parent.left === null) {
+                    parent.left = node
+                } else {
+                    insertNode(parent.left, node)
+                }
+            } else if (parent.key < node.key) {     // 当前节点小于新节点，则新节点放右边
+                if (parent.right === null) {
+                    parent.right = node
+                } else {
+                    insertNode(parent.right, node)
+                }
+            }
+        }
+        return root
+    }
+
+    // 中序遍历
+    this.inOrder = (cb) => {
+        inOrder(root, cb)
+        function inOrder(node, cb) {
+            if (node) {
+                inOrder(node.left, cb)
+                cb(node.key)
+                inOrder(node.right, cb)
+            }
         }
     }
+
+    // 先序遍历
+    this.preOrder = (cb) => {
+        preOrder(root, cb)
+        function preOrder(node, cb) {
+            if (node) {
+                cb(node.key)
+                preOrder(node.left, cb)
+                preOrder(node.right, cb)
+            }
+        }
+    }
+
+    // 后序遍历
+    this.postOrder = (cb) => {
+        postOrder(root, cb)
+        function postOrder(node, cb) {
+            if (node) {
+                postOrder(node.left, cb)
+                postOrder(node.right, cb)
+                cb(node.key)
+            }
+        }
+    }
+
+    // 最大值：最右边
+    this.max = () => {
+        let current = root
+        while (current && current.right) {
+            current = current.right
+        }
+        return current.key
+    }
+
+    // 最小值：最左边
+    this.min = () => {
+        let current = root
+        while (current && current.left) {
+            current = current.left
+        }
+        return current.key
+    }
+
+    // 查找指定值
+    this.search = (key) => {
+        if (root == null) {
+            return null
+        }
+        let current = root
+        while (current) {
+            if (current.key === key) {
+                return current
+            } else if (current.key < key) {
+                current = current.right
+            } else {
+                current = current.left
+            }
+        }
+    }
+
+    // 删除指定值
+    this.remove = (key) => {
+        const removeKey = (node, key) => {
+            if (node == null) return null
+
+            if (key == node.key) {
+                console.log(node)
+                if (node.left == null && node.right == null) {  // 没有子节点
+                    node = null
+                    return node
+                } 
+                else if (node.left == null) {                 // 没有左子节点
+                    node = node.right
+                    console.log(node)
+                    return node
+                } 
+                else if (node.right == null) {                // 没有右子节点
+                    node = node.left
+                    console.log(node)
+                    return node
+                }
+
+                // 包含两个子节点
+                // let min = 
+
+                return node
+            } else if (key < node.key) {    // 小于节点，往左边
+                console.log(1, node.left)
+                node.left = removeKey(node.left, key)
+                console.log(2, node.left)
+                return node
+            } else {                        // 往右
+                console.log(11, node.right)
+                node.right = removeKey(node.right, key)
+                console.log(22, node.right)
+                return node
+            }
+        }
+        removeKey(root, key)
+    }
+
+    this.data = () => root
 }
+
+const tree = new BinarySearchTree()
+
+// tree.insert(23)
+// tree.insert(100)
+// tree.insert(45)
+// tree.insert(16)
+// tree.insert(99)
+// tree.insert(37)
+// tree.insert(3)
+// tree.insert(22)
+
+// let str = ''
+// let p = (val) => str += val + ' '
+
+// tree.inOrder(p)
+// console.log(str)
+// // 3 16 22 23 37 45 99
+
+// str = ''
+// tree.preOrder(p)
+// console.log(str)
+// // 23 16 3 22 45 37 99
+
+// str = ''
+// tree.postOrder(p)
+// console.log(str)
+// 3 22 16 37 99 45 23 
+
+tree.insert(11);
+tree.insert(7);
+tree.insert(15);
+tree.insert(5);
+tree.insert(9);
+tree.insert(13);
+tree.insert(20);
+tree.insert(3);
+tree.insert(6);
+tree.insert(8);
+tree.insert(10);
+tree.insert(12);
+tree.insert(14);
+tree.insert(18);
+tree.insert(25);
+
+console.log(tree.data())
+
+tree.remove(6)
+console.log('dd')
+
+tree.remove(5)
+
+console.log(tree.data())
 </script>
 </body>
 </html>
