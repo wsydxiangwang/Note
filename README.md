@@ -9,6 +9,11 @@
 ### JavaScript
 
 - [this 全面解析](https://github.com/wsydxiangwang/Note/blob/master/docs/web/this/1.md)
+- [Ajax 概念及封装](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/1.md)
+- [Promise 方法介绍](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/2.md)
+- [Promise 回调地狱的终结](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/3.md)
+- [所向披靡的 async/await](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/4.md)
+- [要你头发的跨域汇总](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/5.md)
 
 ### 设计模式
 
@@ -47,6 +52,16 @@
 - [nextTick 作用及原理](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/5.md)
 - [set 实时更新的方法](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/7.md)
 - [props 组件通信](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/10.md)
+
+### 性能优化
+
+- [节流防抖](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/1.md)
+- [防抖多列表的骚操作](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/7.md)
+- [图片懒加载](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/2.md)
+- [前端缓存](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/3.md)
+- [本地存储](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/4.md)
+- [WEB安全](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/5.md)
+- [Script的加载和执行](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/6.md)
 
 ### 考验自己的能力
 
