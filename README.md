@@ -8,7 +8,17 @@
 
 ### JavaScript
 
+- [让人窒息的原型和原型链](https://github.com/wsydxiangwang/Note/blob/master/docs/web/this/4.md)
+- [原型继承的操作](https://github.com/wsydxiangwang/Note/blob/master/docs/web/this/5.md)
+- [作用域和闭包](https://github.com/wsydxiangwang/Note/blob/master/docs/web/this/3.md)
 - [this 全面解析](https://github.com/wsydxiangwang/Note/blob/master/docs/web/this/1.md)
+- [Ajax 概念及封装](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/1.md)
+- [Promise 方法介绍](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/2.md)
+- [Promise 回调地狱的终结](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/3.md)
+- [所向披靡的 async/await](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/4.md)
+- [手把手教你跨域的各种骚操作](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/5.md)
+
+...JS部分，更多的基础文章，在这里看比较方便👉[Vuepress，一个专业笔记的网站](https://wsydxiangwang.github.io) 
 
 ### 设计模式
 
@@ -22,6 +32,7 @@
 - [栈(Stack)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/1.md)
 - [队列(Queue)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/2.md)
 - [链表(Linked-list)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/3.md)
+- [树(Tree)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/4.md)
 
 ### 算法
 
@@ -46,6 +57,16 @@
 - [nextTick 作用及原理](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/5.md)
 - [set 实时更新的方法](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/7.md)
 - [props 组件通信](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue/10.md)
+
+### 性能优化
+
+- [节流防抖](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/1.md)
+- [防抖多列表的骚操作](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/7.md)
+- [图片懒加载](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/2.md)
+- [前端缓存](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/3.md)
+- [本地存储](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/4.md)
+- [WEB安全](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/5.md)
+- [Script的加载和执行](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/6.md)
 
 ### 考验自己的能力
 
