@@ -8,6 +8,9 @@
 
 ### JavaScript
 
+- [让人窒息的原型和原型链](https://github.com/wsydxiangwang/Note/blob/master/docs/web/this/4.md)
+- [原型继承的操作](https://github.com/wsydxiangwang/Note/blob/master/docs/web/this/5.md)
+- [作用域和闭包](https://github.com/wsydxiangwang/Note/blob/master/docs/web/this/3.md)
 - [this 全面解析](https://github.com/wsydxiangwang/Note/blob/master/docs/web/this/1.md)
 - [Ajax 概念及封装](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/1.md)
 - [Promise 方法介绍](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/2.md)
