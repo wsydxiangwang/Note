@@ -18,6 +18,8 @@
 - [所向披靡的 async/await](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/4.md)
 - [手把手教你跨域的各种骚操作](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/5.md)
 
+...有点难搞
+
 ### 设计模式
 
 - [单例模式](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/1.md)
