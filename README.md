@@ -13,7 +13,7 @@
 - [Promise 方法介绍](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/2.md)
 - [Promise 回调地狱的终结](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/3.md)
 - [所向披靡的 async/await](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/4.md)
-- [要你头发的跨域汇总](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/5.md)
+- [手把手教你跨域的各种骚操作](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/5.md)
 
 ### 设计模式
 
