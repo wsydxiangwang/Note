@@ -68,7 +68,7 @@
 - [WEB安全](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/5.md)
 - [Script的加载和执行](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/6.md)
 
-### 考验自己的能力
+### 给自己打个分
 
 - [2020年前端面试复习必读文章【超百篇文章/赠复习导图】](https://juejin.im/post/5e8b163ff265da47ee3f54a6)
 - [写给女朋友的中级前端面试秘籍（含详细答案，15k级别）](https://juejin.im/post/5e7af0685188255dcf4a497e)
