@@ -9,7 +9,7 @@
     "publish": "deploy.sh"
   },
   "author": "LiBai",
-  "repository": "github:wsydxiangwang/VuePressBlog",
+  "repository": "github:wsydxiangwang/Note",
   "license": "ISC",
   "dependencies": {
     "vuepress": "^1.4.1"
