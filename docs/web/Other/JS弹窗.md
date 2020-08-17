@@ -100,10 +100,8 @@ class Popup{
             this.el.appendChild(messageEl)
             this.el.className = 'show'
     
-            this.fun[type] = () => {
-                console.log(2)
-                this.close(messageEl)
-            }
+            // 缓存事件
+            this.fun[type] = () => this.close(messageEl)
 
             // 注册关闭弹窗事件
             const btn_list = messageEl.querySelectorAll('.confirm')
@@ -120,17 +118,14 @@ class Popup{
             this.el.className = ''
             const loading = this.el.querySelector('.loading-content');       
 
-            console.log(loading)
-
             if (!loading) return;
-            console.log(this.el)
-
+            
             setTimeout(() => {
                 this.el.removeChild(loading)    // 动画结束后，删除元素
             }, 300)
         }else{
+            // 删除当前弹窗
             const type = el.getAttribute('data-type')
-    
             const node = Array.from(this.el.children)
             node.map(item => {
                 if(item.getAttribute('data-type') == type){
@@ -156,11 +151,10 @@ class Popup{
 
         // 非 error 触发回调
         if (type != 'error') {
+            // 取消已添加事件 避免重复执行
             dom.querySelector('.confirm').removeEventListener('click', this.fun[type])
-
             dom.querySelector('.confirm').addEventListener('click', () => {
-                fn()
-                this.fun[type]()
+                fn() & this.fun[type]()
             })
         }
     }
