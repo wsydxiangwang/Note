@@ -189,6 +189,13 @@ module.exports = {
 			],
 			'/other/': [
 				{
+					title: '高阶函数',
+					sidebarDepth: 2,
+					children: [
+						'/other/高阶函数/1',
+					]
+				},
+				{
 					title: '手写代码',
 					children: [
 						'/other/手写/1', 

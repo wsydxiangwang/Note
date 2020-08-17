@@ -15,15 +15,15 @@ function Node(key) {
 }
 
 function BinarySearchTree() {
-    let root = null;
+    this.root = null;
 
     // 插入
     this.insert = (key) => {
         const node = new Node(key)
-        if (root == null) {
-            root = node
+        if (this.root == null) {
+            this.root = node
         } else {
-            insertNode(root, node)
+            insertNode(this.root, node)
         }
 
         // 实现思路: 至顶向下查找, 先判断顶点是否为空；顶点为空则直接在该处插入, 若不为空, 则通过比较顶点的 key 和插入元素的 key 判断该插入到顶点的左侧还是右侧, 后面进行如上递归
@@ -42,12 +42,12 @@ function BinarySearchTree() {
                 }
             }
         }
-        return root
+        return this.root
     }
 
     // 中序遍历
     this.inOrder = (cb) => {
-        inOrder(root, cb)
+        inOrder(this.root, cb)
         function inOrder(node, cb) {
             if (node) {
                 inOrder(node.left, cb)
@@ -59,7 +59,7 @@ function BinarySearchTree() {
 
     // 先序遍历
     this.preOrder = (cb) => {
-        preOrder(root, cb)
+        preOrder(this.root, cb)
         function preOrder(node, cb) {
             if (node) {
                 cb(node.key)
@@ -71,7 +71,7 @@ function BinarySearchTree() {
 
     // 后序遍历
     this.postOrder = (cb) => {
-        postOrder(root, cb)
+        postOrder(this.root, cb)
         function postOrder(node, cb) {
             if (node) {
                 postOrder(node.left, cb)
@@ -82,29 +82,29 @@ function BinarySearchTree() {
     }
 
     // 最大值：最右边
-    this.max = () => {
-        let current = root
+    this.max = (node = this.root) => {
+        let current = node
         while (current && current.right) {
             current = current.right
         }
-        return current.key
+        return current
     }
 
     // 最小值：最左边
-    this.min = () => {
-        let current = root
+    this.min = (node = this.root) => {
+        let current = node
         while (current && current.left) {
             current = current.left
         }
-        return current.key
+        return current
     }
 
     // 查找指定值
     this.search = (key) => {
-        if (root == null) {
+        if (this.root == null) {
             return null
         }
-        let current = root
+        let current = this.root
         while (current) {
             if (current.key === key) {
                 return current
@@ -127,21 +127,24 @@ function BinarySearchTree() {
                     node = null
                     return node
                 } 
-                else if (node.left == null) {                 // 没有左子节点
+                else if (node.left == null) {                 // 有右子节点
                     node = node.right
                     console.log(node)
                     return node
                 } 
-                else if (node.right == null) {                // 没有右子节点
+                else if (node.right == null) {                // 有左子节点
                     node = node.left
                     console.log(node)
                     return node
                 }
 
                 // 包含两个子节点
-                // let min = 
-
+                let min = this.min(node.right)
+                console.log('最小值', min.key)
+                node.key = min.key
+                node.right = removeKey(node.right, min.key)
                 return node
+
             } else if (key < node.key) {    // 小于节点，往左边
                 console.log(1, node.left)
                 node.left = removeKey(node.left, key)
@@ -154,11 +157,14 @@ function BinarySearchTree() {
                 return node
             }
         }
-        removeKey(root, key)
+        removeKey(this.root, key)
     }
 
-    this.data = () => root
+
+
+    this.data = () => this.root
 }
+
 
 const tree = new BinarySearchTree()
 
@@ -204,14 +210,71 @@ tree.insert(14);
 tree.insert(18);
 tree.insert(25);
 
+// tree.remove(6)
+// console.log('dd=================')
+
+// tree.remove(5)
+
+// console.log(tree.data())
+// console.log('dd=================')
+
+// tree.remove(15)
+// console.log(tree.data())
+
+
+
+// 自平衡树
+class AVLTree extends BinarySearchTree {
+    constructor() {
+        super()
+    }
+
+    rotationLL(node) {
+        let tmp = node.left
+        node.left = tmp.right
+        tmp.right = node
+        return tmp
+    }
+    
+    rotationRR(node) {
+        let tmp = node.right;
+        node.right = tmp.left;
+        tmp.left = node;
+        return tmp;
+    }
+    rotationLR(node) {
+        node.left = this.rotationRR(node.left);
+        return this.rotationLL(node);
+    }
+
+    rotationRL(node) {
+        node.right = this.rotationLL(node.right);
+        return this.rotationRR(node);
+    }
+    getNodeHeight(node = this.root) {
+        if (node == null) {
+            return 0
+        } else {
+            let left = this.getNodeHeight(node.left)
+            let right = this.getNodeHeight(node.right)
+            return Math.max(left, right) + 1
+        }
+    }
+
+    insert(key) {
+        console.log(2)
+        super.insert(key)
+        console.log(super.insert)
+    }
+}
+
+const trees = new AVLTree()
+console.log(trees.getNodeHeight(tree.root))
+
+trees.insert(88)
+
 console.log(tree.data())
 
-tree.remove(6)
-console.log('dd')
-
-tree.remove(5)
-
-console.log(tree.data())
 </script>
 </body>
 </html>
