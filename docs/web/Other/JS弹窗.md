@@ -1,5 +1,3 @@
-# JS弹窗
-
 ```js
 /**
  *  全局弹窗 
@@ -159,10 +157,10 @@ class Popup{
         }
     }
 }
-const $popup = new Popup();
+const $popup = new Popup();   
 ```
 
-```css
+```scss
 #Popup{
     position: fixed;
     top: 0;
@@ -321,20 +319,10 @@ const $popup = new Popup();
             animation: popup-hide 0.3s;
         }
     }
-    &.show{
+    &.show, &::before{
         opacity: 1;
         visibility: visible;
-        &::before{
-            opacity: 1;
-            visibility: visible;
-        }
     }
-    // &.exit .popup-content{
-    //     animation: popup-hide 0.3s;
-    // }
-    // &.exit-opacity .popup-content{
-    //     animation: opacity-hide 0.3s;
-    // }
 }
 
 @keyframes opacity-show {
@@ -376,22 +364,22 @@ const $popup = new Popup();
 }
 @-webkit-keyframes sk-circleBounceDelay {
     0%, 80%, 100% {
-        -webkit-transform:scale(0);
-        transform:scale(0)
+        -webkit-transform: scale(0);
+        transform: scale(0)
     }
     40% {
-        -webkit-transform:scale(1);
-        transform:scale(1)
+        -webkit-transform: scale(1);
+        transform: scale(1)
     }
 }
 @keyframes sk-circleBounceDelay {
     0%, 80%, 100% {
-        -webkit-transform:scale(0);
-        transform:scale(0)
+        -webkit-transform: scale(0);
+        transform: scale(0)
     }
     40% {
-        -webkit-transform:scale(1);
-        transform:scale(1)
+        -webkit-transform: scale(1);
+        transform: scale(1)
     }
 }
 ```
