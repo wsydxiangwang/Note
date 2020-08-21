@@ -7,9 +7,188 @@
 </head>
 <body>
 <script>
+function Queue() {
+    this.collection = [];
+    this.enqueue = (val) => {
+        this.collection.push(val)
+    }
+    this.dequeue = () => {
+        return this.collection.shift()
+    }
+    this.front = () => {
+        return this.collection[0]
+    }
+    this.back = () => {
+        return this.collection[this.collection.length - 1]
+    }
+    this.toString = () => {
+        return this.collection.join('-')
+    }
+    this.empty = () => {
+        return this.collection.length === 0;
+    }
+    this.size = () => {
+        return this.collection.length;
+    }
+    this.clear = () => {
+        this.collection = []
+    }
+}
+class Graph {
+    constructor() {
+        this.vertices = []          // 存储顶点
+        this.adjList = new Map()    // 存储边
+    }
 
+    // 添加顶点
+    addVertex(v) {
+        if (!this.vertices.includes(v)) {
+            this.vertices.push(v)
+            this.adjList.set(v, [])
+        }
+    }
 
+    // 往指定的点添加相邻的点
+    addEdge(v, w) {
+        // 验证顶点是否存在于图中
+        if (!this.adjList.get(v)) {
+            this.addVertex(v)
+        }
+        if (!this.adjList.get(w)) {
+            this.addVertex(w)
+        }
+        this.adjList.get(v).push(w)
+        this.adjList.get(w).push(v)
+    }
 
+    // 广度
+    bfs(v, callback) {
+        const obj = {}
+        const queue = new Queue()
+
+        for (let i of this.vertices) { // 初始化颜色
+            obj[i] = 'white'
+        }
+
+        obj[v] = 'red'                  // 搜索值
+        queue.enqueue(v)                // 搜索值先入栈
+
+        let shiftQueue, neighbour
+
+        while (!queue.empty()) {
+            shiftQueue = queue.dequeue()
+            neighbour = this.adjList.get(shiftQueue)
+
+            for (let i of neighbour) {
+                if (obj[i] === 'white') {
+                    obj[i] = 'red'
+                    queue.enqueue(i)
+                }
+            }
+
+            if (callback) {
+                callback(shiftQueue)
+            }
+        }
+    }
+
+    BFS(v) {
+        const obj = {}
+        const queue = new Queue()
+
+        const distance = {} // 距离
+        const prev = {}     // 前溯点
+
+        for (let i of this.vertices) { // 初始化颜色
+            obj[i] = 'white'
+            distance[i] = 0
+            prev[i] = null
+        }
+
+        obj[v] = 'red'                  // 搜索值
+        queue.enqueue(v)                // 入栈
+
+        let shiftQueue, neighbour
+
+        while (!queue.empty()) {
+            shiftQueue = queue.dequeue()
+            neighbour = this.adjList.get(shiftQueue)
+
+            console.log('=========', shiftQueue)
+
+            for (let i of neighbour) {
+                if (obj[i] === 'white') {
+                    obj[i] = 'red'
+                    queue.enqueue(i)
+
+                    distance[i] = distance[shiftQueue] + 1 // 第二行的点距离第一行的点相差为 1, 第三行的点距离第二行的点相差为 1, 以此类推。
+                    prev[i] = shiftQueue   // shiftQueue 是 i 的前溯点 (上一级的节点)
+
+                    console.log(prev)
+                }
+            }
+        }
+
+        return {
+            distance,
+            prev
+        }
+    }
+
+    log() {
+        let str = ''
+        let neighbors
+        for (let i = 0; i < this.vertices.length; i++) {
+            str += `${this.vertices[i]} -> `
+            neighbors = this.adjList.get(this.vertices[i]).join(' ')
+            str += neighbors + '\n'
+        }
+        return str
+    }
+
+    logMinPath(v) {
+        const { distance, prev } = this.BFS(v)
+        let path = ''
+        const arr = []
+        Object.keys(distance).map(r => {
+            path = r
+            while (prev[r]) { // 终止条件为 prev 中值为 null 时
+                path = prev[r] + ' - ' + path
+                r = prev[r]
+            }
+            arr.push(path)
+        })
+        return arr.join('\n')
+    }
+}
+
+const graph = new Graph()
+
+var topArr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
+for (let i of topArr) {
+    graph.addVertex(i)
+}
+
+graph.addEdge('A', 'B')
+graph.addEdge('A', 'C')
+graph.addEdge('A', 'D')
+graph.addEdge('B', 'E')
+graph.addEdge('B', 'F')
+graph.addEdge('C', 'D')
+graph.addEdge('C', 'G')
+graph.addEdge('D', 'G')
+graph.addEdge('D', 'H')
+graph.addEdge('E', 'I')
+
+// console.log(graph.adjList)
+// console.log(graph.vertices)
+console.log(graph.log())
+
+// graph.bfs('A', (e) => console.log(e))
+// graph.bfs('B', (e) => console.log(e))
+
+console.log(graph.BFS('B'))
+console.log(graph.logMinPath('B'))
 </script>
 </body>
 </html>
