@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>set</title>
+</head>
+<body>
+<script>
+
+class Set {
+    constructor() {
+        this.items = {}
+    }
+
+    add(value) {
+        if (!this.has(value)) {
+            this.items[value] = value
+            return true
+        }
+        return false
+    }
+
+    has(value) {
+        return Object.prototype.hasOwnProperty.call(this.items, value)
+    }
+
+    delete(value) {
+        if (this.has(value)) {
+            delete this.items[value]
+            return true
+        }
+        return false
+    }
+
+    clear() {
+        this.items = {}
+    }
+
+    size() {
+        let count = 0;
+        for (let key in this.items) {
+            if (this.items.hasOwnProperty) {
+                count++
+            }
+        }
+        return count
+    }
+
+    values() {
+        let arr = []
+        for (let key in this.items) {
+            if (this.items.hasOwnProperty) {
+                arr.push(key)
+            }
+        }
+        return arr
+    }
+
+    // 并集
+    union(otherSet) {
+        const unionSet = new Set()
+
+        let values = this.values()
+        for (let i = 0; i < values.length; i++) {
+            unionSet.add(values[i])
+        }
+        values = otherSet.values()
+        for (let i = 0; i < values.length; i++) {
+            unionSet.add(values[i])
+        }
+
+        return unionSet;
+    }
+
+    // 交集
+    // intersection(otherSet) {
+    //     const intersectionSet = new Set()
+
+    //     const values = this.values()
+    //     for (let i = 0; i < values.length; i++) {
+    //         if (otherSet.has(values[i])) {
+    //             intersectionSet.add(values[i])
+    //         }
+    //     }
+    //     return intersectionSet
+    // }
+    intersection(otherSet) {
+        const intersectionSet = new Set()
+
+        const values = this.values()
+        const otherValues = otherSet.values()
+
+        let biggerSet = values;
+        let smallerSet = otherValues;
+
+        if (otherValues.length > values.length) {
+            biggerSet = otherValues
+            smallerSet = values
+        }
+
+        smallerSet.forEach(val => {
+            if (biggerSet.includes(val)) {
+                intersectionSet.add(val)
+            }
+        })
+
+        return intersectionSet
+    }
+
+    difference(otherSer) {
+        const differenceSet = new Set()
+        const values = this.values()
+
+        values.forEach(val => {
+            if (!otherSer.has(val)) {
+                differenceSet.add(val)
+            }
+        })
+        return differenceSet
+    }
+
+    isSubsetOf(otherSet) {
+        let isSubset = true
+
+        this.values().forEach(val => {
+            if (!otherSet.has(val)) {
+                isSubset = false
+                return false
+            }
+            return true
+        })
+
+        return isSubset
+    }
+    
+    data() {
+        return this.items
+    } 
+}
+
+const setA = new Set()
+
+setA.add(1)
+setA.add(2)
+setA.add(3)
+
+// console.log(setA.has(1))
+// console.log(setA.has(2))
+// console.log(setA.size())
+// console.log(setA.values())
+
+// setA.delete(2)
+// console.log(setA.size())
+console.log(setA.data())
+
+
+const setB = new Set()
+
+setB.add(1)
+setB.add(2)
+setB.add(3)
+
+const setC = new Set()
+
+setC.add(3)
+setC.add(4)
+setC.add(5)
+
+// console.log(setB.data())
+
+const union = setA.intersection(setB)
+
+// console.log(union.values())
+
+console.log(setA.isSubsetOf(setB))
+console.log(setA.isSubsetOf(setC))
+</script>
+</body>
+</html>

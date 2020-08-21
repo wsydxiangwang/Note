@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dictionary</title>
+</head>
+<body>
+<script>
+class ValuePair {
+    constructor(key, value) {
+        this.key = key
+        this.value = value
+    }
+    toString() {
+        return `[${this.key}: ${this.key}]`
+    }
+}
+class Dictionary {
+    constructor() {
+        this.toStrFn = function(item) {
+            if (item === null) {
+                return 'NULL'
+            } else if (item === undefined) {
+                return 'UNDEFINED'
+            } else if (typeof item === 'string' || item instanceof String) {
+                return `${item}`                
+            } else {
+                item.toString()
+            }
+        }
+        this.table = {}
+    }
+
+    set(key, value) {
+        if (key != null && value != null) {
+            const tableKey = this.toStrFn(key)
+            this.table[tableKey] = new ValuePair(key, value)
+            return true
+        }
+        return false
+    }
+
+    remove(key) {
+        if (this.hasKey(key)) {
+            delete this.table[this.toStrFn(key)]
+            return true
+        }
+        return false
+    }
+
+    get(key) {
+        const valuePair = this.table[this.toStrFn(key)]
+        return valuePair == null ? undefined : valuePair.value
+    }
+
+    hasKey(key) {
+        return this.table[this.toStrFn(key)] != null
+    }
+
+    keyValues() {
+        const valuePair = []
+        for (let k in this.table) {
+            if (this.hasKey(k)) {
+                valuePair.push(this.table[k])
+            }
+        }
+        return valuePair
+    }
+
+    keys() {
+        const keys = []
+        const valuePairs = this.keyValues()
+        for (let i = 0; i < valuePairs.length; i++) {
+            keys.push(valuePairs[i].key)
+        }
+        return keys
+    }
+
+    values() {
+        const values = []
+        const valuePairs = this.keyValues()
+        for (let i = 0; i < valuePairs.length; i++) {
+            values.push(valuePairs[i].value)
+        }
+        return values
+    }
+
+    size() {
+        return this.keys().length
+    }
+
+    isEmpty() {
+        return this.size() === 0
+    }
+
+    clear() {
+        this.table = {}
+    }    
+
+    forEach(callFn) {
+        const valuePairs = this.keyValues()
+        for (let i = 0; i < valuePairs.length; i++) {
+            const key = valuePairs[i].key,
+                  value = valuePairs[i].value,
+                  result = callFn(key, value);
+            // 如果回调函数返回false 则中断forEach方法的执行
+            if (result === false) {
+                break;
+            }
+        }
+    }
+}
+
+// const dictionary = new Dictionary()
+
+// dictionary.set('真的是', {a:2, b:3, c:4})
+// dictionary.set('哈哈哈', '32424')
+// dictionary.set(12, '天真的人呐')
+
+// console.log(dictionary.table)
+
+
+// console.log(dictionary.keys())
+// console.log(dictionary.values())
+// console.log(dictionary.keyValues())
+// console.log(dictionary.get(12))
+
+// dictionary.forEach((k, v) => {
+//     console.log(`hhh: key: ${k}, value: ${v}`)
+// })
+
+class HashTable {
+    constructor() {
+        this.toStrFn = (item) => {
+            if (item === null) {
+                return 'NULL'
+            } else if (item === undefined) {
+                return 'UNDEFINED'
+            } else if (typeof item === 'string' || item instanceof String) {
+                return `${item}`                
+            } else {
+                item.toString()
+            }
+        }
+        this.table = {}
+    }
+    
+    put(key, value) {
+        if (key != null && value != null) {
+            const position = this.hashCode(key)
+            console.log(position)
+            this.table[position] = new ValuePair(key, value)
+            return true
+        }
+        return false
+    }
+
+    get(key) {
+        const valuePair = this.table[this.hashCode(key)]
+        return valuePair == null ? undefined : valuePair.value
+    }
+
+    remove(key) {
+        const hash = this.hashCode(key)
+        const valuePair = this.table[hash]
+        if (valuePair != null) {
+            delete this.table[hash]
+            return true
+        }
+        return false
+    }
+
+    // 散列函数
+    hashCode(key) {
+        if (typeof key === 'number') {
+            return key
+        }
+        const tableKey = this.toStrFn(key)
+        let hash = 0
+        for (let i = 0; i < tableKey.length; i++) {
+            hash += tableKey.charCodeAt(i)
+        }
+        return hash % 37
+    }
+}
+
+const hash = new HashTable()
+
+hash.put('Libai', {a:2, b:3})
+hash.put('xiaobai', '天真的人')
+hash.put('jiauyou', '哈哈哈哈哈哈')
+console.log(hash.table)
+
+console.log(hash.get('Libai'))
+console.log(hash.get('sss'))
+</script>
+</body>
+</html>
