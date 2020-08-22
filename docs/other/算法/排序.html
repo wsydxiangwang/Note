@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<script>
+
+const arr = [3, 44, 38, 5, 15, 36, 26, 27, 2, 46, 4, 19]
+console.log(arr)
+
+function bubbleSort(arr) {
+    let len = arr.length;
+    for (let i = 0; i < len - 1; i++) {
+        for (let j = 0; j < len - 1 - i; j++) {
+            if (arr[j] > arr[j+1]) {        // 相邻元素两两对比
+                [arr[j], arr[j+1]] = [arr[j+1], arr[j]]
+            }
+        }
+        console.log('==========')
+    }
+    return arr;
+}
+
+function mergeSort(arr) {
+    let len = arr.length
+    if (len < 2) {      // 停止条件, 并返回
+        return arr
+    }
+    // 以数组长度的中位数, 划分成两个数组 (分治法)
+    let middle = Math.floor(len / 2),
+        left = arr.slice(0, middle),
+        right = arr.slice(middle);
+
+        console.log('all',left, right)
+    return merge(mergeSort(left), mergeSort(right))
+}
+
+function merge(left, right) {
+    console.log('====', left.length, right.length, left, right)
+    const result = []
+
+    while (left.length && right.length) {
+        if (left[0] <= right[0]) {
+            result.push(left.shift())
+        } else {
+            result.push(right.shift())
+        }
+    }
+    console.log(left, right)
+    console.log('result', result)
+
+    while (left.length) {
+        result.push(left.shift())
+    }
+
+    while (right.length) {
+        result.push(right.shift())
+    }
+    
+    console.log(result)
+
+    return result
+}
+
+function quickSort(arr) {
+    if (arr.length <= 1) {
+        return arr;  //递归出口
+    }
+    var left = [],
+        right = [],
+        current = arr.splice(0, 1); // 注意splice后，数组长度少了一个
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] < current ? left.push(arr[i]) : right.push(arr[i]);
+    }
+
+    console.log(left, right)
+
+    return quickSort(left).concat(current, quickSort(right)); //递归
+}
+console.log(quickSort(arr))
+</script>
+</body>
+</html>
