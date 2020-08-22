@@ -160,6 +160,29 @@ class Graph {
         })
         return arr.join('\n')
     }
+
+    dfs(v, cb) {
+        const obj = {}
+
+        for (let i of this.vertices) { // 初始化颜色
+            obj[i] = 'white'
+        }
+
+        const find = (v, color, cb) => {
+            color[v] = 'red'
+            if (cb) {
+                cb(v)
+            }
+            let neighbour = this.adjList.get(v)
+            for (let i of neighbour) {
+                if (color[i] === 'white') {
+                    find(i, color, cb)
+                }
+            }
+        }
+
+        find(v, obj, cb)
+    }
 }
 
 const graph = new Graph()
@@ -182,13 +205,21 @@ graph.addEdge('E', 'I')
 
 // console.log(graph.adjList)
 // console.log(graph.vertices)
-console.log(graph.log())
+// console.log(graph.log())
 
 // graph.bfs('A', (e) => console.log(e))
 // graph.bfs('B', (e) => console.log(e))
 
-console.log(graph.BFS('B'))
-console.log(graph.logMinPath('B'))
+// console.log(graph.BFS('B'))
+// console.log(graph.logMinPath('B'))
+
+let str = ''
+graph.dfs('A', (e) => {
+    str += ' ' + e
+})
+
+console.log(str)
+
 </script>
 </body>
 </html>
