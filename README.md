@@ -33,6 +33,9 @@
 - [队列(Queue)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/2.md)
 - [链表(Linked-list)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/3.md)
 - [树(Tree)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/4.md)
+- [集合(Set)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/5.md)
+- [字典(Dictionary)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/6.md)
+- [图(Graph)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.md)
 
 ### 算法
 
