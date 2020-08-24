@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<script>
+class ValuePair {
+    constructor(key, value) {
+        this.key = key
+        this.value = value
+    }
+    toString() {
+        return `[${this.key}: ${this.key}]`
+    }
+}
+function Node(element) {
+    this.element = element;     // 当前节点的元素
+    this.next = null;           // 下一个节点链接
+}
+function linkedList() {
+
+    let head = null,                // 第一个链表 默认标识
+        length = 0,                 // 链表长度
+        current;                    // 当前传入元素
+
+    // 添加
+    this.push = (el) => {
+        const node = new Node(el)
+        if (head === null) {   // 插入第一个链表
+            head = node;
+        } else {
+            current = head;
+            while (current.next) {  // 获取最后一个链表
+                current = current.next
+            }
+            current.next = node     // 将最后一个链表的next赋值为新元素
+        }
+        length++    // 链表长度
+    }
+
+    // 移除
+    this.removeAt = (index) => {
+        if (index >= 0 && index < length) {     // 是否越界
+            // 移除第一个链表，特殊对待
+            if (index === 0) {
+                head = head.next
+            } else {
+                let previous;
+                current = head;
+                for (let i = 0; i < index; i++) {
+                    previous = current
+                    current = current.next
+                }
+                // 移除当前索引的 current
+                previous.next = current.next
+            }
+            length--
+            return head
+        }
+        return undefined;
+    }
+
+    // 指定位置添加
+    this.insert = (el, index) => {
+        if (index >= 0 && index < length) {     // 是否越界
+            const node = new Node(el);
+            if (index === 0) {
+                current = head
+                node.next = current
+                head = node
+            } else {
+                let previous;
+                current = head;
+                for (let i = 0; i < index; i++) {
+                    previous = current
+                    current = current.next
+                }
+                // 介于 previous & current 两者间插入
+                previous.next = node
+                node.next = current
+            }
+            length++
+            return head
+        }
+        return false;
+    }
+
+    // 查找是否存在，有 => 索引，否 => -1
+    this.indexOf = (el) => {
+        current = head
+        for (let i = 0; i < length; i++) {
+            if (current.element === el) {
+                return i
+            }
+            current = current.next
+        }
+        return -1
+    }
+
+    // 移除
+    this.remove = (index) => {
+        this.removeAt(this.indexOf(index))
+    }
+
+    // 是否为空
+    this.isEmpty = () => {
+        return length === 0
+    }
+
+    // 获取长度
+    this.size = () => {
+        return length
+    }
+
+    // 获取最开头的链表
+    this.getHead = () => {
+        return head
+    }
+
+    // 打印链表
+    this.toString = () => {
+        if (head === null) {
+            return ''
+        }
+        current = head
+        let str = current.element
+        while (current.next) {
+            current = current.next
+            str += current.element
+        }
+        return str
+    }
+}
+class HashTable {
+    constructor() {
+        this.toStrFn = (item) => {
+            if (item === null) {
+                return 'NULL'
+            } else if (item === undefined) {
+                return 'UNDEFINED'
+            } else if (typeof item === 'string' || item instanceof String) {
+                return `${item}`                
+            } else {
+                item.toString()
+            }
+        }
+        this.table = {}
+    }
+    
+    // put(key, value) {
+    //     if (key != null && value != null) {
+    //         const position = this.hashCode(key)
+    //         // 默认添加链表
+    //         if (this.table[position] == null) {
+    //             this.table[position] = new linkedList()
+    //         } 
+    //         this.table[position].push(new ValuePair(key, value))
+    //         return true
+    //     }
+    //     return false
+    // }
+
+    // get(key) {
+    //     const position = this.hashCode(key)
+    //     const linkedList = this.table[position]
+
+    //     // 值不为空
+    //     if (linkedList != null && !linkedList.isEmpty()) {
+    //         let current = linkedList.getHead()
+    //         // 从链表第一个链表开始遍历
+    //         // key相等则返回, 否则继续下一个链表
+    //         while (current != null) {
+    //             if (current.element.key === key) {
+    //                 return current.element.value
+    //             }
+    //             current = current.next
+    //         }
+    //     }
+    //     return undefined
+    // }
+
+    put(key, value) {
+        if (key != null && value != null) {
+            const position = this.hashCode(key)
+
+            // 为空则直接添加
+            // 否则每次循环定位+1, 直到为null即可添加
+            if (this.table[position] == null) {
+                this.table[position] = new ValuePair(key, value)
+            } else {
+                let index = position + 1;
+                while (this.table[index] != null) {
+                    index++
+                }
+                this.table[index] = new ValuePair(key, value)
+            }
+            return true
+        }
+        return false
+    }
+
+    get(key) {
+        const position = this.hashCode(key)
+
+        if (this.table[position] != null) {
+            if (this.table[position].key === key) {
+                return this.table[position].value
+            }
+            let index = position + 1
+            while (this.table[index] != null && this.table[index].key != key) {
+                index++
+            }
+            return this.table[index].value
+        }
+        return undefined
+    }
+
+    remove(key) {
+        const position = this.hashCode(key)
+
+        console.log(position, key)
+
+        if (this.table[position] != null) {
+
+            console.log(this.table[position].key)
+            
+            if (this.table[position].key === key) {
+                delete this.table[position]
+                this.verify(key, position)
+                return true
+            }
+            let index = position + 1
+            while (this.table[index] != null && this.table[index].key != key) {
+                index++
+            }
+            delete this.table[index]
+            return true
+        }
+        return false
+    }
+
+    /**
+     * key => 被删除的key
+     * position => 该key被删除的位置
+     */
+    verify(key, position) {
+        let hash = this.hashCode(key)
+        let index = position + 1
+        while (this.table[index] != null) {
+            // 计算当前元素的hash值
+            let posHash = this.hashCode(this.table[index].key)
+            // 表示需要将元素移动到被删除的position位置上(也就是上一个位置)
+            if (posHash <= hash || posHash <= position) {
+                this.table[position] = this.table[index]
+                delete this.table[index]
+                position = index    // 继续重复后面的元素
+            }
+            index++
+        }
+    }
+
+    // 哈希算法
+    hashCode(key) {
+        if (typeof key === 'number') {
+            return key
+        }
+        const tableKey = this.toStrFn(key)
+        let hash = 0
+        for (let i = 0; i < tableKey.length; i++) {
+            hash += tableKey.charCodeAt(i)
+        }
+        return hash % 37
+    }
+}
+
+const hash = new HashTable()
+
+hash.put('Libai', 'aaa@qq.com')
+hash.put('xiaobai', 'bbb@qq.com')
+hash.put('ab', 'cc@qq.com')
+hash.put('ba', 'dd@qq.com') // ab 和 ba 的哈希值相同, 后者会把前者覆盖
+// console.log(hash.table)
+
+// console.log(hash.get('ab'))
+// console.log(hash.get('ba'))
+console.log(hash.remove('ab'))
+console.log(hash.remove('ba'))
+// console.log(hash.get('ab'))
+// console.log(hash.get('ba'))
+
+console.log(hash.table)
+
+</script>
+</body>
+</html>

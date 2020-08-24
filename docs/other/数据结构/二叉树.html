@@ -209,6 +209,10 @@ tree.insert(12);
 tree.insert(14);
 tree.insert(18);
 tree.insert(25);
+tree.insert(27);
+tree.insert(30);
+tree.insert(46);
+tree.insert(70);
 
 // tree.remove(6)
 // console.log('dd=================')
@@ -229,6 +233,7 @@ class AVLTree extends BinarySearchTree {
         super()
     }
 
+    // LL旋转: 向右旋转
     rotationLL(node) {
         let tmp = node.left
         node.left = tmp.right
@@ -236,17 +241,21 @@ class AVLTree extends BinarySearchTree {
         return tmp
     }
     
+    // RR旋转: 向左旋转
     rotationRR(node) {
         let tmp = node.right;
         node.right = tmp.left;
         tmp.left = node;
         return tmp;
     }
+
+    // LR旋转: 先向左旋转，然后再向右旋转
     rotationLR(node) {
         node.left = this.rotationRR(node.left);
         return this.rotationLL(node);
     }
 
+    // RL旋转: 先向右旋转，然后再向左旋转
     rotationRL(node) {
         node.right = this.rotationLL(node.right);
         return this.rotationRR(node);
@@ -261,19 +270,54 @@ class AVLTree extends BinarySearchTree {
         }
     }
 
-    insert(key) {
-        console.log(2)
-        super.insert(key)
-        console.log(super.insert)
+    insertNode(key) {
+        this.insert(key)
+        
+        // 左子树高度大于右子树高度
+        if (this.getNodeHeight(this.root.left) - this.getNodeHeight(this.root.right) > 1) {
+            if (key < this.root.left.element) {
+                this.root = this.rotationLL(this.root)
+            } else {
+                this.root = this.rotationLR(this.root)
+            }
+        }
+        // 右子树高度大于左子树高度 
+        else if (this.getNodeHeight(this.root.right) - this.getNodeHeight(this.root.left) > 1) {
+            if (key > this.root.right.element) {
+                this.root = this.rotationRR(this.root)
+            } else {
+                this.root = this.rotationRL(this.root)
+            }
+        }
     }
 }
 
 const trees = new AVLTree()
-console.log(trees.getNodeHeight(tree.root))
 
-trees.insert(88)
+trees.insertNode(11);
+trees.insertNode(7);
+trees.insertNode(15);
+trees.insertNode(13);
+trees.insertNode(20);
+trees.insertNode(14);
 
-console.log(tree.data())
+trees.preOrder((value) => console.log(value));
+
+// 13 11 7 15 14 20
+
+// 来历
+// 因缘
+// 习惯
+// 追求
+// 爱好
+// 反思
+// 孤独, 归属
+
+
+
+
+
+console.log(trees.data())
 
 </script>
 </body>

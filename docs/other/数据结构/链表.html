@@ -92,7 +92,7 @@ function linkedList() {
     }
 
     // 移除
-    this.remove = (index) => {
+    this.remove = (element) => {
         this.removeAt(this.indexOf(element))
     }
 
@@ -126,21 +126,21 @@ function linkedList() {
     }
 }
 
-// const link = new linkedList()
+const link = new linkedList()
 
-// link.push(1)
-// link.push(2)
-// link.push(3)
-// link.push(4)
-// link.push(5)
+link.push(1)
+link.push(2)
+link.push(3)
+link.push(4)
+link.push(5)
 
-// console.log(link.removeAt(2))
+console.log(link.removeAt(2))
 
-// console.log(link.insert(31, 3))
+console.log(link.insert(31, 3))
 
-// console.log(link.indexOf(2))
+console.log(link.indexOf(2))
 
-// console.log(link.toString())
+console.log(link.toString())
 
 function DoublyNode(element) {
     this.element = element;
@@ -236,12 +236,12 @@ function DoublyLinkedList() {
 const list = new DoublyLinkedList()
 
 
-console.log(list.insert(11, 0))
+// console.log(list.insert(11, 0))
 
-console.log(list.insert(22, 0))
-console.log(list.insert(33, 0))
+// console.log(list.insert(22, 0))
+// console.log(list.insert(33, 0))
 
-console.log(list.removeAt(1))
+// console.log(list.removeAt(1))
 </script>
 </body>
 </html>

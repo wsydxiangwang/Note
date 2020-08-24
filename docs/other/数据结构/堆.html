@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<script>
+class Heap {
+    constructor() {
+        this.compareFn = (a, b) => {
+            return a >= b
+        }
+        this.heap = []
+    }
+
+    insert(value) {
+        if (value != null) {
+            this.heap.push(value)
+            this.siftUp(this.heap.length - 1)   // 当前索引
+            return true
+        }
+        return false
+    }
+
+    // 上浮
+    siftUp(index) {
+        let parent = this.getParentIndex(index)
+        while (
+            index > 0 && 
+            this.compareFn(this.heap[parent], this.heap[index])
+        ) {
+            this.swap(this.heap, parent, index)
+            index = parent
+            parent = this.getParentIndex(index)
+        }
+    }
+
+    siftDown(index) {
+        const left = this.getLeftIndex(index)
+        const right = this.getRightIndex(index)
+        if (
+            this.compareFn(this.heap[index], this.heap[left]) &&
+            this.compareFn(this.heap[index], this.heap[right])
+        ) {
+            if (!this.compareFn(this.heap[right], this.heap[left])) {
+                this.swap(this.heap, right, index)
+                this.siftDown(right)
+            } else {
+                this.swap(this.heap, left, index)
+                this.siftDown(left)
+            }
+        } else if (this.compareFn(this.heap[index], this.heap[left])) {
+            this.swap(this.heap, left, index)
+            this.siftDown(left)
+        } else if (this.compareFn(this.heap[index], this.heap[right])) {
+            this.swap(this.heap, right, index)
+            this.siftDown(right)
+        }
+    }
+
+    extract() {
+        if (this.isEmpty()) {
+            return undefined
+        }
+        if (this.size() === 1) {
+            return this.heap.shift()
+        }
+        const removedValue = this.heap[0]
+        this.heap[0] = this.heap.pop()
+        this.siftDown(0)
+        return removedValue
+    }
+
+    swap(array, a, b) {
+        [array[a], array[b]] = [array[b], array[a]]
+    }
+
+    size() {
+        return this.heap.length
+    }
+
+    isEmpty() {
+        return this.size() === 0
+    }
+
+    // 最小值
+    findMinimum() {
+        return this.isEmpty() ? undefined : this.heap[0]
+    }
+
+    getLeftIndex(index) {
+        return 2 * index + 1
+    }
+
+    getRightIndex(index) {
+        return 2 * index + 2
+    }
+
+    getParentIndex(index) {
+        if (index === 0) {
+            return undefined
+        }
+        return Math.floor((index - 1) / 2)
+    }
+}
+
+const heap = new Heap()
+
+// heap.insert(2)
+// heap.insert(3)
+// heap.insert(4)
+// heap.insert(5)
+// heap.insert(1)
+
+// for (let i = 1; i < 10; i++) {
+//     heap.insert(i);
+// }
+// console.log(heap.extract())
+// console.log(heap.heap) // [1, 2, 4, 5, 3]
+
+
+
+
+const arr = [7, 6, 3, 5, 4, 1, 2]
+
+arr.forEach(i => heap.insert(i))
+
+console.log(heap.heap)      // [1, 4, 2, 7, 5, 6, 3]
+</script>
+</body>
+</html>

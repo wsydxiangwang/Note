@@ -226,6 +226,8 @@ module.exports = {
 						'/other/数据结构/5',
 						'/other/数据结构/6',
 						'/other/数据结构/7',
+						'/other/数据结构/8',
+						'/other/数据结构/9',
 					]
 				},
 				{
