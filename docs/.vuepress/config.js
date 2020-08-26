@@ -40,10 +40,11 @@ module.exports = {
 					sidebarDepth: 2,
 					children: [
 						'/web/CSS/1',
+						'/web/CSS/7',
 						'/web/CSS/2',
 						'/web/CSS/3',
 						'/web/CSS/4',
-						'/web/CSS/5'
+						'/web/CSS/5',
 					]
 				},
 				{
@@ -237,6 +238,7 @@ module.exports = {
 						'/other/算法/1',
 						'/other/算法/2',
 						'/other/算法/3',
+						'/other/算法/4',
 					]
 				},
 			]

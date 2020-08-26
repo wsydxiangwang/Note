@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+body {
+    background: #57d8ff;
+    margin: 0;
+    padding: 0;
+}
+div{
+    width: 100px;
+    height: 100px;
+    margin: 40px;
+    color: #333;
+    background: #fff;
+    display: inline-block;
+}
+.border-1{
+    border: 20px solid rgba(238, 238, 238, 0.4);
+    background-clip: padding-box;
+}
+.border-2{
+    box-shadow: 0 0 0 20px green, 0 0 0 30px red, 0 0 0 40px rgba(253, 245, 230, 0.4);
+}
+.border-3{
+    border: 10px solid red;
+    outline: 10px solid pink;
+}
+</style>
+</head>
+<body>
+
+<div class="border-1">边框透明</div>
+
+<div class="border-2">shadow多重边框1</div>
+
+<div class="border-3">outline多重边框2</div>
+
+
+</body>
+</html>
