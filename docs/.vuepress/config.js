@@ -56,7 +56,7 @@ module.exports = {
 					]
 				},
 				{
-					title: 'JS 基础',
+					title: 'DOM',
 					sidebarDepth: 2,
 					children: [
 						'/web/Core/1',
@@ -64,7 +64,7 @@ module.exports = {
 					]
 				},
 				{
-					title: 'JS 深入数组',
+					title: '数组',
 					children: [
 						'/web/Array/1', 
 						'/web/Array/2', 
@@ -77,7 +77,7 @@ module.exports = {
 					]
 				},
 				{
-					title: 'JS 对象',
+					title: '对象',
 					children: [
 						'/web/Object/1', 
 						'/web/Object/2', 
@@ -88,7 +88,7 @@ module.exports = {
 					]
 				},
 				{
-					title: 'JS 字符串',
+					title: '字符串',
 					children: [
 						'/web/String/1', 
 						'/web/String/2', 
@@ -142,17 +142,6 @@ module.exports = {
 						'/web/http/8', 
 						'/web/http/9', 
 						'/web/http/10',
-					]
-				},
-				{
-					title: '稀奇古怪的题',
-					children: [
-						'/web/Other/1', 
-						'/web/Other/2', 
-						'/web/Other/3', 
-						'/web/Other/4', 
-						'/web/Other/5', 
-						'/web/Other/6'
 					]
 				},
 				{
@@ -239,6 +228,17 @@ module.exports = {
 						'/other/算法/2',
 						'/other/算法/3',
 						'/other/算法/4',
+					]
+				},
+				{
+					title: '稀奇古怪的题',
+					children: [
+						'/web/Other/1', 
+						'/web/Other/2', 
+						'/web/Other/3', 
+						'/web/Other/4', 
+						'/web/Other/5', 
+						'/web/Other/6'
 					]
 				},
 			]
