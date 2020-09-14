@@ -13,6 +13,7 @@
     <li data-id="4">4444444</li>
     <li data-id="5">5555555</li>
 </ul>
+<button id=btn>哦豁</button>
 <script>
     // 防抖方法 time内有触发 就会一直延后执行 知道 time后没触发才执行
     // const timeout = {}; // 锁用一个对象存，不同方法名作为属性这样就可以作为公共的方法
@@ -58,6 +59,22 @@
     
     function sayHi(id){ console.log('hi', id) }
     function sayno(id){ console.log('on', id) }
+
+
+    function debounces(fn, interval) {
+        let timer = null;
+        return function (...args) {
+            if(timer) clearTimeout(timer);
+            timer = setTimeout(() => {
+                fn.apply(this, args);
+            }, interval);
+        }
+    }
+    let a = debounces(sayHi, 2000)
+    document.querySelector('#btn').onclick = function(){
+        console.log('安安安')
+        a(2)
+    }
 
 </script>
 </body>

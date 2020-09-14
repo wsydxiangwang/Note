@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<script>
+// let c = [1, 2, 3]
+// let d = {a:2}
+// Object.prototype.toString = function(){
+//     console.log(2)
+// }
+// Array.prototype.toString = function(){
+//     console.log(3)
+// }
+// Number.prototype.toString = function(){
+//     console.log(4)
+// }
+// String.prototype.toString = function(){
+//     console.log(5)
+// }
+// console.log(2 + 2)
+// console.log('sdsd')
+// console.log(c + 2)
+// console.log(d + d)
+
+class A {
+    constructor(name) {
+        this.name = name
+    }
+    toString() {
+        return '不吃茶的' + this.name
+    }
+}
+
+let a = new A('Libai')
+
+console.log(a)
+console.log(a.valueOf())
+console.log(a + 2222)
+console.log(a)
+
+// class B {
+//     constructor(age) {
+//         this.age = age
+//     }
+//     valueOf() {
+//         console.log('valueOf')
+//         return this.age
+//     }
+// }
+
+// let b = new B(1)
+
+// console.log(b)
+// console.log(b + 1)
+// console.log(b == 2)
+// console.log(b.valueOf())
+// console.log(b)
+</script>    
+</body>
+</html>

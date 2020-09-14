@@ -25,16 +25,16 @@ module.exports = {
 		],
 		sidebar: {
 			'/web/': [
-				// {
-				// 	title: 'Vue 原理',
-				// 	sidebarDepth: 2,
-				// 	children: ['/web/vue/9', '/web/vue/1', '/web/vue/2', '/web/vue/3', '/web/vue/4', '/web/vue/5', '/web/vue/6', '/web/vue/7', '/web/vue/8',  '/web/vue/10', '/web/vue/20']
-				// },
-				// {
-				// 	title: 'Vue 方法',
-				// 	sidebarDepth: 2,
-				// 	children: ['/web/vue2/1', '/web/vue2/2', '/web/vue2/3', '/web/vue2/4', '/web/vue2/5', '/web/vue2/6', '/web/vue2/7', '/web/vue2/8', '/web/vue2/9', '/web/vue2/10', '/web/vue2/20']
-				// },
+				{
+					title: 'Vue 原理',
+					sidebarDepth: 2,
+					children: ['/web/vue/9', '/web/vue/1', '/web/vue/2', '/web/vue/3', '/web/vue/4', '/web/vue/5', '/web/vue/6', '/web/vue/7', '/web/vue/8',  '/web/vue/10', '/web/vue/20']
+				},
+				{
+					title: 'Vue 方法',
+					sidebarDepth: 2,
+					children: ['/web/vue2/1', '/web/vue2/2', '/web/vue2/3', '/web/vue2/4', '/web/vue2/5', '/web/vue2/6', '/web/vue2/7', '/web/vue2/8', '/web/vue2/9', '/web/vue2/10', '/web/vue2/20']
+				},
 				{
 					title: 'CSS',
 					sidebarDepth: 2,
@@ -150,6 +150,13 @@ module.exports = {
 						'/web/正则/1', 
 						'/web/正则/2'
 					]
+				},
+				{
+					title: '未知分类的集合',
+					children: [
+						'/web/other/1', 
+						'/web/other/2'
+					]
 				}
 			],
 			'/after/': [
@@ -231,14 +238,16 @@ module.exports = {
 					]
 				},
 				{
-					title: '稀奇古怪的题',
+					title: '一些面试题',
 					children: [
-						'/web/Other/1', 
-						'/web/Other/2', 
-						'/web/Other/3', 
-						'/web/Other/4', 
-						'/web/Other/5', 
-						'/web/Other/6'
+						'/other/Other/1', 
+						'/other/Other/2', 
+						'/other/Other/3', 
+						'/other/Other/4', 
+						'/other/Other/5', 
+						'/other/Other/6',
+						'/other/Other/7',
+						'/other/Other/8',
 					]
 				},
 			]

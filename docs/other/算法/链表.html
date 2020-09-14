@@ -132,14 +132,14 @@ function linkedList() {
 
 const list = new linkedList()
 
-const arr = [1,2,3,4]
+const arr = [1,2,3,4,5,6,7]
 
 arr.map(i => list.push(i))
 const data = list.getList()
 
 console.log(data)
 
-
+// 反转链表
 const reverseList1 = (head) => {
     if (!head) {
         return null
@@ -181,7 +181,80 @@ const reverseList3 = (head) => {
 
     return reverse
 }
-console.log(reverseList3(data))
+// console.log(reverseList3(data))
+
+// 区间反转
+const reverseList4 = (head, form, to) => {
+    // 保存原节点
+    let dummy = new Node()
+    dummy.next = head
+
+    let tmpHead = dummy
+
+    // 找到第form-1个节点
+    for (let i = 0; i < form - 1; i++) {
+        tmpHead = tmpHead.next
+    }
+
+    // 区间反转
+    let prev = null, curr = tmpHead.next
+    for (let i = 0; i <= to - form; i++) {
+        let next = curr.next
+        curr.next = prev
+        prev = curr
+        curr = next
+    }
+
+    // 将翻转的部分链表和原链表 拼接
+    tmpHead.next.next = curr
+    tmpHead.next = prev
+
+    return dummy.next
+}
+
+const reverseList5 = (head, m, n) => {
+    if (!head) return null
+
+    // 第m-1个节点 & 第m个节点
+    let prev = null, curr = head
+    while (m > 1) {
+        prev = curr
+        curr = curr.next
+        m--
+        n--
+    }
+    // 分区反转
+    let con = prev, tail = curr
+    while (n > 0) {
+        let next = curr.next
+        curr.next = prev
+        prev = curr
+        curr = next
+        n--
+    }
+    // 解决环
+    if (con != null) {
+        con.next = prev
+    } else {
+        head = prev
+    }
+    tail.next = curr
+
+    return head
+}
+
+const reverseList6 = (head, m, n) => {
+
+}
+// console.log(reverseList6(data, 3, 6))
+
+
+// 两个一组反转
+const reverseList7 = (head) => {
+    
+    return head
+}
+console.log(reverseList7(data))
 
 // 合并两个有序列表
 // const arrTwo = [[1, 2, 4], [1, 3, 4]]
