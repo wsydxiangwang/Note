@@ -41,6 +41,30 @@
 - [发布—订阅模式(观察者模式)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/3.md)
 - [代理模式](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/4.md)
 
+### 手写代码
+
+- [call、apply 的奇妙感觉](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/1.md)
+- [bind 进阶函数的实现](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/2.md)
+- [面试必备的 Promise A+ 规范](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/3.md)
+- [new 原理及模拟实现](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/4.md)
+
+### 奇淫技巧
+
+- [全面分析toString与valueOf，并随手解决掉几道大厂面试题](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Other/1.md)
+
+### 一些面试题
+
+- [undefined与null的区别](https://github.com/wsydxiangwang/Note/blob/master/docs/other/Other/1.md)
+- [实现一个无限累加函数](https://github.com/wsydxiangwang/Note/blob/master/docs/other/Other/2.md)
+- [数组扁平化、去重、升序](https://github.com/wsydxiangwang/Note/blob/master/docs/other/Other/3.md)
+- [['1', '2', '3'].map(parseInt)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/Other/4.md)
+- [代码输出值(this/函数/原型)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/Other/5.md)
+- [代码输出值(this/自调用/闭包)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/Other/6.md)
+- [实现函数 sleep()](https://github.com/wsydxiangwang/Note/blob/master/docs/other/Other/7.md)
+- [a===1&&a===2&&a===3](https://github.com/wsydxiangwang/Note/blob/master/docs/other/Other/8.md)
+
+
+
 ### 数据结构
 
 - [栈(Stack)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/1.md)
@@ -56,13 +80,6 @@
 - [复杂度概念](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E7%AE%97%E6%B3%95/1.md)
 - [排序算法](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E7%AE%97%E6%B3%95/2.md)
 - [二分搜索](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E7%AE%97%E6%B3%95/3.md)
-
-### 手写代码
-
-- [call、apply 的奇妙感觉](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/1.md)
-- [bind 进阶函数的实现](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/2.md)
-- [面试必备的 Promise A+ 规范](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/3.md)
-- [new 原理及模拟实现](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/4.md)
 
 ### Vue
 
