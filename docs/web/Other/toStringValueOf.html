@@ -7,58 +7,103 @@
 </head>
 <body>
 <script>
-// let c = [1, 2, 3]
-// let d = {a:2}
+let c = [1, 2, 3]
+let d = {a:2}
 // Object.prototype.toString = function(){
-//     console.log(2)
+//     console.log('Object')
 // }
 // Array.prototype.toString = function(){
-//     console.log(3)
+//     console.log('Array')
 // }
 // Number.prototype.toString = function(){
-//     console.log(4)
+//     console.log('Number')
 // }
 // String.prototype.toString = function(){
-//     console.log(5)
+//     console.log('String')
 // }
-// console.log(2 + 2)
-// console.log('sdsd')
-// console.log(c + 2)
-// console.log(d + d)
+// Object.prototype.valueOf = function(){
+//     console.log('22 Object')
+// }
+// Array.prototype.valueOf = function(){
+//     console.log('22 Array')
+// }
+// Number.prototype.valueOf = function(){
+//     console.log('22 Number')
+// }
+// String.prototype.valueOf = function(){
+//     console.log('22 String')
+// }
+// console.log(c.toString())
+// console.log(c.valueOf())
+// console.log(d.valueOf())
+// console.log(2 + 1)
+// console.log('s')
+// console.log('s' + 2)
+// console.log(c < 2)
+// console.log(c + c)
+// console.log(d > d)
+
+
+// class A {
+//     constructor(count) {
+//         this.count = count
+//     }
+//     toString() {
+//         return '我有这么多钱：' + this.count
+//     }
+// }
+// let a = new A(100)
+
+// console.log(a)
+// console.log(a.toString())   // 我有这么多钱：100
+// console.log(a + 1)          // 我有这么多钱：1001
+
+// 两者区别
 
 class A {
-    constructor(name) {
-        this.name = name
-    }
+    // valueOf() {
+    //     console.log('valueOf')
+    //     return 2
+    // }
     toString() {
-        return '不吃茶的' + this.name
+        console.log('toString')
+        return '哈哈哈'
     }
 }
 
-let a = new A('Libai')
+let a = new A()
 
-console.log(a)
-console.log(a.valueOf())
-console.log(a + 2222)
-console.log(a)
+console.log(String(a))  // '哈哈哈'   => (toString)
+console.log(Number(a))  // 2         => (valueOf)
+console.log(a + '22')   // '222'     => (valueOf)
+console.log(a == 2)     // true      => (valueOf)
+console.log(a === 2)    // false
 
-// class B {
-//     constructor(age) {
-//         this.age = age
+// a===1&&a===2&&a===3
+// class AA {
+//     constructor(value) {
+//         this.value = value;
 //     }
 //     valueOf() {
-//         console.log('valueOf')
-//         return this.age
+//         return this.value++;
 //     }
 // }
+// const aa = new AA(1);
+// if (aa == 1 && aa == 2 && aa == 3) {
+//     console.log("Hi Eno!");
+// }
 
-// let b = new B(1)
+// let value = 1;
+// Object.defineProperty(window, 'v_a', {
+//     get() {
+//         return value++
+//     }
+// })
 
-// console.log(b)
-// console.log(b + 1)
-// console.log(b == 2)
-// console.log(b.valueOf())
-// console.log(b)
+// if (v_a === 1 && v_a === 2 && v_a === 3) {
+//     console.log("Hi Libai!")
+// }
+
 </script>    
 </body>
 </html>
