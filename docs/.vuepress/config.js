@@ -177,6 +177,7 @@ module.exports = {
 				},
 				{
 					title: '未知分类的集合',
+					sidebarDepth: 2,
 					children: [
 						'/web/Other/1', 
 						'/web/Other/2'

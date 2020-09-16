@@ -60,24 +60,27 @@ let d = {a:2}
 
 // 两者区别
 
-class A {
-    // valueOf() {
-    //     console.log('valueOf')
-    //     return 2
-    // }
-    toString() {
-        console.log('toString')
-        return '哈哈哈'
-    }
-}
+// class A {
+//     valueOf() {
+//         console.log('valueOf')
+//         return 2
+//     }
+//     // toString() {
+//     //     console.log('toString')
+//     //     return '哈哈哈'
+//     // }
+// }
 
-let a = new A()
+// let a = new A()
 
-console.log(String(a))  // '哈哈哈'   => (toString)
-console.log(Number(a))  // 2         => (valueOf)
-console.log(a + '22')   // '222'     => (valueOf)
-console.log(a == 2)     // true      => (valueOf)
-console.log(a === 2)    // false
+// Object.prototype.toString = null; 
+
+// console.log(a.toString())
+// console.log(String(a))  // '哈哈哈'   => (toString)
+// console.log(Number(a))  // 2         => (valueOf)
+// console.log(a + '22')   // '222'     => (valueOf)
+// console.log(a == 2)     // true      => (valueOf)
+// console.log(a === 2)    // false
 
 // a===1&&a===2&&a===3
 // class AA {
@@ -103,6 +106,66 @@ console.log(a === 2)    // false
 // if (v_a === 1 && v_a === 2 && v_a === 3) {
 //     console.log("Hi Libai!")
 // }
+
+
+
+
+// 无限累加函数
+// function add(a) {
+// 	function sum(b) { // 使用闭包
+//     	a = b ? a + b : a; // 累加
+//         console.log(3)
+//     	return sum;
+//  	}
+//     console.log(1)
+//     sum.toString = function() { // 只在最后一次调用
+//         console.log(a)
+//         console.log('toString') 
+//         return a;
+//     }
+//     console.log(2)
+//  	return sum; // 返回一个函数
+// }
+
+// console.log(add(1)(2)(3)(4)(10))
+// console.log(add(1)(2))
+// console.log(add(1)(2)(3))
+// console.log(add(1)(2)(3)(4))
+
+
+function add(){
+    // 1 把所有参数转换成数组
+    let args = Array.prototype.slice.call(arguments)
+
+    // 2 把所有参数都合并成一个数组
+    let fn = function() {
+        let arg_fn = Array.prototype.slice.call(arguments)
+
+        console.log(arg_fn)
+
+        // 3 再次调用add函数，传递合并的参数
+        return add.apply(null, args.concat(arg_fn))
+    }
+
+    fn.toString = function() {
+        return args.reduce(function(a, b) {
+            return a + b
+        })
+    }
+
+    console.log(args) 
+
+    return fn
+}
+
+let a = add(2, 3)(1, 2)(2, 3)
+
+if (a == 2) {
+    console.log(2)
+} else {
+    console.log(a)
+}
+// console.log(add(2, 3)(1, 2)(2, 3))
 
 </script>    
 </body>

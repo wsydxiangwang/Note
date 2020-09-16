@@ -50,7 +50,7 @@
 
 ### 奇淫技巧
 
-- [全面分析toString与valueOf，并随手解决掉几道大厂面试题](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Other/1.md)
+- [全面分析toString与valueOf，并随手解决掉几道大厂必备面试题](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Other/1.md)
 
 ### 一些面试题
 
