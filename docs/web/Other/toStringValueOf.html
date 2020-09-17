@@ -13,7 +13,9 @@ let d = {a:2}
 //     console.log('Object')
 // }
 // Array.prototype.toString = function(){
-//     console.log('Array')
+//     // console.log('aaa', this.join(','))
+//     // console.log('Array')
+//     return this.join(',')
 // }
 // Number.prototype.toString = function(){
 //     console.log('Number')
@@ -33,15 +35,13 @@ let d = {a:2}
 // String.prototype.valueOf = function(){
 //     console.log('22 String')
 // }
-// console.log(c.toString())
-// console.log(c.valueOf())
-// console.log(d.valueOf())
-// console.log(2 + 1)
-// console.log('s')
-// console.log('s' + 2)
-// console.log(c < 2)
-// console.log(c + c)
-// console.log(d > d)
+// console.log(2 + 1)  // 3
+// console.log('s')    // 's'
+// console.log('s'+2)  // 's2'
+// console.log(c < 2)  // false        (一次 => 'Array')
+// console.log(c + c)  // "1,2,31,2,3" (两次 => 'Array')
+// console.log(d > d)  // false        (两次 => 'Object')
+
 
 
 // class A {
@@ -96,16 +96,17 @@ let d = {a:2}
 //     console.log("Hi Eno!");
 // }
 
-// let value = 1;
-// Object.defineProperty(window, 'v_a', {
-//     get() {
-//         return value++
-//     }
-// })
+let value = 1;
+Object.defineProperty(window, 'v_a', {
+    get() {
+        console.log(value)
+        return value++
+    }
+})
 
-// if (v_a === 1 && v_a === 2 && v_a === 3) {
-//     console.log("Hi Libai!")
-// }
+if (v_a === 1 && v_a === 2 && v_a === 3) {
+    console.log("Hi Libai!")
+}
 
 
 
@@ -158,14 +159,56 @@ function add(){
     return fn
 }
 
-let a = add(2, 3)(1, 2)(2, 3)
+// let a = add(2, 3)(1, 2)(2, 3)
 
-if (a == 2) {
-    console.log(2)
-} else {
-    console.log(a)
-}
+// if (a == 2) {
+//     console.log(2)
+// } else {
+//     console.log(a)
+// }
 // console.log(add(2, 3)(1, 2)(2, 3))
+
+
+
+// Symbol.toPrimitive
+
+
+// class A {
+//     constructor(count) {
+//         this.count = count
+//     }
+//     valueOf() {
+//         console.log('valueOf')
+//         return 2
+//     }
+//     toString() {
+//         console.log('toString')
+//         return '哈哈哈'
+//     }
+//     [Symbol.toPrimitive](hint) {
+//         console.log('=====', hint)
+//         if (hint == "number") {
+//             return 10;
+//         }
+//         if (hint == "string") {
+//             return "Hello Libai";
+//         }
+//         return true;
+//     }
+// }
+
+// const a = new A(10)
+
+// console.log(`${a}`)     // 'Hello Libai' => (hint == "string")
+// console.log(String(a))  // 'Hello Libai' => (hint == "string")
+// console.log(+a)         // 10            => (hint == "number")
+// console.log(a * 20)     // 200           => (hint == "number")
+// console.log(a / 20)     // 0.5           => (hint == "number")
+// console.log(Number(a))  // 10            => (hint == "number")
+// console.log(a + '22')   // 'true22'      => (hint == "default")
+// console.log(a == 10)     // false        => (hint == "default")
+
+
 
 </script>    
 </body>
