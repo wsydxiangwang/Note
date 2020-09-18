@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>策略模式</title>
+</head>
+<body>
+<script>
+
+/*策略类*/
+let levelOBJ = {
+    "A": (money) => money * 4,
+    "B": (money) => money * 3,
+    "C": (money) => money * 2
+}
+
+/*环境类*/
+let calculateBouns = (level, money) => {
+    return levelOBJ[level](money);
+}
+
+console.log(calculateBouns('A', 10000)); // 40000
+console.log(calculateBouns('B', 20000)); // 60000
+</script>
+</body>
+</html>

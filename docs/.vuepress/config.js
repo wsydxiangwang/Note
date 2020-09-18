@@ -69,6 +69,7 @@ module.exports = {
 						'/web/CSS/3',
 						'/web/CSS/4',
 						'/web/CSS/5',
+						'/web/CSS/6',
 					]
 				},
 				{
@@ -210,13 +211,13 @@ module.exports = {
 				},
 			],
 			'/other/': [
-				{
-					title: '高阶函数',
-					sidebarDepth: 2,
-					children: [
-						'/other/高阶函数/1',
-					]
-				},
+				// {
+				// 	title: '高阶函数',
+				// 	sidebarDepth: 2,
+				// 	children: [
+				// 		'/other/高阶函数/1',
+				// 	]
+				// },
 				{
 					title: '手写代码',
 					children: [

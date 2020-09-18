@@ -9,38 +9,48 @@
 <script>
 let c = [1, 2, 3]
 let d = {a:2}
-// Object.prototype.toString = function(){
-//     console.log('Object')
-// }
-// Array.prototype.toString = function(){
-//     // console.log('aaa', this.join(','))
-//     // console.log('Array')
-//     return this.join(',')
-// }
-// Number.prototype.toString = function(){
-//     console.log('Number')
-// }
-// String.prototype.toString = function(){
-//     console.log('String')
-// }
-// Object.prototype.valueOf = function(){
-//     console.log('22 Object')
-// }
-// Array.prototype.valueOf = function(){
-//     console.log('22 Array')
-// }
-// Number.prototype.valueOf = function(){
-//     console.log('22 Number')
-// }
-// String.prototype.valueOf = function(){
-//     console.log('22 String')
-// }
-// console.log(2 + 1)  // 3
+
+
+Object.prototype.valueOf = function(){
+    console.log('22 Object')
+}
+Array.prototype.valueOf = function(){
+    console.log('22 Array')
+}
+Number.prototype.valueOf = function(){
+    console.log('22 Number')
+}
+String.prototype.valueOf = function(){
+    console.log('22 String')
+}
+
+Object.prototype.toString = function(){
+    console.log('Object')
+}
+Array.prototype.toString = function(){
+    // console.log('aaa', this.join(','))
+    console.log('Array')
+    return this.join(',')
+}
+Number.prototype.toString = function(){
+    console.log('Number')
+}
+String.prototype.toString = function(){
+    console.log('String')
+}
+
+let dd = 2;
+let cc = '3'
+
+console.log(dd + cc)    // 没打印 Number
+console.log(cc + {})    // 有打印 Object
+
 // console.log('s')    // 's'
 // console.log('s'+2)  // 's2'
 // console.log(c < 2)  // false        (一次 => 'Array')
 // console.log(c + c)  // "1,2,31,2,3" (两次 => 'Array')
 // console.log(d > d)  // false        (两次 => 'Object')
+
 
 
 
@@ -96,17 +106,17 @@ let d = {a:2}
 //     console.log("Hi Eno!");
 // }
 
-let value = 1;
-Object.defineProperty(window, 'v_a', {
-    get() {
-        console.log(value)
-        return value++
-    }
-})
+// let value = 1;
+// Object.defineProperty(window, 'v_a', {
+//     get() {
+//         console.log(value)
+//         return value++
+//     }
+// })
 
-if (v_a === 1 && v_a === 2 && v_a === 3) {
-    console.log("Hi Libai!")
-}
+// if (v_a === 1 && v_a === 2 && v_a === 3) {
+//     console.log("Hi Libai!")
+// }
 
 
 
@@ -134,30 +144,49 @@ if (v_a === 1 && v_a === 2 && v_a === 3) {
 // console.log(add(1)(2)(3)(4))
 
 
-function add(){
-    // 1 把所有参数转换成数组
-    let args = Array.prototype.slice.call(arguments)
 
-    // 2 把所有参数都合并成一个数组
-    let fn = function() {
-        let arg_fn = Array.prototype.slice.call(arguments)
 
-        console.log(arg_fn)
+// function aa(){
+//     function fn(){
+//         a = 2
+//         console.log(a)
+//     }
+//     fn.valueOf = () => {
+//         console.log(224324234)
+//         return 542
+//     }
+//     fn.toString = null
+//     return fn
+// }
 
-        // 3 再次调用add函数，传递合并的参数
-        return add.apply(null, args.concat(arg_fn))
-    }
+// const a = aa()
 
-    fn.toString = function() {
-        return args.reduce(function(a, b) {
-            return a + b
-        })
-    }
+// console.log(a)
 
-    console.log(args) 
+// function add(){
+//     // 1 把所有参数转换成数组
+//     let args = Array.prototype.slice.call(arguments)
 
-    return fn
-}
+//     // 2 把所有参数都合并成一个数组
+//     let fn = function() {
+//         let arg_fn = Array.prototype.slice.call(arguments)
+
+//         console.log(arg_fn)
+
+//         // 3 再次调用add函数，传递合并的参数
+//         return add.apply(null, args.concat(arg_fn))
+//     }
+
+//     fn.toString = function() {
+//         return args.reduce(function(a, b) {
+//             return a + b
+//         })
+//     }
+
+//     console.log(args) 
+
+//     return fn
+// }
 
 // let a = add(2, 3)(1, 2)(2, 3)
 
