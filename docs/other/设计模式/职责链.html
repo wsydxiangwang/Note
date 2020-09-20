@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>职责链</title>
+</head>
+<body>
+<script>
+
+// 500元订单
+// const order500 = (orderType, pay, stock) => {
+//     if (orderType === 1 && pay == true) {
+//         console.log('500元定金预购，得到100优惠券')
+//     } else {
+//         order200(orderType, pay, stock)
+//     }
+// }
+
+// // 200元订单
+// const order200 = (orderType, pay, stock) => {
+//     if (orderType === 2 && pay == true) {
+//         console.log('200元定金预购，得到100优惠券')
+//     } else {
+//         orderNormal(orderType, pay, stock)
+//     }
+// }
+
+const order500 = (orderType, pay, stock) => {
+    if (orderType === 1 && pay == true) {
+        console.log('500元定金预购，得到100优惠券')
+    } else {
+        return 'nextSuccessor'
+    }
+}
+
+// 200元订单
+const order200 = (orderType, pay, stock) => {
+    if (orderType === 2 && pay == true) {
+        console.log('200元定金预购，得到100优惠券')
+    } else {
+        return 'nextSuccessor'
+    }
+}
+
+// 普通购买
+const orderNormal = (orderType, pay, stock) => {
+    if (stock > 0) {
+        console.log('普通购买，无优惠券')
+    } else {
+        console.log('手机库存不足')
+    }
+}
+
+// 测试结果
+// order500(1, true, 500)  // 500元定金预购，得到100优惠券
+// order500(1, false, 500) // 普通购买，无优惠券
+// order500(2, true, 500)  // 200元定金预购，得到100优惠券
+// order500(3, false, 500) // 普通购买，无优惠券
+// order500(3, false, 0)   // 手机库存不足
+
+class Chain {
+    constructor(fn) {
+        this.fn = fn
+        this.successor = null
+    }
+    setNext = function(successor) {
+        return this.successor = successor
+    } 
+    init = function() {
+        console.log(1)
+        const ret = this.fn.apply(null, arguments)
+        if (ret === 'nextSuccessor') {
+            console.log(2)
+            return this.successor && this.successor.init.apply(this.successor, arguments)
+        }
+        return ret
+    }
+}
+
+const chainOrder500 = new Chain(order500)
+const chainOrder200 = new Chain(order200)
+const chainOrderNormal = new Chain(orderNormal)
+
+// console.log(chainOrder500)
+// console.log(chainOrder200)
+// console.log(chainOrderNormal)
+
+// 指定节点在职责链中的顺序
+chainOrder500.setNext(chainOrder200)
+chainOrder200.setNext(chainOrderNormal)
+
+// 最后，只需调用第一个节点
+// chainOrder500.init(1, true, 500)  // 500元定金预购，得到100优惠券
+// chainOrder500.init(1, false, 500) // 普通购买，无优惠券
+// chainOrder500.init(2, true, 500)  // 200元定金预购，得到100优惠券
+chainOrder500.init(3, false, 500) // 普通购买，无优惠券
+// chainOrder500.init(3, false, 0)   // 手机库存不足
+
+</script>
+</body>
+</html>
