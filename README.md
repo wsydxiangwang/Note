@@ -20,6 +20,11 @@
 
 正在边学边整理中，如对你有帮助，还请给个star，感谢支持！！欢迎指错和建议
 
+### Vue 3.0 学习
+
+- [Vue3.0 遗留万年代码也能重构的Composition API](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue2/20.md)
+- [Vue3.0 响应式原理](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue2/10.md)
+
 ### JavaScript
 
 - [让人窒息的原型和原型链](https://github.com/wsydxiangwang/Note/blob/master/docs/web/this/4.md)
