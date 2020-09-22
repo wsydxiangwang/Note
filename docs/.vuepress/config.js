@@ -224,7 +224,11 @@ module.exports = {
 						'/other/手写/1', 
 						'/other/手写/2', 
 						'/other/手写/3', 
-						'/other/手写/4'
+						'/other/手写/4',
+						'/other/手写/5',
+						'/other/手写/6',
+						'/other/手写/7',
+						'/other/手写/8'
 					]
 				},
 				{
