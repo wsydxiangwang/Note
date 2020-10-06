@@ -122,22 +122,28 @@ MyPromise.prototype.then = function(onFulfilled, onRejected){
     }
 }
 
-const promise = (name) => {
-    return new MyPromise((resolve, reject) => {
-        resolve(name)
-    })
+MyPromise.prototype.catch = function(onRejected) {
+    return this.then(null, onRejected)
 }
-promise('1111').then(res => {
-    console.log(res)
-    return promise('22222')
-}).then(res => {
-    console.log(res)
-})
-new MyPromise((resolve, reject) => {
-    resolve('222')
-}).then(res => {
-    console.log(res)
-})
+
+// const promise = (name) => {
+//     return new MyPromise((resolve, reject) => {
+//         resolve(name)
+//     })
+// }
+// promise('1111').then(res => {
+//     console.log(res)
+//     return promise('22222')
+// }).then(res => {
+//     console.log(res)
+// })
+// new MyPromise((resolve, reject) => {
+//     reject('222')
+// }).then(res => {
+//     console.log(res)
+// }).catch(err => {
+//     console.log('err', err)
+// })
 
 // function a(fn){
 //     console.log(22222)
@@ -156,6 +162,83 @@ new MyPromise((resolve, reject) => {
 //     b()
 // })
 
+Promise.resolve = function(param){
+    // 如果是Promise实例，直接返回
+    if (param instanceof MyPromise) {
+        return param
+    }
+    // 如果不是Promise实例，返回一个新的Promise对象，状态为FULFILLED
+    return new MyPromise((resolve, reject) => resolve(param))
+}
+
+Promise.reject = function(param){
+    return new MyPromise((resolve, reject) => reject(param))
+}
+
+Promise.all = function(promises){
+    return new MyPromise((resolve, reject) => {
+        let result = [];
+        let len = promises.length;
+        
+        if (len === 0) {
+            return resolve(result)
+        }
+
+        for (let i = 0; i < len; i++) {
+            Promise.resolve(promises[i]).then(res => {
+                result[i] = res
+                if (i == len - 1) { // 最后一个
+                    resolve(result)
+                }
+            }).catch(err => {
+                reject(err)
+            })
+        }
+    })
+}
+
+Promise.race = function(promises){
+    return new MyPromise((resolve, reject) => {
+        let len = promises.length;
+        if (len === 0) return
+        for (let i = 0; i < len; i++) {
+            Promise.resolve(promises[i]).then(res => {
+                resolve(res)
+                return
+            }).catch(err => {
+                reject(err)
+                return
+            })
+        }
+    })
+}
+
+let Promise1 = new MyPromise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(2222);
+        // reject('数字太大了');
+    }, 1000)
+})
+let Promise2 = new MyPromise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(3);
+        // reject('数字太大了');
+    }, 0)
+})
+let Promise3 = new MyPromise((resolve, reject) => {
+    setTimeout(() => {
+        // resolve(555);
+        reject('数字太大了');
+    }, 3000)
+})
+
+let p = Promise.race([Promise1, Promise2, Promise3])
+
+p.then((res) => {
+    console.log(res)
+}).catch(err => {
+    console.log(err)
+})
 
 </script>
 </body>
