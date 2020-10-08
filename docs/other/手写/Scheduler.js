@@ -1,9 +1,7 @@
 class Scheduler {
-    constructor(
-        maxLimit = 2
-    ) {
+    constructor() {
         this.queue = [];
-        this.maxLimit = maxLimit;
+        this.maxLimit = 2;
         this.runCounts = 0;
     }
     add(promiseCreator) {
@@ -16,27 +14,26 @@ class Scheduler {
     }
     request() {
         if (!this.queue || !this.queue.length || this.runCounts >= this.maxLimit) {
+            console.log('当前执行数量：', this.runCounts)
             return
         }
         this.runCounts++
-        console.log('dd', this.runCounts)
         this.queue.shift()().then(() => {
             this.runCounts--
             this.request()
         })
+        console.log('当前执行数量：', this.runCounts)
     }
 }
 
 const scheduler = new Scheduler()
 
-const addTask = (time, order) => {
-    scheduler.add(() => {
-        return new Promise(resolve => {
-            setTimeout(resolve, time)
-        }).then(() => {
-            console.log(order)
-        })
-    })
+const timeout = (time) => new Promise(resolve => {
+    setTimeout(resolve, time)
+})
+
+const addTask = (time, value) => {
+    scheduler.add(() => timeout(time).then(() => console.log(value)))
 }
 
 addTask(1000, '1');
