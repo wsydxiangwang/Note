@@ -150,7 +150,8 @@ module.exports = {
 						'/web/性能优化/4', 
 						'/web/性能优化/5', 
 						'/web/性能优化/6', 
-						'/web/性能优化/7'
+						'/web/性能优化/7',
+						'/web/性能优化/8'
 					]
 				},
 				{
@@ -234,8 +235,7 @@ module.exports = {
 						'/other/手写/11',
 						'/other/手写/12',
 						'/other/手写/13',
-						'/other/手写/14',
-						'/other/手写/15',
+						'/other/手写/14'
 					]
 				},
 				{
@@ -247,6 +247,7 @@ module.exports = {
 						'/other/设计模式/3',
 						'/other/设计模式/4',
 						'/other/设计模式/5',
+						'/other/设计模式/6',
 					]
 				},
 				{

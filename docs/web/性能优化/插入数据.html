@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<ul></ul>
+<script>
+
+// setTimeout(() => {
+//     console.log('来了')
+//     const oUl = document.querySelector('ul')
+//     for (let i = 0; i < 200000; i++) {
+//         const oLi = document.createElement('li')
+//         oLi.innerHTML = i;
+//         oUl.appendChild(oLi)
+//     }
+// }, 1000)
+
+
+setTimeout(() => {
+    console.time('over')
+    
+    let oUl = document.querySelector('ul')
+    let fragment = document.createDocumentFragment()
+
+    for (let i = 0; i < 200000; i++) {
+        const oLi = document.createElement('li')
+        oLi.innerHTML = i;
+        fragment.appendChild(oLi)
+    }
+
+    oUl.appendChild(fragment)
+
+    // 据说下面这样子世界会更清净
+    fragment = null
+    
+    console.timeEnd('over')
+}, 1000)
+
+
+
+</script>
+</body>
+</html>
