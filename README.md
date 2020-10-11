@@ -1,13 +1,5 @@
 # <div align="center">前端学习</div>
 
-
-<div align="center">
-    <img src="https://image.raindays.cn/image/github/nuxt.png">
-    <img src="https://image.raindays.cn/image/github/vuecli.png">
-    <img src="https://image.raindays.cn/image/github/node.png">
-    <img src="https://image.raindays.cn/image/github/mongodb.png">
-</div>
-
 <div align="center">
     <img src="https://image.raindays.cn/image/github/mood.png" width="350px" style="margin:20px 0 10px">
 </div>
