@@ -28,7 +28,7 @@
 - [所向披靡的 async/await](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/4.md)
 - [手把手教你跨域的各种骚操作](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/5.md)
 
-...JS部分，更多的基础文章，在这里看比较方便👉[Vuepress，一个专业笔记的网站](https://wsydxiangwang.github.io) 
+...JS更多的基础文章，在这里看比较方便👉[Vuepress，一个专业笔记的网站](https://wsydxiangwang.github.io) 
 
 ### 设计模式
 
