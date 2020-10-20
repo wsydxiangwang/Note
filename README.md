@@ -1,13 +1,5 @@
 # <div align="center">前端学习</div>
 
-
-<div align="center">
-    <img src="https://image.raindays.cn/image/github/nuxt.png">
-    <img src="https://image.raindays.cn/image/github/vuecli.png">
-    <img src="https://image.raindays.cn/image/github/node.png">
-    <img src="https://image.raindays.cn/image/github/mongodb.png">
-</div>
-
 <div align="center">
     <img src="https://image.raindays.cn/image/github/mood.png" width="350px" style="margin:20px 0 10px">
 </div>
@@ -23,7 +15,6 @@
 ### Vue 3.0 学习
 
 - [Vue3.0 遗留万年代码也能重构的Composition API](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue2/20.md)
-- [Vue3.0 响应式原理](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue2/10.md)
 
 ### JavaScript
 
@@ -37,7 +28,7 @@
 - [所向披靡的 async/await](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/4.md)
 - [手把手教你跨域的各种骚操作](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/5.md)
 
-...JS部分，更多的基础文章，在这里看比较方便👉[Vuepress，一个专业笔记的网站](https://wsydxiangwang.github.io) 
+...JS更多的基础文章，在这里看比较方便👉[Vuepress，一个专业笔记的网站](https://wsydxiangwang.github.io) 
 
 ### 设计模式
 
