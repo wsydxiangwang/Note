@@ -6,11 +6,11 @@
 
 ## 知其然，也要知其所以然。
 
-看官这边来，更适合阅读的排版👉 [Vuepress，一个专业笔记的网站](https://wsydxiangwang.github.io) 
-
 数不胜数的人走过这条路，留下的脚印皆可见，在下只是，学别人所学，总结别人所总结。
 
-正在边学边整理中，如对你有帮助，还请给个star，感谢支持！！欢迎指错和建议
+持续整理中，如对你有帮助，还请给个star，感谢支持！！
+
+[👉 Vuepress，一个更适合阅读、专业笔记的网站](https://wsydxiangwang.github.io) 
 
 ### Vue 3.0 学习
 
@@ -56,12 +56,7 @@
 - [手写一个寄生组合继承](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/14.md)
 - [JSON字符串——stringify、parse](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/15.md)
 
-
-### 奇淫技巧
-
-- [全面分析toString与valueOf，并随手解决掉几道大厂必备面试题](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Other/1.md)
-
-### 一些面试题
+### 一些简简单单的面试题
 
 - [undefined与null的区别](https://github.com/wsydxiangwang/Note/blob/master/docs/other/Other/1.md)
 - [实现一个无限累加函数](https://github.com/wsydxiangwang/Note/blob/master/docs/other/Other/2.md)
@@ -71,7 +66,7 @@
 - [代码输出值(this/自调用/闭包)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/Other/6.md)
 - [实现函数 sleep()](https://github.com/wsydxiangwang/Note/blob/master/docs/other/Other/7.md)
 - [a===1&&a===2&&a===3](https://github.com/wsydxiangwang/Note/blob/master/docs/other/Other/8.md)
-
+- [全面分析toString与valueOf，并随手解决掉几道大厂必备面试题](https://github.com/wsydxiangwang/Note/blob/master/docs/other/Other/9.md)
 
 
 ### 数据结构

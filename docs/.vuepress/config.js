@@ -176,14 +176,6 @@ module.exports = {
 						'/web/正则/1', 
 						'/web/正则/2'
 					]
-				},
-				{
-					title: '未知分类的集合',
-					sidebarDepth: 2,
-					children: [
-						'/web/Other/1', 
-						'/web/Other/2'
-					]
 				}
 			],
 			'/after/': [
@@ -266,7 +258,7 @@ module.exports = {
 					]
 				},
 				{
-					title: '算法',
+					title: '算法学习',
 					sidebarDepth: 2,
 					children: [
 						'/other/算法/1',
@@ -286,6 +278,7 @@ module.exports = {
 						'/other/Other/6',
 						'/other/Other/7',
 						'/other/Other/8',
+						'/other/Other/9',
 					]
 				},
 			]
