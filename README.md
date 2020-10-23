@@ -12,7 +12,7 @@
 
 [👉 Vuepress，一个更适合阅读、专业笔记的网站](https://wsydxiangwang.github.io) 
 
-### Vue 3.0 学习
+### Vue 3.0 学习 
 
 - [Vue3.0 遗留万年代码也能重构的Composition API](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue2/20.md)
 
