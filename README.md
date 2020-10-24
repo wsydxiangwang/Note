@@ -10,7 +10,7 @@
 
 持续整理中，如对你有帮助，还请给个star，感谢支持！！
 
-[👉 Vuepress，一个更适合阅读、专业笔记的网站](https://wsydxiangwang.github.io) 
+[👉Vuepress，一个更适合阅读、专业笔记的网站](https://wsydxiangwang.github.io) 
 
 ### Vue 3.0 学习 
 
