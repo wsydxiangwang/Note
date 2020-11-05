@@ -6,13 +6,13 @@
 
 ## 知其然，也要知其所以然。
 
-数不胜数的人走过这条路，留下的脚印皆可见，在下只是，学别人所学，总结别人所总结。
+数不胜数的人走过这条路，留下的脚印皆可见，在下只是学别人所学，总结别人所总结。
 
 持续整理中，如对你有帮助，还请给个star，感谢支持！！
 
-[👉 Vuepress，一个更适合阅读、专业笔记的网站](https://wsydxiangwang.github.io) 
+[👉Vuepress，一个更适合阅读、专业笔记的网站](https://wsydxiangwang.github.io) 
 
-### Vue 3.0 学习
+### Vue 3.0 学习 
 
 - [Vue3.0 遗留万年代码也能重构的Composition API](https://github.com/wsydxiangwang/Note/blob/master/docs/web/vue2/20.md)
 
@@ -106,7 +106,7 @@
 - [WEB安全](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/5.md)
 - [Script的加载和执行](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/6.md)
 
-### 给自己打个分
+### 给自己打个分吧~
 
 - [2020年前端面试复习必读文章【超百篇文章/赠复习导图】](https://juejin.im/post/5e8b163ff265da47ee3f54a6)
 - [写给女朋友的中级前端面试秘籍（含详细答案，15k级别）](https://juejin.im/post/5e7af0685188255dcf4a497e)
