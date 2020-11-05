@@ -151,11 +151,12 @@ module.exports = {
 						'/web/性能优化/5', 
 						'/web/性能优化/6', 
 						'/web/性能优化/7',
-						'/web/性能优化/8'
+						'/web/性能优化/8',
+						'/web/性能优化/9'
 					]
 				},
 				{
-					title: 'http',
+					title: 'HTTP',
 					sidebarDepth: 2,
 					children: [
 						'/web/http/1', 
@@ -168,6 +169,14 @@ module.exports = {
 						'/web/http/8', 
 						'/web/http/9', 
 						'/web/http/10',
+					]
+				},
+				{
+					title: '浏览器',
+					children: [
+						'/web/browser/1', 
+						'/web/browser/2', 
+						'/web/browser/3'
 					]
 				},
 				{
