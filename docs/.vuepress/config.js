@@ -176,7 +176,9 @@ module.exports = {
 					children: [
 						'/web/browser/1', 
 						'/web/browser/2', 
-						'/web/browser/3'
+						'/web/browser/3',
+						'/web/browser/4',
+						'/web/browser/5'
 					]
 				},
 				{
