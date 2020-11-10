@@ -36,21 +36,25 @@ const scheduler = new Scheduler()
 const timeout = (time) => new Promise(resolve => setTimeout(resolve, time))
 
 const addTask = (time, value) => {
-    scheduler.add(() => timeout(time).then(() => console.log(value)))
+    scheduler.add(() => {
+        return timeout(time).then(() => {
+            console.log(value)
+        })
+    })
 }
 
-// addTask(1000, '1');
-// addTask(500, '2');
-// addTask(300, '3');
-// addTask(400, '4');
-// addTask(3000, '5');
-// addTask(2000, '6');
-// addTask(2000, '7');
-// addTask(1000, '8');
-// addTask(800, '9');
-// addTask(1000, '10');
+addTask(1000, '1');
+addTask(500, '2');
+addTask(300, '3');
+addTask(400, '4');
+addTask(3000, '5');
+addTask(2000, '6');
+addTask(2000, '7');
+addTask(1000, '8');
+addTask(800, '9');
+addTask(1000, '10');
 
-// scheduler.taskStart()
+scheduler.taskStart()
 
 
 const urls = [
@@ -86,9 +90,9 @@ function sendRequest (urls, max, callback) {
     }
 }
 
-sendRequest(urls, 2, () => {
-    console.log('请求回调')
-})
+// sendRequest(urls, 2, () => {
+//     console.log('请求回调')
+// })
 
 
 
