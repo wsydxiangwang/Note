@@ -137,7 +137,8 @@ module.exports = {
 						'/web/Async/2', 
 						'/web/Async/3', 
 						'/web/Async/4', 
-						'/web/Async/5'
+						'/web/Async/5',
+						'/web/Async/6'
 					]
 				},
 				{
