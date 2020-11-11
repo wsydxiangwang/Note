@@ -138,7 +138,8 @@ module.exports = {
 						'/web/Async/3', 
 						'/web/Async/4', 
 						'/web/Async/5',
-						'/web/Async/6'
+						'/web/Async/6',
+						'/web/Async/7'
 					]
 				},
 				{
