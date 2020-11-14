@@ -81,7 +81,17 @@ module.exports = {
 					]
 				},
 				{
-					title: 'DOM',
+					title: 'Base',
+					children: [
+						'/web/this/1', 
+						'/web/this/2', 
+						'/web/this/3', 
+						'/web/this/4', 
+						'/web/this/5'
+					]
+				},
+				{
+					title: 'DOM、BOM',
 					sidebarDepth: 2,
 					children: [
 						'/web/Core/1',
@@ -89,7 +99,7 @@ module.exports = {
 					]
 				},
 				{
-					title: '数组',
+					title: 'Array',
 					children: [
 						'/web/Array/1', 
 						'/web/Array/2', 
@@ -102,7 +112,7 @@ module.exports = {
 					]
 				},
 				{
-					title: '对象',
+					title: 'Object',
 					children: [
 						'/web/Object/1', 
 						'/web/Object/2', 
@@ -113,25 +123,16 @@ module.exports = {
 					]
 				},
 				{
-					title: '字符串',
+					title: 'String',
 					children: [
 						'/web/String/1', 
 						'/web/String/2', 
-						'/web/String/3'
+						'/web/String/3',
+						'/web/String/4'
 					]
 				},
 				{
-					title: 'this 闭包 原型',
-					children: [
-						'/web/this/1', 
-						'/web/this/2', 
-						'/web/this/3', 
-						'/web/this/4', 
-						'/web/this/5'
-					]
-				},
-				{
-					title: '异步方法',
+					title: 'Async',
 					children: [
 						'/web/Async/1', 
 						'/web/Async/2', 
@@ -140,21 +141,6 @@ module.exports = {
 						'/web/Async/5',
 						'/web/Async/6',
 						'/web/Async/7'
-					]
-				},
-				{
-					title: '性能优化',
-					sidebarDepth: 2,
-					children: [
-						'/web/性能优化/1', 
-						'/web/性能优化/2', 
-						'/web/性能优化/3', 
-						'/web/性能优化/4', 
-						'/web/性能优化/5', 
-						'/web/性能优化/6', 
-						'/web/性能优化/7',
-						'/web/性能优化/8',
-						'/web/性能优化/9'
 					]
 				},
 				{
@@ -174,13 +160,28 @@ module.exports = {
 					]
 				},
 				{
-					title: '浏览器',
+					title: 'Browser',
 					children: [
 						'/web/browser/1', 
 						'/web/browser/2', 
 						'/web/browser/3',
 						'/web/browser/4',
 						'/web/browser/5'
+					]
+				},
+				{
+					title: '性能优化',
+					sidebarDepth: 2,
+					children: [
+						'/web/性能优化/1', 
+						'/web/性能优化/2', 
+						'/web/性能优化/3', 
+						'/web/性能优化/4', 
+						'/web/性能优化/5', 
+						'/web/性能优化/6', 
+						'/web/性能优化/7',
+						'/web/性能优化/8',
+						'/web/性能优化/9'
 					]
 				},
 				{
