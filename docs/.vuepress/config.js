@@ -77,17 +77,18 @@ module.exports = {
 					children: [
 						'/web/ES6/1',
 						'/web/ES6/2',
+						'/web/ES6/4',
 						'/web/ES6/3'
 					]
 				},
 				{
 					title: 'Base',
 					children: [
-						'/web/this/1', 
-						'/web/this/2', 
-						'/web/this/3', 
-						'/web/this/4', 
-						'/web/this/5'
+						'/web/Base/1', 
+						'/web/Base/2', 
+						'/web/Base/3', 
+						'/web/Base/4', 
+						'/web/Base/5'
 					]
 				},
 				{

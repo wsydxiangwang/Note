@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+var foo = (function(){
+    var secret = 'secret'
+    // “闭包”内的函数可以访问 secret 变量，而 secret 变量对于外部却是隐藏的
+    return {
+        get_secret() {
+            return secret
+        },
+        new_secret(new_secret) {
+            secret = new_secret
+        }
+    }
+})()
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1)) 
+        let a = arr[i]
+        arr[i] = arr[j]
+        arr[j] = a
+    }
+}
+
+shuffle(arr)
+console.log(arr)
+</script>
+</body>
+</html>
