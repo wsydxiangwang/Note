@@ -294,6 +294,7 @@ module.exports = {
 						'/other/Other/7',
 						'/other/Other/8',
 						'/other/Other/9',
+						'/other/Other/10'
 					]
 				},
 			]

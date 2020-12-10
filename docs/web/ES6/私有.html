@@ -31,8 +31,186 @@ function shuffle(arr) {
     }
 }
 
-shuffle(arr)
-console.log(arr)
+// shuffle(arr)
+// console.log(arr)
+
+
+class LazyMan {
+    constructor(name) {
+        this.name = name;
+        this.presetTime = 0;
+        this.p = Promise.resolve().then(() => {
+            // sleepFirst 延迟所有操作
+            if(this.presetTime > 0) {
+                return this.holdon(this.presetTime); 
+            }
+        }).then(() => {
+            this.sayName()
+        })
+    }
+    sayName() {
+        console.log(`Hi! This is ${this.name}`)
+        return this
+    }
+    sleep(time) {
+        this.p = this.p.then(() => {
+            return this.holdon(time)
+        })
+        return this
+    }
+    eat(food) {
+        this.p = this.p.then(() => {
+            console.log(`Eat, ${food}`)
+        })
+        return this
+    }
+    holdon(time) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log(`Wake up after ${time}`)
+                resolve()
+            }, time * 1000)
+        })
+    }
+    sleepFirst(time) {
+        this.presetTime = time
+        return this
+    }
+}
+
+// new LazyMan("Hank").sleep(10).eat("dinner")
+// new LazyMan("Hank").eat("dinner").eat("supper")
+// new LazyMan("Hank").sleepFirst(5).eat("supper")
+
+
+var data = [
+    { id: 2, pid: 4, text: "E[父C]" },
+    { id: 1, pid: 0, text: 'A' },
+    { id: 4, pid: 1, text: "C[父A]" },
+    { id: 3, pid: 7, text: "G[父F]" },
+    { id: 5, pid: 6, text: "D[父B]" },
+    { id: 7, pid: 4, text: "F[父C]" },
+    { id: 6, pid: 0, text: 'B' }
+]
+
+function build(data) {
+    const tree = {}
+    const temp = {}
+
+    data.forEach(item => temp[item.id] = item)
+
+    for (const i in temp) {
+        const pid = temp[i].pid
+        if (pid) {
+            if (!temp[pid].children) {
+                temp[pid].children = {}
+            }
+            temp[pid].children[i] = temp[i]
+        } else {
+            tree[i] = temp[i]
+        }
+    }
+    return tree
+}
+
+// console.log(build(data))
+
+
+const arr2 = [
+    {
+        id: 12,
+        children: null
+    },
+    {
+        id: 3,
+        children: [
+            {
+                id: 23,
+                children: null
+            },
+            {
+                id: 63,
+                children: [
+                    {
+                        id: 1,
+                        children: null
+                    },
+                    {
+                        id: 9,
+                        children: null
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 11,
+        children: null
+    }
+]
+
+function getArr(arr) {
+    const result = []
+    if (arr && Array.isArray(arr)) {
+        for (const i in arr) {
+            // 第一层id
+            result.push(arr[i].id)
+
+            let children = arr[i].children
+            let queue = []
+
+            if (children) {
+                queue.push(children)
+            }
+            let queueItem = queue.shift()
+
+            while (queueItem) {
+                queueItem.forEach(item => {
+                    result.push(item.id)
+                    if (item.children) {
+                        queue.push(item.children)
+                    }
+                })
+                queueItem = queue.shift()
+            }
+        }
+    }
+    return result
+}
+
+function getArr2(arr) {
+    const result = []
+    if (arr && Array.isArray(arr)) {
+        (function rec(argsArr){
+            argsArr.forEach(item => {
+                result.push(item.id)
+                let children = item.children
+                if (children && Array.isArray(children)) {
+                    rec(children)
+                }
+            })
+        })(arr)
+    }
+    return result
+}
+
+// console.log(getArr2(arr2))
+
+
+const nums = Object.freeze([-2, 0, 3, -5, 2, -1])
+
+function sumRange(i, j) {
+    const sums = []
+    sums[0] = 0
+
+    nums.forEach((item, i) => {
+        sums[i + 1] = sums[i] + item
+    })
+
+    return sums[j + 1] - sums[i]
+}
+
+console.log(sumRange(0, 4))
 </script>
 </body>
 </html>
