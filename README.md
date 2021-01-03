@@ -18,7 +18,6 @@
 
 [👉 一个更适合阅读、更专业的笔记网站](https://wsydxiangwang.github.io) 
 
-<!-- 
 
 ### Vue 3.0 学习 
 
@@ -26,27 +25,23 @@
 
 ### JavaScript
 
-- [让人窒息的原型和原型链](https://github.com/wsydxiangwang/Note/blob/master/docs/web/this/4.md)
-- [原型继承的操作](https://github.com/wsydxiangwang/Note/blob/master/docs/web/this/5.md)
-- [作用域和闭包](https://github.com/wsydxiangwang/Note/blob/master/docs/web/this/3.md)
-- [this 全面解析](https://github.com/wsydxiangwang/Note/blob/master/docs/web/this/1.md)
+- [this 全面解析](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Base/1.md)
+- [作用域和闭包](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Base/3.md)
+- [让人窒息的原型和原型链](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Base/4.md)
+- [继承的无敌操作](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Base/5.md)
+- [DOM 操作](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Core/2.md)
+- [DOM 事件](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Core/2.md)
+- [数组的遍历方法总结](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Array/2.md)
 - [Ajax 概念及封装](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/1.md)
 - [Promise 方法介绍](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/2.md)
 - [Promise 回调地狱的终结](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/3.md)
 - [所向披靡的 async/await](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/4.md)
-- [手把手教你跨域的各种骚操作](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/5.md)
+- [手把手教你跨域的无敌操作](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/5.md)
+- [try/catch 异常捕获](https://github.com/wsydxiangwang/Note/blob/master/docs/web/Async/6.md)
 
-...JS更多的基础文章，在这里看比较方便👉[Vuepress，一个专业笔记的网站](https://wsydxiangwang.github.io) 
+...JS更多的基础文章，在这里看比较方便 [👉 一个更适合阅读、更专业的笔记网站](https://wsydxiangwang.github.io) 
 
-### 设计模式
-
-- [单例模式](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/1.md)
-- [策略模式](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/2.md)
-- [发布—订阅模式(观察者模式)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/3.md)
-- [代理模式](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/4.md)
-- [职责链模式](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/5.md)
-
-### 手写代码
+### 手写API
 
 - [call、apply 的奇妙感觉](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/1.md)
 - [bind 进阶函数的实现](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/2.md)
@@ -62,7 +57,42 @@
 - [Array 原生实现 reduce](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/12.md)
 - [中高级面试之并发请求](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/13.md)
 - [手写一个寄生组合继承](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/14.md)
-- [JSON字符串——stringify、parse](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%89%8B%E5%86%99/15.md)
+
+### 设计模式
+
+- [单例模式](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/1.md)
+- [策略模式](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/2.md)
+- [发布—订阅模式(观察者模式)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/3.md)
+- [代理模式](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/4.md)
+- [职责链模式](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/5.md)
+
+### 数据结构
+
+- [栈(Stack)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/1.md)
+- [队列(Queue)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/2.md)
+- [链表(Linked-list)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/3.md)
+- [树(Tree)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/4.md)
+- [集合(Set)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/5.md)
+- [字典(Dictionary)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/6.md)
+- [图(Graph)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.md)
+
+### 浏览器
+
+- [本地存储](https://github.com/wsydxiangwang/Note/tree/master/docs/web/browser/1.md)
+- [前端缓存](https://github.com/wsydxiangwang/Note/tree/master/docs/web/browser/2.md)
+- [运行机制 EventLoop](https://github.com/wsydxiangwang/Note/tree/master/docs/web/browser/3.md)
+- [前端安全](https://github.com/wsydxiangwang/Note/tree/master/docs/web/browser/4.md)
+- [浏览器输入URL后发生了什么](https://github.com/wsydxiangwang/Note/tree/master/docs/web/browser/5.md)
+
+<!-- 
+
+
+
+
+
+
+
+
 
 ### 一些简简单单的面试题
 
@@ -77,15 +107,7 @@
 - [全面分析toString与valueOf，并随手解决掉几道大厂必备面试题](https://github.com/wsydxiangwang/Note/blob/master/docs/other/Other/9.md)
 
 
-### 数据结构
 
-- [栈(Stack)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/1.md)
-- [队列(Queue)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/2.md)
-- [链表(Linked-list)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/3.md)
-- [树(Tree)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/4.md)
-- [集合(Set)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/5.md)
-- [字典(Dictionary)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/6.md)
-- [图(Graph)](https://github.com/wsydxiangwang/Note/blob/master/docs/other/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.md)
 
 ### 算法
 
@@ -109,9 +131,6 @@
 - [节流防抖](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/1.md)
 - [防抖多列表的骚操作](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/7.md)
 - [图片懒加载](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/2.md)
-- [前端缓存](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/3.md)
-- [本地存储](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/4.md)
-- [WEB安全](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/5.md)
 - [Script的加载和执行](https://github.com/wsydxiangwang/Note/tree/master/docs/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/6.md)
 
 ### 给自己打个分吧~
