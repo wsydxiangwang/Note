@@ -78,7 +78,8 @@ module.exports = {
 						'/web/ES6/1',
 						'/web/ES6/2',
 						'/web/ES6/4',
-						'/web/ES6/3'
+						'/web/ES6/3',
+						'/web/ES6/5'
 					]
 				},
 				{
