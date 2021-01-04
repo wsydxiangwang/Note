@@ -97,7 +97,8 @@ module.exports = {
 					sidebarDepth: 2,
 					children: [
 						'/web/Core/1',
-						'/web/Core/2'
+						'/web/Core/2',
+						'/web/Core/3'
 					]
 				},
 				{
