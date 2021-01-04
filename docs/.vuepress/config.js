@@ -110,8 +110,7 @@ module.exports = {
 						'/web/Array/4', 
 						'/web/Array/5', 
 						'/web/Array/6', 
-						'/web/Array/7', 
-						'/web/Array/8'
+						'/web/Array/7'
 					]
 				},
 				{
@@ -147,22 +146,6 @@ module.exports = {
 					]
 				},
 				{
-					title: 'HTTP',
-					sidebarDepth: 2,
-					children: [
-						'/web/http/1', 
-						'/web/http/2', 
-						'/web/http/3', 
-						'/web/http/4', 
-						'/web/http/5', 
-						'/web/http/6', 
-						'/web/http/7', 
-						'/web/http/8', 
-						'/web/http/9', 
-						'/web/http/10',
-					]
-				},
-				{
 					title: 'Browser',
 					children: [
 						'/web/browser/1', 
@@ -193,7 +176,30 @@ module.exports = {
 						'/web/正则/1', 
 						'/web/正则/2'
 					]
-				}
+				},
+				{
+					title: 'HTTP',
+					sidebarDepth: 2,
+					children: [
+						'/web/http/1', 
+						'/web/http/2', 
+						'/web/http/3', 
+						'/web/http/4', 
+						'/web/http/5', 
+						'/web/http/6', 
+						'/web/http/7', 
+						'/web/http/8', 
+						'/web/http/9', 
+						'/web/http/10',
+					]
+				},
+				{
+					title: 'webpack',
+					sidebarDepth: 2,
+					children: [
+						'/web/webpack/1'
+					]
+				},
 			],
 			'/after/': [
 				{
