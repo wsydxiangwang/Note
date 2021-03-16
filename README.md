@@ -1,4 +1,4 @@
-# <div align="center">前端学习</div>
+# <div align="center">前端学习笔记</div>
 
 <div align="center">
     <img src="https://image.raindays.cn/image/github/mood.png" width="350px" style="margin:20px 0 10px">
