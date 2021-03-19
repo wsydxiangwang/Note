@@ -125,6 +125,12 @@ module.exports = {
 					]
 				},
 				{
+					title: 'Function',
+					children: [
+						'/web/Function/1'
+					]
+				},
+				{
 					title: 'String',
 					children: [
 						'/web/String/1', 
