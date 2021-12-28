@@ -18,7 +18,7 @@ module.exports = {
 		nav:[
 			{text: 'Web', link: '/web/'},
 			{text: '进阶', link: '/other/'},
-			{text: '后端', link: '/after/'},
+			{text: '专业', link: '/after/'},
 			{text: '心情小镇', link: 'https://raindays.cn/'}, 
 			{text: '全栈项目', link: 'https://github.com/wsydxiangwang/Mood'}, 
 			{text: 'Github', link: 'https://github.com/wsydxiangwang/Note'} 
@@ -209,15 +209,14 @@ module.exports = {
 			],
 			'/after/': [
 				{
-					title: 'NodeJS',
+					title: 'Git',
 					sidebarDepth: 2,
 					children: [
-						'/after/mongo/1',
-						'/after/mongo/2'
+						'/after/git/1',
 					]
 				},
 				{
-					title: 'MongoDB',
+					title: 'NodeJS',
 					sidebarDepth: 2,
 					children: [
 						'/after/mongo/1',
@@ -228,7 +227,8 @@ module.exports = {
 					title: 'Docker',
 					sidebarDepth: 2,
 					children: [
-						'/after/docker/1',
+						'/after/mongo/1',
+						'/after/mongo/2'
 					]
 				},
 			],
