@@ -231,11 +231,19 @@ module.exports = {
 					]
 				},
 				{
-					title: 'Docker',
+					title: 'MySQL',
 					sidebarDepth: 2,
 					children: [
-						'/after/mongo/1',
-						'/after/mongo/2'
+						'/after/mysql/1',
+						'/after/mysql/2',
+						'/after/mysql/3'
+					]
+				},
+				{
+					title: 'Nginx',
+					sidebarDepth: 2,
+					children: [
+						'/after/nginx/1'
 					]
 				},
 			],
