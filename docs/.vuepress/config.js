@@ -209,6 +209,13 @@ module.exports = {
 			],
 			'/after/': [
 				{
+					title: 'Mac',
+					sidebarDepth: 2,
+					children: [
+						'/after/mac/1',
+					]
+				},
+				{
 					title: 'Git',
 					sidebarDepth: 2,
 					children: [
