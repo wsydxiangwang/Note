@@ -1,5 +1,5 @@
 module.exports = {
-	title: '不吃茶的v李白',
+	title: '不吃茶的李白v',
 	description: 'Live and Study.',
 	head: [
 		['link', { rel: 'icon', href: '/images/photo.png' }],
